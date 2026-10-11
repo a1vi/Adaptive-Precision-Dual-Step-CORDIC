@@ -1,0 +1,30 @@
+{
+  "hiF": {
+    "High": {
+      "sfdr": 114.69,
+      "fund_bin": 811
+    },
+    "Medium": {
+      "sfdr": 98.34,
+      "fund_bin": 811
+    },
+    "Low": {
+      "sfdr": 76.68,
+      "fund_bin": 811
+    }
+  },
+  "noncoh": {
+    "High": {
+      "sfdr": 35.86,
+      "fund_bin": 37
+    },
+    "Medium": {
+      "sfdr": 35.86,
+      "fund_bin": 37
+    },
+    "Low": {
+      "sfdr": 35.85,
+      "fund_bin": 37
+    }
+  }
+}

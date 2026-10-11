@@ -1,0 +1,4 @@
+read_verilog -sv rtl/cordic_engine.v
+read_verilog -sv rtl/cordic_top.v
+hierarchy -top cordic_top -chparam DUAL_STEP 1 -chparam EARLY_STOP 1
+synth_ice40 -top cordic_top -json fpga_pnr/cordic_1_1.json

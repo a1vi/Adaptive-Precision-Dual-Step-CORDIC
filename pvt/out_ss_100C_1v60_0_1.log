@@ -1,0 +1,15 @@
+OpenSTA 3.1.0 7a034b56de Copyright (c) 2026, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Warning 1171: sky130_fd_sc_hd__ss_100C_1v60.lib line 28, default_fanout_load is 0.0.
+Warning 441: run_ss_100C_1v60_0_1.tcl line 1, set_input_delay relative to a clock defined on the same port/pin not allowed.
+wns max -32.73
+tns max -2675.48
+Startpoint                           Endpoint                                 Slack
+----------------------------------------------------------------------------------
+rst_n (input)                        _3267_/RESET_B (sky130_fd_sc_hd__dfrtp_1)    1.4653
+u_engine/_5415_/Q (sky130_fd_sc_hd__dfrtp_1) u_engine/_5318_/D (sky130_fd_sc_hd__dfrtp_1)  -32.7292
+

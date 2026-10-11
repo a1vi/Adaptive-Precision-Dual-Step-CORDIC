@@ -1,0 +1,8 @@
+read_verilog -sv cordic_engine.v
+read_verilog -sv cordic_top.v
+hierarchy -top cordic_top -chparam DUAL_STEP 0 -chparam EARLY_STOP 1
+synth -top cordic_top
+dfflibmap -liberty sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty sky130_fd_sc_hd__tt_025C_1v80.lib
+stat -liberty sky130_fd_sc_hd__tt_025C_1v80.lib
+write_verilog -noattr netlist_0_1.v

@@ -1,0 +1,26 @@
+{
+  "baseline": {
+    "total_leakage_nW": 6.695300798021658,
+    "total_leakage_uW": 0.006695300798021658,
+    "n_cell_types": 54,
+    "missing": []
+  },
+  "earlyonly": {
+    "total_leakage_nW": 6.99945277811797,
+    "total_leakage_uW": 0.00699945277811797,
+    "n_cell_types": 60,
+    "missing": []
+  },
+  "dualonly": {
+    "total_leakage_nW": 9.690272636099653,
+    "total_leakage_uW": 0.009690272636099654,
+    "n_cell_types": 62,
+    "missing": []
+  },
+  "combined": {
+    "total_leakage_nW": 10.147219687182846,
+    "total_leakage_uW": 0.010147219687182846,
+    "n_cell_types": 72,
+    "missing": []
+  }
+}

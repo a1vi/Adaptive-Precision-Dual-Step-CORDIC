@@ -1,0 +1,100 @@
+Warning 1171: sky130_fd_sc_hd__tt_025C_1v80.lib line 23, default_fanout_load is 0.0.
+Warning 441: sta_pipe.tcl line 1, set_input_delay relative to a clock defined on the same port/pin not allowed.
+Startpoint: rst_n (input port clocked by clk)
+Endpoint: _3267_ (recovery check against rising-edge clock clk)
+Path Group: asynchronous
+Path Type: max
+
+    Delay      Time   Description
+-------------------------------------------------------------
+   0.0000    0.0000   clock clk (rise edge)
+   0.0000    0.0000   clock network delay (ideal)
+   0.0000    0.0000 ^ input external delay
+   0.0000    0.0000 ^ rst_n (in)
+   0.0000    0.0000 ^ _3267_/RESET_B (sky130_fd_sc_hd__dfrtp_1)
+             0.0000   data arrival time
+
+  10.0000   10.0000   clock clk (rise edge)
+   0.0000   10.0000   clock network delay (ideal)
+   0.0000   10.0000   clock reconvergence pessimism
+            10.0000 ^ _3267_/CLK (sky130_fd_sc_hd__dfrtp_1)
+   0.2283   10.2283   library recovery time
+            10.2283   data required time
+-------------------------------------------------------------
+            10.2283   data required time
+            -0.0000   data arrival time
+-------------------------------------------------------------
+            10.2283   slack (MET)
+
+
+Startpoint: u_engine/_5415_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: u_engine/_5318_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+    Delay      Time   Description
+-------------------------------------------------------------
+   0.0000    0.0000   clock clk (rise edge)
+   0.0000    0.0000   clock network delay (ideal)
+   0.0000    0.0000 ^ u_engine/_5415_/CLK (sky130_fd_sc_hd__dfrtp_1)
+   2.6342    2.6342 ^ u_engine/_5415_/Q (sky130_fd_sc_hd__dfrtp_1)
+   0.7319    3.3662 v u_engine/_4038_/X (sky130_fd_sc_hd__mux4_2)
+   0.3327    3.6989 v u_engine/_4039_/X (sky130_fd_sc_hd__mux2_1)
+   0.5326    4.2315 v u_engine/_4051_/X (sky130_fd_sc_hd__mux4_2)
+   0.2602    4.4917 ^ u_engine/_4209_/Y (sky130_fd_sc_hd__o21ai_0)
+   0.1726    4.6643 v u_engine/_4214_/Y (sky130_fd_sc_hd__o21ai_0)
+   0.3820    5.0463 v u_engine/_4217_/X (sky130_fd_sc_hd__maj3_1)
+   0.3921    5.4384 v u_engine/_4218_/X (sky130_fd_sc_hd__maj3_1)
+   0.3930    5.8314 v u_engine/_4219_/X (sky130_fd_sc_hd__maj3_1)
+   0.3876    6.2190 v u_engine/_4220_/X (sky130_fd_sc_hd__maj3_1)
+   0.1868    6.4058 ^ u_engine/_4222_/Y (sky130_fd_sc_hd__a21oi_1)
+   0.1366    6.5424 v u_engine/_4223_/Y (sky130_fd_sc_hd__o21ai_0)
+   0.2121    6.7544 ^ u_engine/_4225_/Y (sky130_fd_sc_hd__a21oi_1)
+   0.2413    6.9957 ^ u_engine/_4226_/X (sky130_fd_sc_hd__maj3_1)
+   0.2153    7.2111 ^ u_engine/_4228_/X (sky130_fd_sc_hd__maj3_1)
+   0.1516    7.3626 ^ u_engine/_4230_/X (sky130_fd_sc_hd__o211a_1)
+   0.0824    7.4450 v u_engine/_4233_/Y (sky130_fd_sc_hd__o31ai_1)
+   0.3926    7.8376 v u_engine/_4234_/X (sky130_fd_sc_hd__maj3_1)
+   0.3924    8.2300 v u_engine/_4235_/X (sky130_fd_sc_hd__maj3_1)
+   0.3931    8.6231 v u_engine/_4237_/X (sky130_fd_sc_hd__maj3_1)
+   0.3923    9.0154 v u_engine/_4238_/X (sky130_fd_sc_hd__maj3_1)
+   0.3929    9.4082 v u_engine/_4239_/X (sky130_fd_sc_hd__maj3_1)
+   0.3922    9.8005 v u_engine/_4240_/X (sky130_fd_sc_hd__maj3_1)
+   0.3930   10.1935 v u_engine/_4241_/X (sky130_fd_sc_hd__maj3_1)
+   0.3931   10.5865 v u_engine/_4242_/X (sky130_fd_sc_hd__maj3_1)
+   0.3932   10.9797 v u_engine/_4243_/X (sky130_fd_sc_hd__maj3_1)
+   0.3931   11.3728 v u_engine/_4244_/X (sky130_fd_sc_hd__maj3_1)
+   0.3911   11.7639 v u_engine/_4306_/X (sky130_fd_sc_hd__maj3_1)
+   0.3869   12.1508 v u_engine/_4307_/X (sky130_fd_sc_hd__maj3_1)
+   0.1847   12.3355 ^ u_engine/_4309_/Y (sky130_fd_sc_hd__a21oi_1)
+   0.1446   12.4801 v u_engine/_4310_/Y (sky130_fd_sc_hd__o21ai_0)
+   0.4020   12.8822 v u_engine/_4311_/X (sky130_fd_sc_hd__maj3_1)
+   0.3921   13.2743 v u_engine/_4312_/X (sky130_fd_sc_hd__maj3_1)
+   0.3921   13.6664 v u_engine/_4314_/X (sky130_fd_sc_hd__maj3_1)
+   0.3714   14.0379 v u_engine/_4316_/X (sky130_fd_sc_hd__maj3_1)
+   0.4847   14.5226 ^ u_engine/_4320_/Y (sky130_fd_sc_hd__xnor2_1)
+   0.2749   14.7974 v u_engine/_4321_/Y (sky130_fd_sc_hd__a21oi_1)
+   0.2626   15.0601 v u_engine/_4445_/Y (sky130_fd_sc_hd__nor2b_1)
+   0.4384   15.4984 ^ u_engine/_4517_/Y (sky130_fd_sc_hd__a2111oi_0)
+   0.1357   15.6342 v u_engine/_4519_/Y (sky130_fd_sc_hd__nand4_1)
+   0.2626   15.8968 ^ u_engine/_4524_/Y (sky130_fd_sc_hd__nor4_1)
+   0.1117   16.0085 v u_engine/_4530_/Y (sky130_fd_sc_hd__o31ai_1)
+   0.1808   16.1893 v u_engine/_4532_/X (sky130_fd_sc_hd__and2_0)
+   0.0000   16.1893 v u_engine/_5318_/D (sky130_fd_sc_hd__dfrtp_1)
+            16.1893   data arrival time
+
+  10.0000   10.0000   clock clk (rise edge)
+   0.0000   10.0000   clock network delay (ideal)
+   0.0000   10.0000   clock reconvergence pessimism
+            10.0000 ^ u_engine/_5318_/CLK (sky130_fd_sc_hd__dfrtp_1)
+  -0.1265    9.8735   library setup time
+             9.8735   data required time
+-------------------------------------------------------------
+             9.8735   data required time
+           -16.1893   data arrival time
+-------------------------------------------------------------
+            -6.3159   slack (VIOLATED)
+
+
+tns max -92.92
+wns max -6.32

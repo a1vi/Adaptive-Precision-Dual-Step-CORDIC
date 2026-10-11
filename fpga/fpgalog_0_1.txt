@@ -1,0 +1,1945 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Executing script file `synth_fpga_0_1.ys' --
+
+1. Executing Verilog-2005 frontend: cordic_engine.v
+Parsing SystemVerilog input from `cordic_engine.v' to AST representation.
+Generating RTLIL representation for module `\cordic_engine'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: cordic_top.v
+Parsing SystemVerilog input from `cordic_top.v' to AST representation.
+Generating RTLIL representation for module `\cordic_top'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+Parameter \DUAL_STEP = 0
+Parameter \EARLY_STOP = 1
+
+4. Executing AST frontend in derive mode using pre-parsed AST for module `\cordic_top'.
+Parameter \DUAL_STEP = 0
+Parameter \EARLY_STOP = 1
+Generating RTLIL representation for module `$paramod$cd56363c222e78cb573352c43099b6e50b54edc2\cordic_top'.
+
+4.1. Analyzing design hierarchy..
+Top module:  \cordic_top
+Used module:     \cordic_engine
+Parameter \PW = 32
+Parameter \FRAC = 20
+Parameter \ITMAX = 18
+Parameter \DUAL_STEP = 0
+Parameter \EARLY_STOP = 1
+
+4.2. Executing AST frontend in derive mode using pre-parsed AST for module `\cordic_engine'.
+Parameter \PW = 32
+Parameter \FRAC = 20
+Parameter \ITMAX = 18
+Parameter \DUAL_STEP = 0
+Parameter \EARLY_STOP = 1
+Generating RTLIL representation for module `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine'.
+
+4.3. Analyzing design hierarchy..
+Top module:  \cordic_top
+Used module:     $paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine
+
+4.4. Analyzing design hierarchy..
+Top module:  \cordic_top
+Used module:     $paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine
+Removing unused module `$paramod$cd56363c222e78cb573352c43099b6e50b54edc2\cordic_top'.
+Removing unused module `\cordic_engine'.
+Removed 2 unused modules.
+
+5. Executing SYNTH_ICE40 pass.
+
+5.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/cells_sim.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\SB_IO'.
+Generating RTLIL representation for module `\SB_GB_IO'.
+Generating RTLIL representation for module `\SB_GB'.
+Generating RTLIL representation for module `\SB_LUT4'.
+Generating RTLIL representation for module `\SB_CARRY'.
+Generating RTLIL representation for module `\SB_DFF'.
+Generating RTLIL representation for module `\SB_DFFE'.
+Generating RTLIL representation for module `\SB_DFFSR'.
+Generating RTLIL representation for module `\SB_DFFR'.
+Generating RTLIL representation for module `\SB_DFFSS'.
+Generating RTLIL representation for module `\SB_DFFS'.
+Generating RTLIL representation for module `\SB_DFFESR'.
+Generating RTLIL representation for module `\SB_DFFER'.
+Generating RTLIL representation for module `\SB_DFFESS'.
+Generating RTLIL representation for module `\SB_DFFES'.
+Generating RTLIL representation for module `\SB_DFFN'.
+Generating RTLIL representation for module `\SB_DFFNE'.
+Generating RTLIL representation for module `\SB_DFFNSR'.
+Generating RTLIL representation for module `\SB_DFFNR'.
+Generating RTLIL representation for module `\SB_DFFNSS'.
+Generating RTLIL representation for module `\SB_DFFNS'.
+Generating RTLIL representation for module `\SB_DFFNESR'.
+Generating RTLIL representation for module `\SB_DFFNER'.
+Generating RTLIL representation for module `\SB_DFFNESS'.
+Generating RTLIL representation for module `\SB_DFFNES'.
+Generating RTLIL representation for module `\SB_RAM40_4K'.
+Generating RTLIL representation for module `\SB_RAM40_4KNR'.
+Generating RTLIL representation for module `\SB_RAM40_4KNW'.
+Generating RTLIL representation for module `\SB_RAM40_4KNRNW'.
+Generating RTLIL representation for module `\ICESTORM_LC'.
+Generating RTLIL representation for module `\SB_PLL40_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2F_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_2F_PAD'.
+Generating RTLIL representation for module `\SB_WARMBOOT'.
+Generating RTLIL representation for module `\SB_SPRAM256KA'.
+Generating RTLIL representation for module `\SB_HFOSC'.
+Generating RTLIL representation for module `\SB_LFOSC'.
+Generating RTLIL representation for module `\SB_RGBA_DRV'.
+Generating RTLIL representation for module `\SB_LED_DRV_CUR'.
+Generating RTLIL representation for module `\SB_RGB_DRV'.
+Generating RTLIL representation for module `\SB_I2C'.
+Generating RTLIL representation for module `\SB_SPI'.
+Generating RTLIL representation for module `\SB_LEDDA_IP'.
+Generating RTLIL representation for module `\SB_FILTER_50NS'.
+Generating RTLIL representation for module `\SB_IO_I3C'.
+Generating RTLIL representation for module `\SB_IO_OD'.
+Generating RTLIL representation for module `\SB_MAC16'.
+Generating RTLIL representation for module `\ICESTORM_RAM'.
+Successfully finished Verilog frontend.
+
+5.2. Executing HIERARCHY pass (managing design hierarchy).
+
+5.2.1. Analyzing design hierarchy..
+Top module:  \cordic_top
+Used module:     $paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine
+
+5.2.2. Analyzing design hierarchy..
+Top module:  \cordic_top
+Used module:     $paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine
+Removed 0 unused modules.
+
+5.3. Executing PROC pass (convert processes to netlists).
+
+5.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:160$214'.
+Cleaned up 1 empty switch.
+
+5.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1414$555 in module SB_DFFNES.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1353$548 in module SB_DFFNESS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1273$544 in module SB_DFFNER.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1212$537 in module SB_DFFNESR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1138$534 in module SB_DFFNS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1088$531 in module SB_DFFNSS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1017$528 in module SB_DFFNR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:967$525 in module SB_DFFNSR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:803$517 in module SB_DFFES.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:742$510 in module SB_DFFESS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:662$506 in module SB_DFFER.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:601$499 in module SB_DFFESR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:527$496 in module SB_DFFS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:477$493 in module SB_DFFSS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:406$490 in module SB_DFFR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:356$487 in module SB_DFFSR.
+Marked 1 switch rules as full_case in process $proc$cordic_engine.v:0$309 in module $paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.
+Marked 1 switch rules as full_case in process $proc$cordic_engine.v:0$303 in module $paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.
+Marked 1 switch rules as full_case in process $proc$cordic_engine.v:0$297 in module $paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.
+Marked 3 switch rules as full_case in process $proc$cordic_engine.v:0$259 in module $paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.
+Marked 3 switch rules as full_case in process $proc$cordic_engine.v:0$221 in module $paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.
+Marked 3 switch rules as full_case in process $proc$cordic_engine.v:160$214 in module $paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.
+Marked 4 switch rules as full_case in process $proc$cordic_top.v:45$158 in module cordic_top.
+Marked 1 switch rules as full_case in process $proc$cordic_top.v:72$167 in module cordic_top.
+Marked 2 switch rules as full_case in process $proc$cordic_top.v:92$170 in module cordic_top.
+Removed a total of 0 dead cases.
+
+5.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 8 redundant assignments.
+Promoted 77 assignments to connections.
+
+5.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$558'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$554'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$547'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$543'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$536'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$533'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$530'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$527'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$524'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$522'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$520'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$516'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$509'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$505'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$498'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$495'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$492'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$489'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$486'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$484'.
+  Set init value: \Q = 1'0
+
+5.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \S in `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1414$555'.
+Found async reset \R in `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1273$544'.
+Found async reset \S in `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1138$534'.
+Found async reset \R in `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1017$528'.
+Found async reset \S in `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:803$517'.
+Found async reset \R in `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:662$506'.
+Found async reset \S in `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:527$496'.
+Found async reset \R in `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:406$490'.
+Found async reset \rst_n in `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:160$214'.
+Found async reset \rst_n in `\cordic_top.$proc$cordic_top.v:72$167'.
+
+5.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 4 switches.
+<suppressed ~33 debug messages>
+
+5.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$558'.
+Creating decoders for process `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1414$555'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$554'.
+Creating decoders for process `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1353$548'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$547'.
+Creating decoders for process `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1273$544'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$543'.
+Creating decoders for process `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1212$537'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$536'.
+Creating decoders for process `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1138$534'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$533'.
+Creating decoders for process `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1088$531'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$530'.
+Creating decoders for process `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1017$528'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$527'.
+Creating decoders for process `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:967$525'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$524'.
+Creating decoders for process `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:922$523'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$522'.
+Creating decoders for process `\SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:882$521'.
+Creating decoders for process `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$520'.
+Creating decoders for process `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:803$517'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$516'.
+Creating decoders for process `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:742$510'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$509'.
+Creating decoders for process `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:662$506'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$505'.
+Creating decoders for process `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:601$499'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$498'.
+Creating decoders for process `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:527$496'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$495'.
+Creating decoders for process `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:477$493'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$492'.
+Creating decoders for process `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:406$490'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$489'.
+Creating decoders for process `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:356$487'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$486'.
+Creating decoders for process `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:311$485'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$484'.
+Creating decoders for process `\SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:271$483'.
+Creating decoders for process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$309'.
+     1/1: $1\thresh_val$func$cordic_engine.v:153$192.$result[31:0]$314
+Creating decoders for process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$303'.
+     1/1: $1\floor_depth$func$cordic_engine.v:152$191.$result[4:0]$308
+Creating decoders for process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$297'.
+     1/1: $1\target_depth$func$cordic_engine.v:151$190.$result[4:0]$302
+Creating decoders for process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$259'.
+     1/9: $2\atan_lut$func$cordic_engine.v:131$189.$result[31:0]$295
+     2/9: $2\atan_lut$func$cordic_engine.v:127$188.$result[31:0]$289
+     3/9: $1\micro_step$func$cordic_engine.v:142$187.zn[31:0]$282
+     4/9: $1\atan_lut$func$cordic_engine.v:127$188.$result[31:0]$281
+     5/9: $1\atan_lut$func$cordic_engine.v:127$188.idx[4:0]$280
+     6/9: $1\micro_step$func$cordic_engine.v:142$187.yn[31:0]$283
+     7/9: $1\micro_step$func$cordic_engine.v:142$187.xn[31:0]$284
+     8/9: $1\atan_lut$func$cordic_engine.v:131$189.$result[31:0]$279
+     9/9: $1\atan_lut$func$cordic_engine.v:131$189.idx[4:0]$278
+Creating decoders for process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$221'.
+     1/9: $2\atan_lut$func$cordic_engine.v:131$186.$result[31:0]$257
+     2/9: $2\atan_lut$func$cordic_engine.v:127$185.$result[31:0]$251
+     3/9: $1\micro_step$func$cordic_engine.v:138$184.zn[31:0]$243
+     4/9: $1\atan_lut$func$cordic_engine.v:127$185.$result[31:0]$242
+     5/9: $1\atan_lut$func$cordic_engine.v:127$185.idx[4:0]$241
+     6/9: $1\micro_step$func$cordic_engine.v:138$184.yn[31:0]$244
+     7/9: $1\micro_step$func$cordic_engine.v:138$184.xn[31:0]$245
+     8/9: $1\atan_lut$func$cordic_engine.v:131$186.idx[4:0]$246
+     9/9: $1\atan_lut$func$cordic_engine.v:131$186.$result[31:0]$240
+Creating decoders for process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:205$220'.
+Creating decoders for process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:160$214'.
+     1/9: $0\mode_r[0:0]
+     2/9: $0\prec_r[1:0]
+     3/9: $0\iter[4:0]
+     4/9: $0\z_r[31:0]
+     5/9: $0\y_r[31:0]
+     6/9: $0\x_r[31:0]
+     7/9: $0\state[1:0]
+     8/9: $0\cycle_count[7:0]
+     9/9: $0\valid[0:0]
+Creating decoders for process `\cordic_top.$proc$cordic_top.v:45$158'.
+     1/15: $2\atan_flip[0:0]
+     2/15: $2\y_in_e[31:0]
+     3/15: $2\x_in_e[31:0]
+     4/15: $3\quad_neg_sin[0:0]
+     5/15: $3\quad_neg_cos[0:0]
+     6/15: $3\z_in_e[31:0]
+     7/15: $2\quad_neg_sin[0:0]
+     8/15: $2\quad_neg_cos[0:0]
+     9/15: $2\z_in_e[31:0]
+    10/15: $1\z_in_e[31:0]
+    11/15: $1\quad_neg_sin[0:0]
+    12/15: $1\quad_neg_cos[0:0]
+    13/15: $1\y_in_e[31:0]
+    14/15: $1\x_in_e[31:0]
+    15/15: $1\atan_flip[0:0]
+Creating decoders for process `\cordic_top.$proc$cordic_top.v:72$167'.
+     1/5: $0\y0_nonneg_r[0:0]
+     2/5: $0\atan_flip_r[0:0]
+     3/5: $0\quad_neg_sin_r[0:0]
+     4/5: $0\quad_neg_cos_r[0:0]
+     5/5: $0\mode_r[0:0]
+Creating decoders for process `\cordic_top.$proc$cordic_top.v:92$170'.
+     1/4: $2\angle_out[31:0]
+     2/4: $1\angle_out[31:0]
+     3/4: $1\sin_out[31:0]
+     4/4: $1\cos_out[31:0]
+
+5.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\thresh_val$func$cordic_engine.v:153$183.$result' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$309'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\thresh_val$func$cordic_engine.v:153$192.$result' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$309'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\thresh_val$func$cordic_engine.v:153$192.m' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$309'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\thresh_val$func$cordic_engine.v:153$192.p' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$309'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\floor_depth$func$cordic_engine.v:152$191.p' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$303'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\floor_depth$func$cordic_engine.v:152$191.m' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$303'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\floor_depth$func$cordic_engine.v:152$191.$result' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$303'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\floor_depth$func$cordic_engine.v:152$182.$result' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$303'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\target_depth$func$cordic_engine.v:151$190.p' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$297'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\target_depth$func$cordic_engine.v:151$190.m' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$297'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\target_depth$func$cordic_engine.v:151$190.$result' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$297'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\target_depth$func$cordic_engine.v:151$181.$result' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$297'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\atan_lut$func$cordic_engine.v:131$189.idx' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$259'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\atan_lut$func$cordic_engine.v:131$189.$result' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$259'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\atan_lut$func$cordic_engine.v:127$188.idx' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$259'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\atan_lut$func$cordic_engine.v:127$188.$result' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$259'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:142$187.zn' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$259'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:142$187.yn' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$259'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:142$187.xn' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$259'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:142$187.d_pos' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$259'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:142$187.m' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$259'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:142$187.i' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$259'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:142$187.z' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$259'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:142$187.y' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$259'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:142$187.x' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$259'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:142$187.$result' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$259'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:142$180.$result' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$259'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\atan_lut$func$cordic_engine.v:131$186.$result' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$221'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\atan_lut$func$cordic_engine.v:127$185.idx' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$221'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\atan_lut$func$cordic_engine.v:127$185.$result' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$221'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:138$184.zn' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$221'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:138$184.yn' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$221'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:138$184.xn' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$221'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:138$184.d_pos' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$221'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:138$184.m' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$221'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:138$184.i' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$221'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:138$184.z' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$221'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:138$184.y' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$221'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:138$184.x' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$221'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:138$184.$result' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$221'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\atan_lut$func$cordic_engine.v:131$186.idx' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$221'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\micro_step$func$cordic_engine.v:138$179.$result' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$221'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\x_out' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:205$220'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\y_out' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:205$220'.
+No latch inferred for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\z_out' from process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:205$220'.
+No latch inferred for signal `\cordic_top.\quad_neg_cos' from process `\cordic_top.$proc$cordic_top.v:45$158'.
+No latch inferred for signal `\cordic_top.\quad_neg_sin' from process `\cordic_top.$proc$cordic_top.v:45$158'.
+No latch inferred for signal `\cordic_top.\atan_flip' from process `\cordic_top.$proc$cordic_top.v:45$158'.
+No latch inferred for signal `\cordic_top.\x_in_e' from process `\cordic_top.$proc$cordic_top.v:45$158'.
+No latch inferred for signal `\cordic_top.\y_in_e' from process `\cordic_top.$proc$cordic_top.v:45$158'.
+No latch inferred for signal `\cordic_top.\z_in_e' from process `\cordic_top.$proc$cordic_top.v:45$158'.
+No latch inferred for signal `\cordic_top.\mode_e' from process `\cordic_top.$proc$cordic_top.v:45$158'.
+No latch inferred for signal `\cordic_top.\cos_out' from process `\cordic_top.$proc$cordic_top.v:92$170'.
+No latch inferred for signal `\cordic_top.\sin_out' from process `\cordic_top.$proc$cordic_top.v:92$170'.
+No latch inferred for signal `\cordic_top.\angle_out' from process `\cordic_top.$proc$cordic_top.v:92$170'.
+
+5.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\SB_DFFNES.\Q' using process `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1414$555'.
+  created $adff cell `$procdff$1003' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNESS.\Q' using process `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1353$548'.
+  created $dff cell `$procdff$1004' with negative edge clock.
+Creating register for signal `\SB_DFFNER.\Q' using process `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1273$544'.
+  created $adff cell `$procdff$1005' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNESR.\Q' using process `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1212$537'.
+  created $dff cell `$procdff$1006' with negative edge clock.
+Creating register for signal `\SB_DFFNS.\Q' using process `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1138$534'.
+  created $adff cell `$procdff$1007' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNSS.\Q' using process `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1088$531'.
+  created $dff cell `$procdff$1008' with negative edge clock.
+Creating register for signal `\SB_DFFNR.\Q' using process `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1017$528'.
+  created $adff cell `$procdff$1009' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNSR.\Q' using process `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:967$525'.
+  created $dff cell `$procdff$1010' with negative edge clock.
+Creating register for signal `\SB_DFFNE.\Q' using process `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:922$523'.
+  created $dff cell `$procdff$1011' with negative edge clock.
+Creating register for signal `\SB_DFFN.\Q' using process `\SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:882$521'.
+  created $dff cell `$procdff$1012' with negative edge clock.
+Creating register for signal `\SB_DFFES.\Q' using process `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:803$517'.
+  created $adff cell `$procdff$1013' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFESS.\Q' using process `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:742$510'.
+  created $dff cell `$procdff$1014' with positive edge clock.
+Creating register for signal `\SB_DFFER.\Q' using process `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:662$506'.
+  created $adff cell `$procdff$1015' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFESR.\Q' using process `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:601$499'.
+  created $dff cell `$procdff$1016' with positive edge clock.
+Creating register for signal `\SB_DFFS.\Q' using process `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:527$496'.
+  created $adff cell `$procdff$1017' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFSS.\Q' using process `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:477$493'.
+  created $dff cell `$procdff$1018' with positive edge clock.
+Creating register for signal `\SB_DFFR.\Q' using process `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:406$490'.
+  created $adff cell `$procdff$1019' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFSR.\Q' using process `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:356$487'.
+  created $dff cell `$procdff$1020' with positive edge clock.
+Creating register for signal `\SB_DFFE.\Q' using process `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:311$485'.
+  created $dff cell `$procdff$1021' with positive edge clock.
+Creating register for signal `\SB_DFF.\Q' using process `\SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:271$483'.
+  created $dff cell `$procdff$1022' with positive edge clock.
+Creating register for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\valid' using process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:160$214'.
+  created $adff cell `$procdff$1023' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\cycle_count' using process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:160$214'.
+  created $adff cell `$procdff$1024' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\state' using process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:160$214'.
+  created $adff cell `$procdff$1025' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\x_r' using process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:160$214'.
+  created $adff cell `$procdff$1026' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\y_r' using process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:160$214'.
+  created $adff cell `$procdff$1027' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\z_r' using process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:160$214'.
+  created $adff cell `$procdff$1028' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\iter' using process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:160$214'.
+  created $adff cell `$procdff$1029' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\prec_r' using process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:160$214'.
+  created $adff cell `$procdff$1030' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.\mode_r' using process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:160$214'.
+  created $adff cell `$procdff$1031' with positive edge clock and negative level reset.
+Creating register for signal `\cordic_top.\mode_r' using process `\cordic_top.$proc$cordic_top.v:72$167'.
+  created $adff cell `$procdff$1032' with positive edge clock and negative level reset.
+Creating register for signal `\cordic_top.\quad_neg_cos_r' using process `\cordic_top.$proc$cordic_top.v:72$167'.
+  created $adff cell `$procdff$1033' with positive edge clock and negative level reset.
+Creating register for signal `\cordic_top.\quad_neg_sin_r' using process `\cordic_top.$proc$cordic_top.v:72$167'.
+  created $adff cell `$procdff$1034' with positive edge clock and negative level reset.
+Creating register for signal `\cordic_top.\atan_flip_r' using process `\cordic_top.$proc$cordic_top.v:72$167'.
+  created $adff cell `$procdff$1035' with positive edge clock and negative level reset.
+Creating register for signal `\cordic_top.\y0_nonneg_r' using process `\cordic_top.$proc$cordic_top.v:72$167'.
+  created $adff cell `$procdff$1036' with positive edge clock and negative level reset.
+
+5.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+5.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$558'.
+Found and cleaned up 1 empty switch in `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1414$555'.
+Removing empty process `SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1414$555'.
+Removing empty process `SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$554'.
+Found and cleaned up 2 empty switches in `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1353$548'.
+Removing empty process `SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1353$548'.
+Removing empty process `SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$547'.
+Found and cleaned up 1 empty switch in `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1273$544'.
+Removing empty process `SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1273$544'.
+Removing empty process `SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$543'.
+Found and cleaned up 2 empty switches in `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1212$537'.
+Removing empty process `SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1212$537'.
+Removing empty process `SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$536'.
+Removing empty process `SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1138$534'.
+Removing empty process `SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$533'.
+Found and cleaned up 1 empty switch in `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1088$531'.
+Removing empty process `SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1088$531'.
+Removing empty process `SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$530'.
+Removing empty process `SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1017$528'.
+Removing empty process `SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$527'.
+Found and cleaned up 1 empty switch in `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:967$525'.
+Removing empty process `SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:967$525'.
+Removing empty process `SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$524'.
+Found and cleaned up 1 empty switch in `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:922$523'.
+Removing empty process `SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:922$523'.
+Removing empty process `SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$522'.
+Removing empty process `SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:882$521'.
+Removing empty process `SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$520'.
+Found and cleaned up 1 empty switch in `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:803$517'.
+Removing empty process `SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:803$517'.
+Removing empty process `SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$516'.
+Found and cleaned up 2 empty switches in `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:742$510'.
+Removing empty process `SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:742$510'.
+Removing empty process `SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$509'.
+Found and cleaned up 1 empty switch in `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:662$506'.
+Removing empty process `SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:662$506'.
+Removing empty process `SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$505'.
+Found and cleaned up 2 empty switches in `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:601$499'.
+Removing empty process `SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:601$499'.
+Removing empty process `SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$498'.
+Removing empty process `SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:527$496'.
+Removing empty process `SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$495'.
+Found and cleaned up 1 empty switch in `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:477$493'.
+Removing empty process `SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:477$493'.
+Removing empty process `SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$492'.
+Removing empty process `SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:406$490'.
+Removing empty process `SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$489'.
+Found and cleaned up 1 empty switch in `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:356$487'.
+Removing empty process `SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:356$487'.
+Removing empty process `SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$486'.
+Found and cleaned up 1 empty switch in `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:311$485'.
+Removing empty process `SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:311$485'.
+Removing empty process `SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$484'.
+Removing empty process `SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:271$483'.
+Found and cleaned up 1 empty switch in `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$309'.
+Removing empty process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$309'.
+Found and cleaned up 1 empty switch in `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$303'.
+Removing empty process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$303'.
+Found and cleaned up 1 empty switch in `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$297'.
+Removing empty process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$297'.
+Found and cleaned up 3 empty switches in `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$259'.
+Removing empty process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$259'.
+Found and cleaned up 3 empty switches in `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$221'.
+Removing empty process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:0$221'.
+Removing empty process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:205$220'.
+Found and cleaned up 3 empty switches in `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:160$214'.
+Removing empty process `$paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.$proc$cordic_engine.v:160$214'.
+Found and cleaned up 4 empty switches in `\cordic_top.$proc$cordic_top.v:45$158'.
+Removing empty process `cordic_top.$proc$cordic_top.v:45$158'.
+Found and cleaned up 1 empty switch in `\cordic_top.$proc$cordic_top.v:72$167'.
+Removing empty process `cordic_top.$proc$cordic_top.v:72$167'.
+Found and cleaned up 2 empty switches in `\cordic_top.$proc$cordic_top.v:92$170'.
+Removing empty process `cordic_top.$proc$cordic_top.v:92$170'.
+Cleaned up 37 empty switches.
+
+5.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.
+<suppressed ~12 debug messages>
+Optimizing module cordic_top.
+<suppressed ~21 debug messages>
+
+5.4. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod$19cb67715318ee5916ba3cbbc9b592d6ccabd98d\cordic_engine.
+<suppressed ~1 debug messages>
+
+5.5. Executing TRIBUF pass.
+
+5.6. Executing DEMINOUT pass (demote inout ports to input or output).
+
+5.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+
+5.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+Removed 45 unused cells and 264 unused wires.
+<suppressed ~62 debug messages>
+
+5.9. Executing CHECK pass (checking for obvious problems).
+Checking module cordic_top...
+Found and reported 0 problems.
+
+5.10. Executing OPT pass (performing simple optimizations).
+
+5.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+
+5.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+<suppressed ~63 debug messages>
+Removed a total of 21 cells.
+
+5.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cordic_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $flatten\u_engine.$ternary$cordic_engine.v:148$197: \u_engine.resid1 -> { 1'0 \u_engine.resid1 [30:0] }
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$901.
+    dead port 2/2 on $mux $procmux$907.
+    dead port 2/2 on $mux $procmux$913.
+    dead port 1/2 on $mux $procmux$920.
+    dead port 1/2 on $mux $procmux$922.
+    dead port 1/2 on $mux $procmux$929.
+    dead port 1/2 on $mux $procmux$931.
+    dead port 1/2 on $mux $procmux$938.
+    dead port 1/2 on $mux $procmux$940.
+    dead port 1/2 on $mux $procmux$946.
+    dead port 1/2 on $mux $procmux$952.
+    dead port 1/2 on $mux $procmux$958.
+    dead port 2/2 on $mux $procmux$992.
+Removed 13 multiplexer ports.
+<suppressed ~27 debug messages>
+
+5.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cordic_top.
+  Optimizing cells in module \cordic_top.
+Performed a total of 1 changes.
+
+5.10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+5.10.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+Removed 0 unused cells and 36 unused wires.
+<suppressed ~1 debug messages>
+
+5.10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+
+5.10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cordic_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~28 debug messages>
+
+5.10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cordic_top.
+Performed a total of 0 changes.
+
+5.10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+Removed a total of 0 cells.
+
+5.10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+
+5.10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+
+5.10.16. Finished OPT passes. (There is nothing left to do.)
+
+5.11. Executing FSM pass (extract and optimize FSM).
+
+5.11.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking cordic_top.u_engine.state as FSM state register:
+    Circuit seems to be self-resetting.
+
+5.11.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+5.11.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+5.11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+
+5.11.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+5.11.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+5.11.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+5.11.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+5.12. Executing OPT pass (performing simple optimizations).
+
+5.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+
+5.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+Removed a total of 0 cells.
+
+5.12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cordic_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~28 debug messages>
+
+5.12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cordic_top.
+Performed a total of 0 changes.
+
+5.12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+Removed a total of 0 cells.
+
+5.12.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$1036 ($adff) from module cordic_top (D = $ge$cordic_top.v:79$169_Y, Q = \y0_nonneg_r).
+Adding EN signal on $procdff$1035 ($adff) from module cordic_top (D = \atan_flip, Q = \atan_flip_r).
+Adding EN signal on $procdff$1034 ($adff) from module cordic_top (D = \quad_neg_sin, Q = \quad_neg_sin_r).
+Adding EN signal on $procdff$1033 ($adff) from module cordic_top (D = \quad_neg_cos, Q = \quad_neg_cos_r).
+Adding EN signal on $procdff$1032 ($adff) from module cordic_top (D = \op, Q = \mode_r).
+Adding EN signal on $flatten\u_engine.$procdff$1031 ($adff) from module cordic_top (D = \op, Q = \u_engine.mode_r).
+Adding EN signal on $flatten\u_engine.$procdff$1030 ($adff) from module cordic_top (D = \prec_sel, Q = \u_engine.prec_r).
+Adding EN signal on $flatten\u_engine.$procdff$1029 ($adff) from module cordic_top (D = $flatten\u_engine.$0\iter[4:0], Q = \u_engine.iter).
+Adding EN signal on $flatten\u_engine.$procdff$1028 ($adff) from module cordic_top (D = $flatten\u_engine.$0\z_r[31:0], Q = \u_engine.z_r).
+Adding EN signal on $flatten\u_engine.$procdff$1027 ($adff) from module cordic_top (D = $flatten\u_engine.$0\y_r[31:0], Q = \u_engine.y_r).
+Adding EN signal on $flatten\u_engine.$procdff$1026 ($adff) from module cordic_top (D = $flatten\u_engine.$0\x_r[31:0], Q = \u_engine.x_r).
+Adding EN signal on $flatten\u_engine.$procdff$1025 ($adff) from module cordic_top (D = $flatten\u_engine.$0\state[1:0], Q = \u_engine.state).
+Adding EN signal on $flatten\u_engine.$procdff$1024 ($adff) from module cordic_top (D = $flatten\u_engine.$0\cycle_count[7:0], Q = \u_engine.cycle_count).
+Adding EN signal on $flatten\u_engine.$procdff$1023 ($adff) from module cordic_top (D = $flatten\u_engine.$0\valid[0:0], Q = \u_engine.valid).
+
+5.12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+Removed 9 unused cells and 9 unused wires.
+<suppressed ~10 debug messages>
+
+5.12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+<suppressed ~6 debug messages>
+
+5.12.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.12.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cordic_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+5.12.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cordic_top.
+Performed a total of 0 changes.
+
+5.12.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+<suppressed ~42 debug messages>
+Removed a total of 14 cells.
+
+5.12.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.12.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+Removed 0 unused cells and 14 unused wires.
+<suppressed ~1 debug messages>
+
+5.12.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+
+5.12.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.12.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cordic_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+5.12.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cordic_top.
+Performed a total of 0 changes.
+
+5.12.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+Removed a total of 0 cells.
+
+5.12.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.12.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+
+5.12.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+
+5.12.23. Finished OPT passes. (There is nothing left to do.)
+
+5.13. Executing WREDUCE pass (reducing word size of cells).
+Removed top 27 address bits (of 32) from memory init port cordic_top.$flatten\u_engine.$auto$mem.cc:319:emit$706 ($flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704).
+Removed top 27 address bits (of 32) from memory init port cordic_top.$flatten\u_engine.$auto$mem.cc:319:emit$710 ($flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708).
+Removed top 10 bits (of 32) from port B of cell cordic_top.$gt$cordic_top.v:54$160 ($gt).
+Removed top 9 bits (of 32) from port A of cell cordic_top.$sub$cordic_top.v:55$161 ($sub).
+Removed top 10 bits (of 32) from port B of cell cordic_top.$lt$cordic_top.v:56$162 ($lt).
+Removed top 9 bits (of 32) from port B of cell cordic_top.$add$cordic_top.v:57$163 ($add).
+Removed top 31 bits (of 32) from port B of cell cordic_top.$lt$cordic_top.v:62$164 ($lt).
+Removed top 31 bits (of 32) from port B of cell cordic_top.$ge$cordic_top.v:79$169 ($ge).
+Removed top 9 bits (of 32) from port B of cell cordic_top.$add$cordic_top.v:101$176 ($add).
+Removed top 9 bits (of 32) from port B of cell cordic_top.$sub$cordic_top.v:101$177 ($sub).
+Removed top 1 bits (of 2) from port B of cell cordic_top.$auto$opt_dff.cc:195:make_patterns_logic$1080 ($ne).
+Removed top 1 bits (of 2) from port B of cell cordic_top.$flatten\u_engine.$procmux$845_CMP0 ($eq).
+Removed top 2 bits (of 5) from mux cell cordic_top.$flatten\u_engine.$procmux$760 ($pmux).
+Removed top 23 bits (of 32) from mux cell cordic_top.$flatten\u_engine.$procmux$756 ($pmux).
+Removed top 1 bits (of 2) from port B of cell cordic_top.$flatten\u_engine.$procmux$757_CMP0 ($eq).
+Removed top 31 bits (of 32) from port B of cell cordic_top.$flatten\u_engine.$ge$cordic_engine.v:123$238 ($ge).
+Removed top 31 bits (of 32) from port B of cell cordic_top.$flatten\u_engine.$lt$cordic_engine.v:123$237 ($lt).
+Removed top 4 bits (of 5) from port B of cell cordic_top.$flatten\u_engine.$add$cordic_engine.v:189$218 ($add).
+Removed top 7 bits (of 8) from port B of cell cordic_top.$flatten\u_engine.$add$cordic_engine.v:176$216 ($add).
+Removed top 22 bits (of 32) from port B of cell cordic_top.$flatten\u_engine.$lt$cordic_engine.v:155$203 ($lt).
+Removed top 1 bits (of 5) from port B of cell cordic_top.$flatten\u_engine.$ge$cordic_engine.v:155$201 ($ge).
+Removed top 31 bits (of 32) from port B of cell cordic_top.$flatten\u_engine.$add$cordic_engine.v:155$200 ($add).
+Removed top 26 bits (of 32) from port Y of cell cordic_top.$flatten\u_engine.$add$cordic_engine.v:155$200 ($add).
+Removed top 26 bits (of 32) from wire cordic_top.$flatten\u_engine.$add$cordic_engine.v:155$200_Y.
+
+5.14. Executing PEEPOPT pass (run peephole optimizers).
+
+5.15. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+5.16. Executing SHARE pass (SAT-based resource sharing).
+Found 4 cells in module cordic_top that may be considered for resource sharing.
+  Analyzing resource sharing options for $flatten\u_engine.$sshr$cordic_engine.v:126$249 ($sshr):
+    Found 2 activation_patterns using ctrl signal { \u_engine.mode_r $flatten\u_engine.$procmux$845_CMP }.
+    Found 1 candidates: $flatten\u_engine.$sshr$cordic_engine.v:125$247
+    Analyzing resource sharing with $flatten\u_engine.$sshr$cordic_engine.v:125$247 ($sshr):
+      Found 1 activation_patterns using ctrl signal $flatten\u_engine.$procmux$845_CMP.
+      Forbidden control signals for this pair of cells: { \u_engine.resid1 [31] $flatten\u_engine.$logic_or$cordic_engine.v:188$217_Y }
+      Activation pattern for cell $flatten\u_engine.$sshr$cordic_engine.v:126$249: $flatten\u_engine.$procmux$845_CMP = 1'1
+      Activation pattern for cell $flatten\u_engine.$sshr$cordic_engine.v:126$249: \u_engine.mode_r = 1'1
+      Activation pattern for cell $flatten\u_engine.$sshr$cordic_engine.v:125$247: $flatten\u_engine.$procmux$845_CMP = 1'1
+      Size of SAT problem: 0 cells, 22 variables, 53 clauses
+      According to the SAT solver this pair of cells can not be shared.
+      Model from SAT solver: { \u_engine.mode_r $flatten\u_engine.$procmux$845_CMP } = 2'11
+  Analyzing resource sharing options for $flatten\u_engine.$sshr$cordic_engine.v:125$247 ($sshr):
+    Found 1 activation_patterns using ctrl signal $flatten\u_engine.$procmux$845_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\u_engine.$auto$mem.cc:273:emit$709 ($memrd_v2):
+    Found 2 activation_patterns using ctrl signal { \u_engine.mode_r $flatten\u_engine.$0\micro_step$func$cordic_engine.v:138$184.d_pos[0:0]$228 $flatten\u_engine.$procmux$845_CMP }.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\u_engine.$auto$mem.cc:273:emit$705 ($memrd_v2):
+    Found 2 activation_patterns using ctrl signal { \u_engine.mode_r $flatten\u_engine.$0\micro_step$func$cordic_engine.v:138$184.d_pos[0:0]$228 $flatten\u_engine.$procmux$845_CMP }.
+    No candidates found.
+
+5.17. Executing TECHMAP pass (map to technology primitives).
+
+5.17.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/usr/bin/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+5.17.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~192 debug messages>
+
+5.18. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+
+5.19. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+
+5.20. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module cordic_top:
+  creating $macc model for $add$cordic_top.v:101$176 ($add).
+  creating $macc model for $add$cordic_top.v:57$163 ($add).
+  creating $macc model for $flatten\u_engine.$add$cordic_engine.v:126$250 ($add).
+  creating $macc model for $flatten\u_engine.$add$cordic_engine.v:129$254 ($add).
+  creating $macc model for $flatten\u_engine.$add$cordic_engine.v:131$258 ($add).
+  creating $macc model for $flatten\u_engine.$add$cordic_engine.v:155$200 ($add).
+  creating $macc model for $flatten\u_engine.$add$cordic_engine.v:176$216 ($add).
+  creating $macc model for $flatten\u_engine.$add$cordic_engine.v:189$218 ($add).
+  creating $macc model for $flatten\u_engine.$neg$cordic_engine.v:148$196 ($neg).
+  creating $macc model for $flatten\u_engine.$sub$cordic_engine.v:125$248 ($sub).
+  creating $macc model for $flatten\u_engine.$sub$cordic_engine.v:127$252 ($sub).
+  creating $macc model for $flatten\u_engine.$sub$cordic_engine.v:130$256 ($sub).
+  creating $macc model for $neg$cordic_top.v:63$165 ($neg).
+  creating $macc model for $neg$cordic_top.v:63$166 ($neg).
+  creating $macc model for $neg$cordic_top.v:94$172 ($neg).
+  creating $macc model for $neg$cordic_top.v:95$174 ($neg).
+  creating $macc model for $sub$cordic_top.v:101$177 ($sub).
+  creating $macc model for $sub$cordic_top.v:55$161 ($sub).
+  creating $alu model for $macc $sub$cordic_top.v:55$161.
+  creating $alu model for $macc $sub$cordic_top.v:101$177.
+  creating $alu model for $macc $neg$cordic_top.v:95$174.
+  creating $alu model for $macc $neg$cordic_top.v:94$172.
+  creating $alu model for $macc $neg$cordic_top.v:63$166.
+  creating $alu model for $macc $neg$cordic_top.v:63$165.
+  creating $alu model for $macc $flatten\u_engine.$sub$cordic_engine.v:130$256.
+  creating $alu model for $macc $flatten\u_engine.$sub$cordic_engine.v:127$252.
+  creating $alu model for $macc $flatten\u_engine.$sub$cordic_engine.v:125$248.
+  creating $alu model for $macc $flatten\u_engine.$neg$cordic_engine.v:148$196.
+  creating $alu model for $macc $flatten\u_engine.$add$cordic_engine.v:189$218.
+  creating $alu model for $macc $flatten\u_engine.$add$cordic_engine.v:176$216.
+  creating $alu model for $macc $flatten\u_engine.$add$cordic_engine.v:155$200.
+  creating $alu model for $macc $flatten\u_engine.$add$cordic_engine.v:131$258.
+  creating $alu model for $macc $flatten\u_engine.$add$cordic_engine.v:129$254.
+  creating $alu model for $macc $flatten\u_engine.$add$cordic_engine.v:126$250.
+  creating $alu model for $macc $add$cordic_top.v:57$163.
+  creating $alu model for $macc $add$cordic_top.v:101$176.
+  creating $alu model for $flatten\u_engine.$ge$cordic_engine.v:123$238 ($ge): new $alu
+  creating $alu model for $flatten\u_engine.$ge$cordic_engine.v:155$201 ($ge): new $alu
+  creating $alu model for $flatten\u_engine.$ge$cordic_engine.v:156$206 ($ge): new $alu
+  creating $alu model for $flatten\u_engine.$lt$cordic_engine.v:123$237 ($lt): new $alu
+  creating $alu model for $flatten\u_engine.$lt$cordic_engine.v:155$203 ($lt): new $alu
+  creating $alu model for $ge$cordic_top.v:79$169 ($ge): new $alu
+  creating $alu model for $gt$cordic_top.v:54$160 ($gt): new $alu
+  creating $alu model for $lt$cordic_top.v:56$162 ($lt): new $alu
+  creating $alu model for $lt$cordic_top.v:62$164 ($lt): new $alu
+  creating $alu cell for $lt$cordic_top.v:62$164: $auto$alumacc.cc:485:replace_alu$1104
+  creating $alu cell for $lt$cordic_top.v:56$162: $auto$alumacc.cc:485:replace_alu$1117
+  creating $alu cell for $gt$cordic_top.v:54$160: $auto$alumacc.cc:485:replace_alu$1130
+  creating $alu cell for $ge$cordic_top.v:79$169: $auto$alumacc.cc:485:replace_alu$1137
+  creating $alu cell for $flatten\u_engine.$lt$cordic_engine.v:155$203: $auto$alumacc.cc:485:replace_alu$1148
+  creating $alu cell for $flatten\u_engine.$lt$cordic_engine.v:123$237: $auto$alumacc.cc:485:replace_alu$1161
+  creating $alu cell for $flatten\u_engine.$ge$cordic_engine.v:156$206: $auto$alumacc.cc:485:replace_alu$1174
+  creating $alu cell for $flatten\u_engine.$ge$cordic_engine.v:155$201: $auto$alumacc.cc:485:replace_alu$1183
+  creating $alu cell for $flatten\u_engine.$ge$cordic_engine.v:123$238: $auto$alumacc.cc:485:replace_alu$1192
+  creating $alu cell for $add$cordic_top.v:101$176: $auto$alumacc.cc:485:replace_alu$1203
+  creating $alu cell for $flatten\u_engine.$add$cordic_engine.v:131$258: $auto$alumacc.cc:485:replace_alu$1206
+  creating $alu cell for $flatten\u_engine.$add$cordic_engine.v:176$216: $auto$alumacc.cc:485:replace_alu$1209
+  creating $alu cell for $flatten\u_engine.$add$cordic_engine.v:155$200: $auto$alumacc.cc:485:replace_alu$1212
+  creating $alu cell for $flatten\u_engine.$add$cordic_engine.v:189$218: $auto$alumacc.cc:485:replace_alu$1215
+  creating $alu cell for $flatten\u_engine.$neg$cordic_engine.v:148$196: $auto$alumacc.cc:485:replace_alu$1218
+  creating $alu cell for $flatten\u_engine.$add$cordic_engine.v:129$254: $auto$alumacc.cc:485:replace_alu$1221
+  creating $alu cell for $flatten\u_engine.$sub$cordic_engine.v:125$248: $auto$alumacc.cc:485:replace_alu$1224
+  creating $alu cell for $flatten\u_engine.$sub$cordic_engine.v:127$252: $auto$alumacc.cc:485:replace_alu$1227
+  creating $alu cell for $flatten\u_engine.$add$cordic_engine.v:126$250: $auto$alumacc.cc:485:replace_alu$1230
+  creating $alu cell for $flatten\u_engine.$sub$cordic_engine.v:130$256: $auto$alumacc.cc:485:replace_alu$1233
+  creating $alu cell for $neg$cordic_top.v:63$165: $auto$alumacc.cc:485:replace_alu$1236
+  creating $alu cell for $neg$cordic_top.v:63$166: $auto$alumacc.cc:485:replace_alu$1239
+  creating $alu cell for $neg$cordic_top.v:94$172: $auto$alumacc.cc:485:replace_alu$1242
+  creating $alu cell for $neg$cordic_top.v:95$174: $auto$alumacc.cc:485:replace_alu$1245
+  creating $alu cell for $sub$cordic_top.v:101$177: $auto$alumacc.cc:485:replace_alu$1248
+  creating $alu cell for $add$cordic_top.v:57$163: $auto$alumacc.cc:485:replace_alu$1251
+  creating $alu cell for $sub$cordic_top.v:55$161: $auto$alumacc.cc:485:replace_alu$1254
+  created 27 $alu and 0 $macc cells.
+
+5.21. Executing OPT pass (performing simple optimizations).
+
+5.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+<suppressed ~5 debug messages>
+
+5.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+Removed a total of 0 cells.
+
+5.21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cordic_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+5.21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cordic_top.
+Performed a total of 0 changes.
+
+5.21.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+Removed a total of 0 cells.
+
+5.21.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+Removed 2 unused cells and 11 unused wires.
+<suppressed ~3 debug messages>
+
+5.21.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+
+5.21.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.21.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cordic_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+5.21.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cordic_top.
+Performed a total of 0 changes.
+
+5.21.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+Removed a total of 0 cells.
+
+5.21.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+
+5.21.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+
+5.21.16. Finished OPT passes. (There is nothing left to do.)
+
+5.22. Executing MEMORY pass.
+
+5.22.1. Executing OPT_MEM pass (optimize memories).
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704: removing const-0 lane 20
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704: removing const-0 lane 21
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704: removing const-0 lane 22
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704: removing const-0 lane 23
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704: removing const-0 lane 24
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704: removing const-0 lane 25
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704: removing const-0 lane 26
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704: removing const-0 lane 27
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704: removing const-0 lane 28
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704: removing const-0 lane 29
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704: removing const-0 lane 30
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704: removing const-0 lane 31
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708: removing const-0 lane 20
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708: removing const-0 lane 21
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708: removing const-0 lane 22
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708: removing const-0 lane 23
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708: removing const-0 lane 24
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708: removing const-0 lane 25
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708: removing const-0 lane 26
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708: removing const-0 lane 27
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708: removing const-0 lane 28
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708: removing const-0 lane 29
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708: removing const-0 lane 30
+cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708: removing const-0 lane 31
+Performed a total of 2 transformations.
+
+5.22.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+5.22.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+5.22.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+5.22.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704'[0] in module `\cordic_top': no output FF found.
+Checking read port `$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708'[0] in module `\cordic_top': no output FF found.
+Checking read port address `$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704'[0] in module `\cordic_top': address FF has async set and/or reset, not supported.
+Checking read port address `$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708'[0] in module `\cordic_top': address FF has async set and/or reset, not supported.
+
+5.22.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+
+5.22.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+5.22.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+5.22.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+
+5.22.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+5.23. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+
+5.24. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+using FF mapping for memory cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704
+using FF mapping for memory cordic_top.$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708
+<suppressed ~28 debug messages>
+
+5.25. Executing TECHMAP pass (map to technology primitives).
+
+5.25.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/brams_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/brams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ICE40_RAM4K_'.
+Successfully finished Verilog frontend.
+
+5.25.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/spram_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/spram_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ICE40_SPRAM_'.
+Successfully finished Verilog frontend.
+
+5.25.3. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+5.26. Executing ICE40_BRAMINIT pass.
+
+5.27. Executing OPT pass (performing simple optimizations).
+
+5.27.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+<suppressed ~18 debug messages>
+
+5.27.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+Removed a total of 0 cells.
+
+5.27.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.27.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+Removed 0 unused cells and 11 unused wires.
+<suppressed ~1 debug messages>
+
+5.27.5. Finished fast OPT passes.
+
+5.28. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory $flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704 in module \cordic_top:
+  created 32 $dff cells and 0 static cells of width 20.
+  read interface: 0 $dff and 31 $mux cells.
+  write interface: 0 write mux blocks.
+Mapping memory $flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708 in module \cordic_top:
+  created 32 $dff cells and 0 static cells of width 20.
+  read interface: 0 $dff and 31 $mux cells.
+  write interface: 0 write mux blocks.
+
+5.29. Executing OPT pass (performing simple optimizations).
+
+5.29.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+<suppressed ~22 debug messages>
+
+5.29.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+Removed a total of 0 cells.
+
+5.29.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cordic_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~23 debug messages>
+
+5.29.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cordic_top.
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][4][7]$1446:
+      Old ports: A=20'00000000000001000000, B=20'00000000000000100000, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][3]$b$1412
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][3]$b$1412 [6:5]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][3]$b$1412 [19:7] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][3]$b$1412 [4:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][4][3]$1434:
+      Old ports: A=20'00000011111111111111, B=20'00000010000000000001, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$b$1406
+      New ports: A=1'1, B=1'0, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$b$1406 [1]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$b$1406 [19:2] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$b$1406 [0] } = { 7'0000001 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$b$1406 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$b$1406 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$b$1406 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$b$1406 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$b$1406 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$b$1406 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$b$1406 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$b$1406 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$b$1406 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$b$1406 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$b$1406 [1] 1'1 }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][4][2]$1431:
+      Old ports: A=20'00001111111110101011, B=20'00000111111111110101, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$a$1405
+      New ports: A=2'01, B=2'10, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$a$1405 [2:1]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$a$1405 [19:3] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$a$1405 [0] } = { 4'0000 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$a$1405 [1] 8'11111111 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$a$1405 [2] 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$a$1405 [2:1] 1'1 }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][4][4]$1437:
+      Old ports: A=20'00000001000000000000, B=20'00000000100000000000, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][2]$a$1408
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][2]$a$1408 [12:11]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][2]$a$1408 [19:13] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][2]$a$1408 [10:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][4][8]$1356:
+      Old ports: A=20'00000000000000010000, B=20'00000000000000001000, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][4]$a$1321
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][4]$a$1321 [4:3]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][4]$a$1321 [19:5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][4]$a$1321 [2:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][4][7]$1353:
+      Old ports: A=20'00000000000001000000, B=20'00000000000000100000, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][3]$b$1319
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][3]$b$1319 [6:5]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][3]$b$1319 [19:7] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][3]$b$1319 [4:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][4][6]$1350:
+      Old ports: A=20'00000000000100000000, B=20'00000000000010000000, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][3]$a$1318
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][3]$a$1318 [8:7]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][3]$a$1318 [19:9] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][3]$a$1318 [6:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][4][5]$1347:
+      Old ports: A=20'00000000010000000000, B=20'00000000001000000000, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][2]$b$1316
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][2]$b$1316 [10:9]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][2]$b$1316 [19:11] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][2]$b$1316 [8:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][4][4]$1344:
+      Old ports: A=20'00000001000000000000, B=20'00000000100000000000, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][2]$a$1315
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][2]$a$1315 [12:11]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][2]$a$1315 [19:13] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][2]$a$1315 [10:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][4][3]$1341:
+      Old ports: A=20'00000011111111111111, B=20'00000010000000000001, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$b$1313
+      New ports: A=1'1, B=1'0, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$b$1313 [1]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$b$1313 [19:2] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$b$1313 [0] } = { 7'0000001 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$b$1313 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$b$1313 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$b$1313 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$b$1313 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$b$1313 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$b$1313 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$b$1313 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$b$1313 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$b$1313 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$b$1313 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$b$1313 [1] 1'1 }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][4][2]$1338:
+      Old ports: A=20'00001111111110101011, B=20'00000111111111110101, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$a$1312
+      New ports: A=2'01, B=2'10, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$a$1312 [2:1]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$a$1312 [19:3] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$a$1312 [0] } = { 4'0000 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$a$1312 [1] 8'11111111 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$a$1312 [2] 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$a$1312 [2:1] 1'1 }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][4][1]$1335:
+      Old ports: A=20'00111110101101101111, B=20'00011111110101011100, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$b$1310
+      New ports: A=2'01, B=2'10, Y={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$b$1310 [4] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$b$1310 [0] }
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$b$1310 [19:5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$b$1310 [3:1] } = { 2'00 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$b$1310 [0] 4'1111 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$b$1310 [4] 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$b$1310 [4] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$b$1310 [0] 3'101 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$b$1310 [0] 2'11 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$b$1310 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][4][0]$1332:
+      Old ports: A=20'11001001000011111110, B=20'01110110101100011010, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309
+      New ports: A=2'01, B=2'10, Y={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [2] }
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [19:9] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [7:3] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [1:0] } = { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [2] 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [2] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [2] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [8] 1'0 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [2] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [2] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [2] 4'1110 }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][4][6]$1443:
+      Old ports: A=20'00000000000100000000, B=20'00000000000010000000, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][3]$a$1411
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][3]$a$1411 [8:7]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][3]$a$1411 [19:9] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][3]$a$1411 [6:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][4][1]$1428:
+      Old ports: A=20'00111110101101101111, B=20'00011111110101011100, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$b$1403
+      New ports: A=2'01, B=2'10, Y={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$b$1403 [4] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$b$1403 [0] }
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$b$1403 [19:5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$b$1403 [3:1] } = { 2'00 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$b$1403 [0] 4'1111 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$b$1403 [4] 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$b$1403 [4] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$b$1403 [0] 3'101 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$b$1403 [0] 2'11 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$b$1403 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][4][5]$1440:
+      Old ports: A=20'00000000010000000000, B=20'00000000001000000000, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][2]$b$1409
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][2]$b$1409 [10:9]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][2]$b$1409 [19:11] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][2]$b$1409 [8:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][4][8]$1449:
+      Old ports: A=20'00000000000000010000, B=20'00000000000000001000, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][4]$a$1414
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][4]$a$1414 [4:3]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][4]$a$1414 [19:5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][4]$a$1414 [2:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][4][0]$1425:
+      Old ports: A=20'11001001000011111110, B=20'01110110101100011010, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402
+      New ports: A=2'01, B=2'10, Y={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [2] }
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [19:9] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [7:3] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [1:0] } = { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [2] 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [2] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [2] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [8] 1'0 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [2] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [2] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [2] 4'1110 }
+    Consolidated identical input bits for $pmux cell $flatten\u_engine.$procmux$756:
+      Old ports: A=9'100000000, B=18'000010000001000000, Y=\u_engine.th [8:0]
+      New ports: A=3'100, B=6'001010, Y={ \u_engine.th [8] \u_engine.th [6] \u_engine.th [4] }
+      New connections: { \u_engine.th [7] \u_engine.th [5] \u_engine.th [3:0] } = 6'000000
+    Consolidated identical input bits for $pmux cell $flatten\u_engine.$procmux$760:
+      Old ports: A=3'000, B=6'100010, Y=\u_engine.flr [2:0]
+      New ports: A=2'00, B=4'1001, Y=\u_engine.flr [2:1]
+      New connections: \u_engine.flr [0] = 1'0
+    Consolidated identical input bits for $pmux cell $flatten\u_engine.$procmux$764:
+      Old ports: A=5'01011, B=10'1001001110, Y=\u_engine.tgt
+      New ports: A=4'0101, B=8'10000110, Y={ \u_engine.tgt [4:2] \u_engine.tgt [0] }
+      New connections: \u_engine.tgt [1] = 1'1
+  Optimizing cells in module \cordic_top.
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$1401:
+      Old ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402, B=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$b$1403, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390
+      New ports: A={ 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [2] 1'0 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [2] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [2] 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$a$1402 [2] 2'10 }, B={ 1'0 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$b$1403 [4] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$b$1403 [4] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$b$1403 [0] 2'10 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$b$1403 [0] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$b$1403 [4] 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$b$1403 [0] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$b$1403 [0] }, Y={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [18] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [12] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [10:7] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [5:4] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [2:0] }
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [19] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [17:13] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [11] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [6] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [3] } = { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [7] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [9:8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [2] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [2] 1'1 }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][2]$1407:
+      Old ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][2]$a$1408, B=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][2]$b$1409, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][1]$a$1393
+      New ports: A={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][2]$a$1408 [12:11] 2'00 }, B={ 2'00 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][2]$b$1409 [10:9] }, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][1]$a$1393 [12:9]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][1]$a$1393 [19:13] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][1]$a$1393 [8:0] } = 16'0000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][4]$1413:
+      Old ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][4]$a$1414, B=20'00000000000000000000, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][2]$a$1396
+      New ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][4]$a$1414 [4:3], B=2'00, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][2]$a$1396 [4:3]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][2]$a$1396 [19:5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][2]$a$1396 [2:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][3]$1410:
+      Old ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][3]$a$1411, B=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][3]$b$1412, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][1]$b$1394
+      New ports: A={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][3]$a$1411 [8:7] 2'00 }, B={ 2'00 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][3]$b$1412 [6:5] }, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][1]$b$1394 [8:5]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][1]$b$1394 [19:9] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][1]$b$1394 [4:0] } = 16'0000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$1404:
+      Old ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$a$1405, B=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$b$1406, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391
+      New ports: A={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$a$1405 [1] 2'11 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$a$1405 [2:1] }, B={ 2'00 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$b$1406 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$b$1406 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][1]$b$1406 [1] }, Y={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [15:14] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [2:1] }
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [19:16] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [13:6] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [4:3] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [0] } = { 5'00001 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [2] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [2:1] 1'1 }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][4]$1320:
+      Old ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][4]$a$1321, B=20'00000000000000000000, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][2]$a$1303
+      New ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][4]$a$1321 [4:3], B=2'00, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][2]$a$1303 [4:3]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][2]$a$1303 [19:5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][2]$a$1303 [2:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][3]$1317:
+      Old ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][3]$a$1318, B=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][3]$b$1319, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][1]$b$1301
+      New ports: A={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][3]$a$1318 [8:7] 2'00 }, B={ 2'00 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][3]$b$1319 [6:5] }, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][1]$b$1301 [8:5]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][1]$b$1301 [19:9] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][1]$b$1301 [4:0] } = 16'0000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][2]$1314:
+      Old ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][2]$a$1315, B=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][2]$b$1316, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][1]$a$1300
+      New ports: A={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][2]$a$1315 [12:11] 2'00 }, B={ 2'00 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][2]$b$1316 [10:9] }, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][1]$a$1300 [12:9]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][1]$a$1300 [19:13] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][1]$a$1300 [8:0] } = 16'0000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$1311:
+      Old ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$a$1312, B=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$b$1313, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298
+      New ports: A={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$a$1312 [1] 2'11 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$a$1312 [2:1] }, B={ 2'00 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$b$1313 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$b$1313 [1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][1]$b$1313 [1] }, Y={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [15:14] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [2:1] }
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [19:16] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [13:6] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [4:3] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [0] } = { 5'00001 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [2] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [2:1] 1'1 }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$1308:
+      Old ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309, B=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$b$1310, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297
+      New ports: A={ 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [2] 1'0 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [2] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [2] 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [2] 2'10 }, B={ 1'0 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$b$1310 [4] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$b$1310 [4] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$b$1310 [0] 2'10 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$b$1310 [0] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$b$1310 [4] 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$b$1310 [0] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$b$1310 [0] }, Y={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [18] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [12] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [10:7] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [5:4] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [2:0] }
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [19] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [17:13] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [11] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [6] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [3] } = { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [7] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [9:8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [2] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [2] 1'1 }
+  Optimizing cells in module \cordic_top.
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][2]$1395:
+      Old ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][2]$a$1396, B=20'00000000000000000000, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][1][1]$a$1387
+      New ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][2]$a$1396 [4:3], B=2'00, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][1][1]$a$1387 [4:3]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][1][1]$a$1387 [19:5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][1][1]$a$1387 [2:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][1]$1392:
+      Old ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][1]$a$1393, B=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][1]$b$1394, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][1][0]$b$1385
+      New ports: A={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][1]$a$1393 [12:9] 4'0000 }, B={ 4'0000 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][1]$b$1394 [8:5] }, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][1][0]$b$1385 [12:5]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][1][0]$b$1385 [19:13] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][1][0]$b$1385 [4:0] } = 12'000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$1389:
+      Old ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390, B=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][1][0]$a$1384
+      New ports: A={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [7] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [18] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [9:8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [2] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [12] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [10:7] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [5:4] 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$a$1390 [2:0] }, B={ 4'0000 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [15:14] 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [2:1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][2][0]$b$1391 [2:1] 1'1 }, Y={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][1][0]$a$1384 [19:12] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][1][0]$a$1384 [10:7] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][1][0]$a$1384 [5:0] }
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][1][0]$a$1384 [11] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][1][0]$a$1384 [6] } = { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][1][0]$a$1384 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][1][0]$a$1384 [2] }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][2]$1302:
+      Old ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][2]$a$1303, B=20'00000000000000000000, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][1][1]$a$1294
+      New ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][2]$a$1303 [4:3], B=2'00, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][1][1]$a$1294 [4:3]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][1][1]$a$1294 [19:5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][1][1]$a$1294 [2:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][1]$1299:
+      Old ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][1]$a$1300, B=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][1]$b$1301, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][1][0]$b$1292
+      New ports: A={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][1]$a$1300 [12:9] 4'0000 }, B={ 4'0000 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][1]$b$1301 [8:5] }, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][1][0]$b$1292 [12:5]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][1][0]$b$1292 [19:13] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][1][0]$b$1292 [4:0] } = 12'000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$1296:
+      Old ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297, B=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][1][0]$a$1291
+      New ports: A={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [7] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [18] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [9:8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [2] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [12] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [10:7] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [5:4] 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [2:0] }, B={ 4'0000 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [15:14] 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [2:1] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$b$1298 [2:1] 1'1 }, Y={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][1][0]$a$1291 [19:12] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][1][0]$a$1291 [10:7] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][1][0]$a$1291 [5:0] }
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][1][0]$a$1291 [11] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][1][0]$a$1291 [6] } = { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][1][0]$a$1291 [8] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][1][0]$a$1291 [2] }
+  Optimizing cells in module \cordic_top.
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][1][1]$1386:
+      Old ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][1][1]$a$1387, B=20'00000000000000000000, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][0][0]$b$1382
+      New ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][1][1]$a$1387 [4:3], B=2'00, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][0][0]$b$1382 [4:3]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][0][0]$b$1382 [19:5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][0][0]$b$1382 [2:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][1][1]$1293:
+      Old ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][1][1]$a$1294, B=20'00000000000000000000, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][0][0]$b$1289
+      New ports: A=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][1][1]$a$1294 [4:3], B=2'00, Y=$memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][0][0]$b$1289 [4:3]
+      New connections: { $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][0][0]$b$1289 [19:5] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][0][0]$b$1289 [2:0] } = 18'000000000000000000
+  Optimizing cells in module \cordic_top.
+Performed a total of 39 changes.
+
+5.29.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+<suppressed ~81 debug messages>
+Removed a total of 27 cells.
+
+5.29.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.29.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+Removed 0 unused cells and 113 unused wires.
+<suppressed ~1 debug messages>
+
+5.29.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+
+5.29.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.29.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cordic_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+5.29.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cordic_top.
+    Consolidated identical input bits for $mux cell $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$708$rdmux[0][3][0]$1401:
+      Old ports: A={ 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [19] 1'0 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [17] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [17] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [19] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [19] 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [19] 2'10 }, B={ 1'0 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [17] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [17] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [19] 2'10 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [19] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [17] 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [19] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [19] }, Y={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [18] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [12] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [10] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [17:16] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [19] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [5:4] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [15] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [1:0] }
+      New ports: A={ 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [19] 1'0 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [17] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [17] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [19] 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [19] 2'10 }, B={ 1'0 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [17] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [17] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [19] 2'10 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [17] 1'1 $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [19] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [19] }, Y={ $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [18] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [12] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [10] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [17:16] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [19] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [4] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [15] $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [1:0] }
+      New connections: $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][2][0]$a$1297 [5] = $memory$flatten\u_engine.$auto$proc_rom.cc:150:do_switch$704$rdmux[0][3][0]$a$1309 [19]
+  Optimizing cells in module \cordic_top.
+Performed a total of 1 changes.
+
+5.29.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+Removed a total of 0 cells.
+
+5.29.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.29.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+
+5.29.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+
+5.29.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.29.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cordic_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+5.29.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cordic_top.
+Performed a total of 0 changes.
+
+5.29.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+Removed a total of 0 cells.
+
+5.29.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.29.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+
+5.29.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+
+5.29.23. Finished OPT passes. (There is nothing left to do.)
+
+5.30. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+5.31. Executing TECHMAP pass (map to technology primitives).
+
+5.31.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+5.31.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/arith_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_ice40_alu'.
+Successfully finished Verilog frontend.
+
+5.31.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod$7b00947614a4c48e09c066dca449366ddfa907a5\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod$7fd5b4d7d88b05df445e71e1efc89bfe738da47b\_80_ice40_alu for cells of type $alu.
+Using template $paramod$f31235db72ccf9c1ce2fe287188eba7dffdc9745\_80_ice40_alu for cells of type $alu.
+Using template $paramod$c6baa65225090ac0a120feab1b920965244aa496\_80_ice40_alu for cells of type $alu.
+Using template $paramod$32e7c4d6f92ff4337599ece53082d2e88a82a9f2\_90_pmux for cells of type $pmux.
+Using template $paramod$a77d4b6fbb68fb20c1bf15b8d79b6db75c48b7c2\_80_ice40_alu for cells of type $alu.
+Using template $paramod$d30366fce2ed1ff5d617fbeb18b2d2f7032b5816\_80_ice40_alu for cells of type $alu.
+Using template $paramod$2653f68ddb8eab7b1907b4a20767b72a824a7a36\_80_ice40_alu for cells of type $alu.
+Using template $paramod$1cd7b48931e8fc0e2388e46792294929cf794dd3\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$521ce43182eecb9f60c72393a788160d2c356bf5\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $logic_not.
+Using template $paramod$bf2533632d512eac76dd186c0da49367e29b8e98\_90_pmux for cells of type $pmux.
+Using template $paramod$c3cd1564c35d873179656addd6052d7ea8b6d991\_80_ice40_alu for cells of type $alu.
+Using template $paramod$constmap:4621fcf06a436d1e2a4080e2ed9866a7d07a6e07$paramod$e765c459d3029c22a22a27989e94858fd9ebfa9c\_90_shift_ops_shr_shl_sshl_sshr for cells of type $sshr.
+Using template $paramod$5e23d2e0f07f5403e3d2c5b606bab0c16e4174c1\_80_ice40_alu for cells of type $alu.
+Using template $paramod$b0777dc865134c8525a4aa84de8cfa938974cad1\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $logic_or.
+Using template $paramod$a7817265ef3ab2ee43da53bbd8a90f6450d412d9\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $logic_and.
+Using template $paramod$672a140277c71df8314410f22acc08d55222c3c7\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $and.
+No more expansions possible.
+<suppressed ~1129 debug messages>
+
+5.32. Executing OPT pass (performing simple optimizations).
+
+5.32.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+<suppressed ~1751 debug messages>
+
+5.32.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+<suppressed ~1221 debug messages>
+Removed a total of 407 cells.
+
+5.32.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.32.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+Removed 178 unused cells and 648 unused wires.
+<suppressed ~179 debug messages>
+
+5.32.5. Finished fast OPT passes.
+
+5.33. Executing ICE40_OPT pass (performing simple optimizations).
+
+5.33.1. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1104.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1104.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1117.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1117.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1130.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1117.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1137.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1137.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1148.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1148.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1161.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1161.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[10].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [10]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[11].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [11]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[12].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [12]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[13].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [13]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[14].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [14]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[15].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [15]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[16].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [16]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[17].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [17]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[18].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [18]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[19].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [19]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[20].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [20]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[21].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [21]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[22].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [22]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[23].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [23]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[24].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [24]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[25].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [25]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[26].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [26]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[27].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [27]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[28].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [28]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[29].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [29]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[30].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [30]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[31].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [31]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[6].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [6]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[7].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [7]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[8].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [8]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1174.slice[9].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.C [9]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1174.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[10].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [10]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[11].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [11]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[12].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [12]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[13].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [13]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[14].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [14]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[15].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [15]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[16].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [16]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[17].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [17]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[18].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [18]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[19].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [19]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[20].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [20]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[21].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [21]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[22].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [22]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[23].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [23]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[24].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [24]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[25].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [25]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[26].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [26]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[27].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [27]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[28].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [28]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[29].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [29]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[30].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [30]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[31].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [31]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[6].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [6]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[7].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [7]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[8].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [8]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1183.slice[9].carry: CO=$auto$alumacc.cc:485:replace_alu$1183.C [9]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1192.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1192.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1203.slice[0].carry: CO=\u_engine.z_r [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1209.slice[0].carry: CO=\u_engine.cycle_count [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1212.slice[0].carry: CO=\u_engine.iter [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1212.slice[5].carry: CO=1'0
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1215.slice[0].carry: CO=\u_engine.iter [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1218.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1218.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1236.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1104.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1239.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1137.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1242.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1242.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1245.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1161.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1248.slice[0].carry: CO=\u_engine.z_r [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1251.slice[0].carry: CO=\theta_in [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) cordic_top.$auto$alumacc.cc:485:replace_alu$1254.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1117.BB [3]
+
+5.33.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+<suppressed ~1 debug messages>
+
+5.33.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+<suppressed ~165 debug messages>
+Removed a total of 55 cells.
+
+5.33.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.33.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+Removed 6 unused cells and 4 unused wires.
+<suppressed ~7 debug messages>
+
+5.33.6. Rerunning OPT passes. (Removed registers in this run.)
+
+5.33.7. Running ICE40 specific optimizations.
+
+5.33.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+
+5.33.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+Removed a total of 0 cells.
+
+5.33.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.33.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+
+5.33.12. Finished OPT passes. (There is nothing left to do.)
+
+5.34. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+5.35. Executing TECHMAP pass (map to technology primitives).
+
+5.35.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+5.35.2. Continuing TECHMAP pass.
+Using template \$_DFFE_PP0P_ for cells of type $_DFFE_PP0P_.
+No more expansions possible.
+<suppressed ~142 debug messages>
+
+5.36. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+
+5.37. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+Mapping cordic_top.$auto$alumacc.cc:485:replace_alu$1137.slice[0].carry ($lut).
+Mapping cordic_top.$auto$alumacc.cc:485:replace_alu$1161.slice[0].carry ($lut).
+Mapping cordic_top.$auto$alumacc.cc:485:replace_alu$1203.slice[0].carry ($lut).
+Mapping cordic_top.$auto$alumacc.cc:485:replace_alu$1209.slice[0].carry ($lut).
+Mapping cordic_top.$auto$alumacc.cc:485:replace_alu$1212.slice[0].carry ($lut).
+Mapping cordic_top.$auto$alumacc.cc:485:replace_alu$1212.slice[5].carry ($lut).
+Mapping cordic_top.$auto$alumacc.cc:485:replace_alu$1218.slice[0].carry ($lut).
+Mapping cordic_top.$auto$alumacc.cc:485:replace_alu$1236.slice[0].carry ($lut).
+Mapping cordic_top.$auto$alumacc.cc:485:replace_alu$1242.slice[0].carry ($lut).
+Mapping cordic_top.$auto$alumacc.cc:485:replace_alu$1248.slice[0].carry ($lut).
+Mapping cordic_top.$auto$alumacc.cc:485:replace_alu$1251.slice[0].carry ($lut).
+Mapping cordic_top.$auto$alumacc.cc:485:replace_alu$1254.slice[0].carry ($lut).
+
+5.38. Executing ICE40_OPT pass (performing simple optimizations).
+
+5.38.1. Running ICE40 specific optimizations.
+
+5.38.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+<suppressed ~286 debug messages>
+
+5.38.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+<suppressed ~393 debug messages>
+Removed a total of 131 cells.
+
+5.38.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.38.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+Removed 0 unused cells and 888 unused wires.
+<suppressed ~1 debug messages>
+
+5.38.6. Rerunning OPT passes. (Removed registers in this run.)
+
+5.38.7. Running ICE40 specific optimizations.
+
+5.38.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+<suppressed ~1 debug messages>
+
+5.38.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+Removed a total of 0 cells.
+
+5.38.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.38.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+
+5.38.12. Rerunning OPT passes. (Removed registers in this run.)
+
+5.38.13. Running ICE40 specific optimizations.
+
+5.38.14. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cordic_top.
+
+5.38.15. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cordic_top'.
+Removed a total of 0 cells.
+
+5.38.16. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.38.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cordic_top..
+
+5.38.18. Finished OPT passes. (There is nothing left to do.)
+
+5.39. Executing TECHMAP pass (map to technology primitives).
+
+5.39.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/latches_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/latches_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Successfully finished Verilog frontend.
+
+5.39.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+5.40. Executing ABC pass (technology mapping using ABC).
+
+5.40.1. Extracting gate netlist of module `\cordic_top' to `<abc-temp-dir>/input.blif'..
+Extracted 1711 gates and 2431 wires to a netlist network with 718 inputs and 645 outputs.
+
+5.40.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + mfs2 
+ABC: + lutpack -S 1 
+ABC: + dress <abc-temp-dir>/input.blif 
+ABC: Total number of equiv classes                =     976.
+ABC: Participating nodes from both networks       =    2195.
+ABC: Participating nodes from the first network   =    1058. (  81.95 % of nodes)
+ABC: Participating nodes from the second network  =    1137. (  88.07 % of nodes)
+ABC: Node pairs (any polarity)                    =    1058. (  81.95 % of names can be moved)
+ABC: Node pairs (same polarity)                   =     685. (  53.06 % of names can be moved)
+ABC: Total runtime =     0.22 sec
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+5.40.1.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:     1290
+ABC RESULTS:        internal signals:     1068
+ABC RESULTS:           input signals:      718
+ABC RESULTS:          output signals:      645
+Removing temp directory.
+
+5.41. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+5.42. Executing TECHMAP pass (map to technology primitives).
+
+5.42.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+5.42.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~22 debug messages>
+Removed 238 unused cells and 1397 unused wires.
+
+5.43. Executing OPT_LUT pass (optimize LUTs).
+Discovering LUTs.
+Number of LUTs:     1779
+  1-LUT              282
+  2-LUT              107
+  3-LUT              977
+  4-LUT              413
+  with \SB_CARRY    (#0)  478
+  with \SB_CARRY    (#1)  476
+
+Eliminating LUTs.
+Number of LUTs:     1779
+  1-LUT              282
+  2-LUT              107
+  3-LUT              977
+  4-LUT              413
+  with \SB_CARRY    (#0)  478
+  with \SB_CARRY    (#1)  476
+
+Combining LUTs.
+Number of LUTs:     1760
+  1-LUT              282
+  2-LUT               92
+  3-LUT              956
+  4-LUT              430
+  with \SB_CARRY    (#0)  478
+  with \SB_CARRY    (#1)  476
+
+Eliminated 0 LUTs.
+Combined 19 LUTs.
+<suppressed ~12347 debug messages>
+
+5.44. Executing TECHMAP pass (map to technology primitives).
+
+5.44.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/cells_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+5.44.2. Continuing TECHMAP pass.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00110101 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10101100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01011100 for cells of type $lut.
+Using template $paramod$fd904e9e35cfd343a9df248824bd3f1408724879\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11001010 for cells of type $lut.
+Using template $paramod$7fc0ccda7d57286915be66abcb1fb9c005815207\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
+Using template $paramod$81281693907c526a9c15a055205ebc0f295effec\$lut for cells of type $lut.
+Using template $paramod$a670b08a47dd8a34f954c50cd06e9996d77e8467\$lut for cells of type $lut.
+Using template $paramod$0a94662b0161fc067fc2a1123fd5ac94da2ec1db\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0100 for cells of type $lut.
+Using template $paramod$a3cdc1eb771a2c6a16f64da161e11100ac409d2b\$lut for cells of type $lut.
+Using template $paramod$5e5fd4eec4cf05703aae0802b966262ea4d52f3f\$lut for cells of type $lut.
+Using template $paramod$b4d0f4738a5ce50c7f36c2aa2ecc09cfb874f2b6\$lut for cells of type $lut.
+Using template $paramod$a8b2b0f3a3fd7b01c99e8d61bb72f602bd41af54\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000001 for cells of type $lut.
+Using template $paramod$c8f07aef973f71b76e0c6a31237492b2778f5a58\$lut for cells of type $lut.
+Using template $paramod$e5e9da8fed769f971686eed8c5eea50e61f73aaa\$lut for cells of type $lut.
+Using template $paramod$c5b694ec89d7629b942ccf6a9be1d39e24f8edec\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010000 for cells of type $lut.
+Using template $paramod$38debc9ecb856f8fdb72adb11bd5220839a653fd\$lut for cells of type $lut.
+Using template $paramod$c46f33a04bf7d78d7d193191d82e6f87a2b5bdfc\$lut for cells of type $lut.
+Using template $paramod$cf22ec6cc21483dba8bacc9af3c619caa648a676\$lut for cells of type $lut.
+Using template $paramod$8e0383e91d17a7fabdbf348f7476dc4ca9a49795\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000000 for cells of type $lut.
+Using template $paramod$7299f2246d1a80c33c807bc8bb00c5b5d234d530\$lut for cells of type $lut.
+Using template $paramod$9d707d218adbd63b6f9a0c79d7ee037306fb6296\$lut for cells of type $lut.
+Using template $paramod$e96de5e9fcce737e52eacf39c70c8f533dc27d63\$lut for cells of type $lut.
+Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8\$lut for cells of type $lut.
+Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
+Using template $paramod$6b0849254d6c87461fb93e37cc18f089f61eb912\$lut for cells of type $lut.
+Using template $paramod$920b342e429905ad61ab7cd3f67ebfaaf1217f0e\$lut for cells of type $lut.
+Using template $paramod$4b2297966ddb718657b80566604f97685ffc0120\$lut for cells of type $lut.
+Using template $paramod$e49f6e3576ef1a6d2f58c54414dbb786af8cc869\$lut for cells of type $lut.
+Using template $paramod$973818279bc95792902f3c09371fd2407d04a2a5\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10010100 for cells of type $lut.
+Using template $paramod$d2e6d37235ab843778c678747f5760d5e87de899\$lut for cells of type $lut.
+Using template $paramod$56c6fc98268f6966dd23dcb4af9b8f5298fa7ead\$lut for cells of type $lut.
+Using template $paramod$baece84ce51a02b01851964ee6e92a1b8d2e2c99\$lut for cells of type $lut.
+Using template $paramod$ec8386f461f761c94ca8d124d7e7b3a99a15a5b8\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1011 for cells of type $lut.
+Using template $paramod$272652f6c6fbe9a75eff76e45cc7e2788835518b\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00011000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10010000 for cells of type $lut.
+Using template $paramod$bba54c1ef87367812b4c15f4aed5ac70773df775\$lut for cells of type $lut.
+Using template $paramod$ad3a97108c9f4d10f8acfa309b668b9455d3d733\$lut for cells of type $lut.
+Using template $paramod$c1a19a87ccbbb03d43a72335db63f692ddf82cc1\$lut for cells of type $lut.
+Using template $paramod$81d8a60fd95b1a9f9ef71c12a774ae6988cb9fd5\$lut for cells of type $lut.
+Using template $paramod$703a13a751e631ef123f38f7d2125aeabec0f94c\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01100000 for cells of type $lut.
+Using template $paramod$0ffc732f40a0fcc39b2e74c16deb398834a1693c\$lut for cells of type $lut.
+Using template $paramod$71d951b20e73043168c1656217d126e617052faa\$lut for cells of type $lut.
+Using template $paramod$5a621b016c894274d07edef48c49b401a15fd796\$lut for cells of type $lut.
+Using template $paramod$89ecea64a21f1d46300084f3bd1ea75b5999f12a\$lut for cells of type $lut.
+Using template $paramod$a4df2b5be2b644499880e088a11556935f22b401\$lut for cells of type $lut.
+Using template $paramod$848d2b023321e0badae356e7259e2c767c32a546\$lut for cells of type $lut.
+Using template $paramod$575b200168b9e109c2ed99df4359056f2c6696ac\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01110000 for cells of type $lut.
+Using template $paramod$f54c0ffd7b041ca43eac7710ab19c0666d826c22\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11110100 for cells of type $lut.
+Using template $paramod$b4db603f36decd70d6926caece8ccf0edaf909bb\$lut for cells of type $lut.
+Using template $paramod$8ec29827d94e80e773a6f636dfcf3e1591527264\$lut for cells of type $lut.
+Using template $paramod$2167383712a3ef5a7aa9a279cd8db29e1fc2db5f\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1110 for cells of type $lut.
+Using template $paramod$df0b68f8e63b2deb6710e23abd8b8ff0796d4897\$lut for cells of type $lut.
+Using template $paramod$8b24407096beec47292ddeb1567a058197a320b9\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001011 for cells of type $lut.
+Using template $paramod$2ea69c779d6c1b79ac5a87b0d1523c67d5628dba\$lut for cells of type $lut.
+Using template $paramod$4da6fe9957da309dc16b8f31a6b80b19c05c808d\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01010011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11000101 for cells of type $lut.
+Using template $paramod$9ce83c401f07863ef6c07aa36141bf86d010bac8\$lut for cells of type $lut.
+No more expansions possible.
+<suppressed ~2738 debug messages>
+Removed 0 unused cells and 3798 unused wires.
+
+5.45. Executing AUTONAME pass.
+Renamed 68108 objects in module cordic_top (76 iterations).
+<suppressed ~3132 debug messages>
+
+5.46. Executing HIERARCHY pass (managing design hierarchy).
+
+5.46.1. Analyzing design hierarchy..
+Top module:  \cordic_top
+
+5.46.2. Analyzing design hierarchy..
+Top module:  \cordic_top
+Removed 0 unused modules.
+
+5.47. Printing statistics.
+
+=== cordic_top ===
+
+   Number of wires:                633
+   Number of wire bits:           4481
+   Number of public wires:         633
+   Number of public wire bits:    4481
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               2574
+     SB_CARRY                      694
+     SB_DFFER                      120
+     SB_LUT4                      1760
+
+5.48. Executing CHECK pass (checking for obvious problems).
+Checking module cordic_top...
+Found and reported 0 problems.
+
+6. Printing statistics.
+
+=== cordic_top ===
+
+   Number of wires:                633
+   Number of wire bits:           4481
+   Number of public wires:         633
+   Number of public wire bits:    4481
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               2574
+     SB_CARRY                      694
+     SB_DFFER                      120
+     SB_LUT4                      1760
+
+End of script. Logfile hash: 2daa9ab0e8, CPU: user 2.70s system 0.02s, MEM: 42.24 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 20% 27x opt_expr (0 sec), 19% 1x abc (0 sec), ...

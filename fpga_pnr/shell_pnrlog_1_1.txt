@@ -1,0 +1,1045 @@
+Warning: No PCF file specified; IO pins will be placed automatically
+
+Info: Packing constants..
+Info: Packing IOs..
+Info: Packing LUT-FFs..
+Info:     2602 LCs used as LUT4 only
+Info:      240 LCs used as LUT4 and DFF
+Info: Packing non-LUT FFs..
+Info:      104 LCs used as DFF only
+Info: Packing carries..
+Info:      331 LCs used as CARRY only
+Info: Packing indirect carry+LUT pairs...
+Info:      172 LUTs merged into carry LCs
+Info: Packing RAMs..
+Info: Placing PLLs..
+Info: Packing special functions..
+Info: Packing PLLs..
+Info: Promoting globals..
+Info: promoting clk$SB_IO_IN (fanout 344)
+Info: promoting rst_n_SB_LUT4_I3_O [reset] (fanout 120)
+Info: promoting u_engine.mode_r [reset] (fanout 64)
+Info: promoting angle_cap_SB_DFFESR_Q_R [reset] (fanout 32)
+Info: promoting start_SB_LUT4_I1_O[2] [cen] (fanout 108)
+Info: promoting valid$SB_IO_OUT [cen] (fanout 96)
+Info: promoting rd_sel_SB_LUT4_I0_O [cen] (fanout 32)
+Info: promoting ld_shift_SB_LUT4_I3_O [cen] (fanout 32)
+Info: Constraining chains...
+Info:       45 LCs used to legalise carry chains.
+Info: Checksum: 0x53e8b0ae
+
+Info: Annotating ports with timing budgets for target frequency 1.00 MHz
+Info: Checksum: 0xeef275c2
+
+Info: Device utilisation:
+Info: 	         ICESTORM_LC:  3152/ 7680    41%
+Info: 	        ICESTORM_RAM:     0/   32     0%
+Info: 	               SB_IO:    39/  256    15%
+Info: 	               SB_GB:     8/    8   100%
+Info: 	        ICESTORM_PLL:     0/    2     0%
+Info: 	         SB_WARMBOOT:     0/    1     0%
+
+Info: Placed 0 cells based on constraints.
+Info: Creating initial analytic placement for 2114 cells, random placement wirelen = 80258.
+Info:     at initial placer iter 0, wirelen = 1887
+Info:     at initial placer iter 1, wirelen = 2041
+Info:     at initial placer iter 2, wirelen = 1738
+Info:     at initial placer iter 3, wirelen = 1754
+Info: Running main analytical placer, max placement attempts per cell = 1279200.
+Info:     at iteration #1, type ALL: wirelen solved = 1743, spread = 29382, legal = 30249; time = 0.13s
+Info:     at iteration #2, type ALL: wirelen solved = 2357, spread = 27332, legal = 28434; time = 0.10s
+Info:     at iteration #3, type ALL: wirelen solved = 2511, spread = 25834, legal = 26760; time = 0.10s
+Info:     at iteration #4, type ALL: wirelen solved = 2802, spread = 25110, legal = 25944; time = 1.50s
+Info:     at iteration #5, type ALL: wirelen solved = 3320, spread = 24202, legal = 25156; time = 0.11s
+Info:     at iteration #6, type ALL: wirelen solved = 3978, spread = 22170, legal = 23416; time = 0.09s
+Info:     at iteration #7, type ALL: wirelen solved = 4452, spread = 21643, legal = 22794; time = 0.11s
+Info:     at iteration #8, type ALL: wirelen solved = 4951, spread = 20315, legal = 21393; time = 0.13s
+Info:     at iteration #9, type ALL: wirelen solved = 5650, spread = 18983, legal = 19792; time = 0.13s
+Info:     at iteration #10, type ALL: wirelen solved = 5966, spread = 18544, legal = 19753; time = 0.11s
+Info:     at iteration #11, type ALL: wirelen solved = 6713, spread = 17135, legal = 17990; time = 0.11s
+Info:     at iteration #12, type ALL: wirelen solved = 6976, spread = 16700, legal = 17769; time = 0.11s
+Info:     at iteration #13, type ALL: wirelen solved = 7228, spread = 16832, legal = 17725; time = 0.12s
+Info:     at iteration #14, type ALL: wirelen solved = 7719, spread = 16321, legal = 17381; time = 0.87s
+Info:     at iteration #15, type ALL: wirelen solved = 7916, spread = 16534, legal = 17541; time = 0.14s
+Info:     at iteration #16, type ALL: wirelen solved = 8403, spread = 15189, legal = 16510; time = 0.12s
+Info:     at iteration #17, type ALL: wirelen solved = 8355, spread = 16021, legal = 16985; time = 0.11s
+Info:     at iteration #18, type ALL: wirelen solved = 8938, spread = 15666, legal = 17114; time = 2.73s
+Info:     at iteration #19, type ALL: wirelen solved = 8705, spread = 15191, legal = 16209; time = 0.09s
+Info:     at iteration #20, type ALL: wirelen solved = 8882, spread = 15687, legal = 16824; time = 0.12s
+Info:     at iteration #21, type ALL: wirelen solved = 8836, spread = 16191, legal = 17183; time = 0.11s
+Info:     at iteration #22, type ALL: wirelen solved = 9212, spread = 15950, legal = 16950; time = 0.12s
+Info:     at iteration #23, type ALL: wirelen solved = 9195, spread = 15930, legal = 16815; time = 0.11s
+Info:     at iteration #24, type ALL: wirelen solved = 9718, spread = 16370, legal = 17354; time = 0.13s
+Info: HeAP Placer Time: 8.83s
+Info:   of which solving equations: 2.13s
+Info:   of which spreading cells: 0.28s
+Info:   of which strict legalisation: 5.16s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 1706, wirelen = 16209
+Info:   at iteration #5: temp = 0.000000, timing cost = 1237, wirelen = 13535
+Info:   at iteration #10: temp = 0.000000, timing cost = 1395, wirelen = 12854
+Info:   at iteration #15: temp = 0.000000, timing cost = 1223, wirelen = 12579
+Info:   at iteration #20: temp = 0.000000, timing cost = 1220, wirelen = 12419
+Info:   at iteration #25: temp = 0.000000, timing cost = 1289, wirelen = 12356
+Info:   at iteration #27: temp = 0.000000, timing cost = 1298, wirelen = 12345 
+Info: SA placement time 7.91s
+
+Info: Max frequency for clock 'clk$SB_IO_IN_$glb_clk': 22.77 MHz (PASS at 1.00 MHz)
+
+Info: Max delay <async>                       -> posedge clk$SB_IO_IN_$glb_clk: 9.89 ns
+Info: Max delay posedge clk$SB_IO_IN_$glb_clk -> <async>                      : 3.71 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 7 endpoint(s)
+Info:          + represents [1,7) endpoint(s)
+Info: [956090, 958233) |+
+Info: [958233, 960376) | 
+Info: [960376, 962519) | 
+Info: [962519, 964662) | 
+Info: [964662, 966805) |***+
+Info: [966805, 968948) |**********************+
+Info: [968948, 971091) |+
+Info: [971091, 973234) |+
+Info: [973234, 975377) | 
+Info: [975377, 977520) | 
+Info: [977520, 979663) | 
+Info: [979663, 981806) | 
+Info: [981806, 983949) |+
+Info: [983949, 986092) |**********+
+Info: [986092, 988235) |**+
+Info: [988235, 990378) |**+
+Info: [990378, 992521) |***********************************+
+Info: [992521, 994664) |*****************************************************+
+Info: [994664, 996807) |********************************************+
+Info: [996807, 998950) |************************************************************ 
+Info: Checksum: 0x72521fce
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 9959 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:       1000 |       81        918 |   81   918 |      9102|       1.39       1.39|
+Info:       2000 |      222       1777 |  141   859 |      8549|       0.75       2.14|
+Info:       3000 |      528       2471 |  306   694 |      8053|       0.72       2.86|
+Info:       4000 |      928       3071 |  400   600 |      7612|       0.58       3.44|
+Info:       5000 |     1205       3794 |  277   723 |      7015|       0.76       4.20|
+Info:       6000 |     1442       4372 |  237   578 |      6341|       0.24       4.45|
+Info:       7000 |     1781       4950 |  339   578 |      5782|       0.23       4.68|
+Info:       8000 |     2135       5546 |  354   596 |      5241|       0.27       4.94|
+Info:       9000 |     2395       6174 |  260   628 |      4604|       0.28       5.22|
+Info:      10000 |     2705       6814 |  310   640 |      4112|       0.49       5.70|
+Info:      11000 |     3034       7431 |  329   617 |      3666|       0.45       6.15|
+Info:      12000 |     3294       8168 |  260   737 |      3073|       0.51       6.66|
+Info:      13000 |     3620       8780 |  326   612 |      2623|       0.68       7.34|
+Info:      14000 |     3891       9396 |  271   616 |      2039|       0.57       7.90|
+Info:      15000 |     4087      10031 |  196   635 |      1335|       0.47       8.37|
+Info:      16000 |     4337      10768 |  250   737 |       684|       0.44       8.81|
+Info:      17000 |     4607      11496 |  270   728 |        83|       1.24      10.05|
+Info:      17162 |     4665      11601 |   58   105 |         0|       0.23      10.28|
+Info: Routing complete.
+Info: Router1 time 10.28s
+Info: Checksum: 0xd116a92d
+
+Info: Critical path report for clock 'clk$SB_IO_IN_$glb_clk' (posedge -> posedge):
+Info: curr total
+Info:  0.5  0.5  Source u_engine.u_engine.y_r_SB_DFFER_Q_10_D_SB_LUT4_O_LC.O
+Info:  1.6  2.2    Net u_engine.y_eng[21] budget 0.000000 ns (12,17) -> (14,24)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_8_I2_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_LC.I1
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_top.v:41.33-41.38
+Info:  0.4  2.6  Source u_engine.u_engine.x1_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_8_I2_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_LC.O
+Info:  0.6  3.2    Net u_engine.u_engine.x1_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_28_I1_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_I1[0] budget 0.000000 ns (14,24) -> (14,24)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_8_I2_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_LC.I2
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.4  3.5  Source u_engine.u_engine.x1_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_8_I2_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_LC.O
+Info:  0.6  4.1    Net u_engine.u_engine.x1_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_28_I1_SB_LUT4_O_I2_SB_LUT4_O_I2[0] budget 0.000000 ns (14,24) -> (13,23)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_28_I1_SB_LUT4_O_I2_SB_LUT4_O_LC.I1
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.4  4.5  Source u_engine.u_engine.x1_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_28_I1_SB_LUT4_O_I2_SB_LUT4_O_LC.O
+Info:  0.6  5.1    Net u_engine.u_engine.x1_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_28_I1_SB_LUT4_O_I2[1] budget 0.000000 ns (13,23) -> (12,24)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_28_I1_SB_LUT4_O_LC.I2
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.4  5.5  Source u_engine.u_engine.x1_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_28_I1_SB_LUT4_O_LC.O
+Info:  1.3  6.8    Net u_engine.u_engine.x1_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_28_I1[1] budget 0.000000 ns (12,24) -> (11,20)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_28_LC.I1
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.4  7.2  Source u_engine.u_engine.x1_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_28_LC.O
+Info:  0.6  7.8    Net u_engine.u_engine.x1_SB_LUT4_O_I2_SB_LUT4_O_I2[1] budget 0.000000 ns (11,20) -> (11,19)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_28_LC.I3
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:125.22-125.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:49.21-49.23
+Info:  0.3  8.1  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_28_LC.O
+Info:  1.3  9.4    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I2[1] budget 0.000000 ns (11,19) -> (9,16)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_20_LC.I2
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:31.22-31.23
+Info:  0.2  9.6  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_20_LC.COUT
+Info:  0.0  9.6    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[2] budget 0.000000 ns (9,16) -> (9,16)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_9_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1  9.8  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_9_LC.COUT
+Info:  0.0  9.8    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[3] budget 0.000000 ns (9,16) -> (9,16)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_6_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1  9.9  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_6_LC.COUT
+Info:  0.0  9.9    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[4] budget 0.000000 ns (9,16) -> (9,16)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_5_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 10.0  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_5_LC.COUT
+Info:  0.0 10.0    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[5] budget 0.000000 ns (9,16) -> (9,16)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_4_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 10.1  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_4_LC.COUT
+Info:  0.0 10.1    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[6] budget 0.000000 ns (9,16) -> (9,16)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_3_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 10.3  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_3_LC.COUT
+Info:  0.0 10.3    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[7] budget 0.000000 ns (9,16) -> (9,16)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_2_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 10.4  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_2_LC.COUT
+Info:  0.2 10.6    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[8] budget 0.190000 ns (9,16) -> (9,17)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_1_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 10.7  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_1_LC.COUT
+Info:  0.0 10.7    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[9] budget 0.000000 ns (9,17) -> (9,17)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 10.8  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_LC.COUT
+Info:  0.0 10.8    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[10] budget 0.000000 ns (9,17) -> (9,17)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_30_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 11.0  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_30_LC.COUT
+Info:  0.0 11.0    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[11] budget 0.000000 ns (9,17) -> (9,17)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_29_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 11.1  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_29_LC.COUT
+Info:  0.0 11.1    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[12] budget 0.000000 ns (9,17) -> (9,17)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_28_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 11.2  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_28_LC.COUT
+Info:  0.0 11.2    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[13] budget 0.000000 ns (9,17) -> (9,17)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_27_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 11.3  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_27_LC.COUT
+Info:  0.0 11.3    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[14] budget 0.000000 ns (9,17) -> (9,17)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_26_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 11.5  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_26_LC.COUT
+Info:  0.0 11.5    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[15] budget 0.000000 ns (9,17) -> (9,17)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_25_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 11.6  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_25_LC.COUT
+Info:  0.2 11.8    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[16] budget 0.190000 ns (9,17) -> (9,18)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_24_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 11.9  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_24_LC.COUT
+Info:  0.0 11.9    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[17] budget 0.000000 ns (9,18) -> (9,18)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_23_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 12.0  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_23_LC.COUT
+Info:  0.0 12.0    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[18] budget 0.000000 ns (9,18) -> (9,18)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_22_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 12.2  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_22_LC.COUT
+Info:  0.0 12.2    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[19] budget 0.000000 ns (9,18) -> (9,18)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_21_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 12.3  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_21_LC.COUT
+Info:  0.0 12.3    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[20] budget 0.000000 ns (9,18) -> (9,18)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_19_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 12.4  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_19_LC.COUT
+Info:  0.0 12.4    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[21] budget 0.000000 ns (9,18) -> (9,18)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_18_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 12.6  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_18_LC.COUT
+Info:  0.0 12.6    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[22] budget 0.000000 ns (9,18) -> (9,18)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_17_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 12.7  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_17_LC.COUT
+Info:  0.0 12.7    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[23] budget 0.000000 ns (9,18) -> (9,18)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_16_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 12.8  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_16_LC.COUT
+Info:  0.2 13.0    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[24] budget 0.190000 ns (9,18) -> (9,19)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_15_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 13.1  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_15_LC.COUT
+Info:  0.0 13.1    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[25] budget 0.000000 ns (9,19) -> (9,19)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_14_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 13.3  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_14_LC.COUT
+Info:  0.0 13.3    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[26] budget 0.000000 ns (9,19) -> (9,19)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_13_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 13.4  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_13_LC.COUT
+Info:  0.0 13.4    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[27] budget 0.000000 ns (9,19) -> (9,19)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_12_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 13.5  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_12_LC.COUT
+Info:  0.0 13.5    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[28] budget 0.000000 ns (9,19) -> (9,19)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_11_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 13.6  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_11_LC.COUT
+Info:  0.0 13.6    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[29] budget 0.000000 ns (9,19) -> (9,19)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_10_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 13.8  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_10_LC.COUT
+Info:  0.0 13.8    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[30] budget 0.000000 ns (9,19) -> (9,19)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_8_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 13.9  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_8_LC.COUT
+Info:  0.3 14.1    Net u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_I3[31] budget 0.260000 ns (9,19) -> (9,19)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_7_LC.I3
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 14.5  Source u_engine.u_engine.x1_SB_LUT4_O_I1_SB_LUT4_O_7_LC.O
+Info:  1.6 16.0    Net u_engine.u_engine.x1_SB_LUT4_O_I1[31] budget 0.000000 ns (9,19) -> (17,20)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_LC.I1
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:129.22-129.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:33.26-33.27
+Info:  0.4 16.4  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_LC.O
+Info:  1.3 17.8    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O[31] budget 0.000000 ns (17,20) -> (16,24)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_7_I2_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_LC.I1
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.4 18.2  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_7_I2_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_LC.O
+Info:  0.6 18.8    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_7_I2_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I2[0] budget 0.000000 ns (16,24) -> (16,24)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_9_I2_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_LC.I1
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.4 19.2  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_9_I2_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_LC.O
+Info:  0.6 19.7    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_9_I2_SB_LUT4_O_I1_SB_LUT4_O_I2[0] budget 0.000000 ns (16,24) -> (17,23)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_5_I2_SB_LUT4_O_I2_SB_LUT4_O_LC.I1
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.4 20.1  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_5_I2_SB_LUT4_O_I2_SB_LUT4_O_LC.O
+Info:  1.3 21.4    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_5_I2_SB_LUT4_O_I2[0] budget 0.000000 ns (17,23) -> (19,19)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_29_I2_SB_LUT4_O_LC.I1
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.4 21.8  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_29_I2_SB_LUT4_O_LC.O
+Info:  0.6 22.4    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1[1] budget 0.000000 ns (19,19) -> (18,18)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_LC.I2
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.4 22.8  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_LC.O
+Info:  1.3 24.1    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O[0] budget 0.000000 ns (18,18) -> (16,15)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_30_LC.I2
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:31.22-31.23
+Info:  0.2 24.3  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_30_LC.COUT
+Info:  0.0 24.3    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[1] budget 0.000000 ns (16,15) -> (16,15)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_19_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 24.4  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_19_LC.COUT
+Info:  0.0 24.4    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[2] budget 0.000000 ns (16,15) -> (16,15)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_8_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 24.5  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_8_LC.COUT
+Info:  0.0 24.5    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[3] budget 0.000000 ns (16,15) -> (16,15)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_6_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 24.7  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_6_LC.COUT
+Info:  0.0 24.7    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[4] budget 0.000000 ns (16,15) -> (16,15)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_5_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 24.8  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_5_LC.COUT
+Info:  0.0 24.8    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[5] budget 0.000000 ns (16,15) -> (16,15)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_4_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 24.9  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_4_LC.COUT
+Info:  0.0 24.9    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[6] budget 0.000000 ns (16,15) -> (16,15)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_3_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 25.0  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_3_LC.COUT
+Info:  0.0 25.0    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[7] budget 0.000000 ns (16,15) -> (16,15)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_2_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 25.2  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_2_LC.COUT
+Info:  0.2 25.4    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[8] budget 0.190000 ns (16,15) -> (16,16)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_1_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 25.5  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_1_LC.COUT
+Info:  0.0 25.5    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[9] budget 0.000000 ns (16,16) -> (16,16)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 25.6  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_LC.COUT
+Info:  0.0 25.6    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[10] budget 0.000000 ns (16,16) -> (16,16)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_29_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 25.7  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_29_LC.COUT
+Info:  0.0 25.7    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[11] budget 0.000000 ns (16,16) -> (16,16)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_28_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 25.9  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_28_LC.COUT
+Info:  0.0 25.9    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[12] budget 0.000000 ns (16,16) -> (16,16)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_27_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 26.0  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_27_LC.COUT
+Info:  0.0 26.0    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[13] budget 0.000000 ns (16,16) -> (16,16)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_26_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 26.1  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_26_LC.COUT
+Info:  0.0 26.1    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[14] budget 0.000000 ns (16,16) -> (16,16)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_25_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 26.3  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_25_LC.COUT
+Info:  0.0 26.3    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[15] budget 0.000000 ns (16,16) -> (16,16)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_24_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 26.4  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_24_LC.COUT
+Info:  0.2 26.6    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[16] budget 0.190000 ns (16,16) -> (16,17)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_23_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 26.7  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_23_LC.COUT
+Info:  0.0 26.7    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[17] budget 0.000000 ns (16,17) -> (16,17)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_22_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 26.8  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_22_LC.COUT
+Info:  0.0 26.8    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[18] budget 0.000000 ns (16,17) -> (16,17)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_21_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 27.0  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_21_LC.COUT
+Info:  0.0 27.0    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[19] budget 0.000000 ns (16,17) -> (16,17)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_20_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 27.1  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_20_LC.COUT
+Info:  0.0 27.1    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[20] budget 0.000000 ns (16,17) -> (16,17)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_18_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 27.2  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_18_LC.COUT
+Info:  0.0 27.2    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[21] budget 0.000000 ns (16,17) -> (16,17)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_17_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 27.3  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_17_LC.COUT
+Info:  0.0 27.3    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[22] budget 0.000000 ns (16,17) -> (16,17)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_16_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 27.5  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_16_LC.COUT
+Info:  0.0 27.5    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[23] budget 0.000000 ns (16,17) -> (16,17)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_15_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 27.6  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_15_LC.COUT
+Info:  0.2 27.8    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[24] budget 0.190000 ns (16,17) -> (16,18)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_14_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 27.9  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_14_LC.COUT
+Info:  0.0 27.9    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[25] budget 0.000000 ns (16,18) -> (16,18)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_13_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 28.0  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_13_LC.COUT
+Info:  0.0 28.0    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[26] budget 0.000000 ns (16,18) -> (16,18)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_12_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 28.2  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_12_LC.COUT
+Info:  0.0 28.2    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[27] budget 0.000000 ns (16,18) -> (16,18)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_11_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 28.3  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_11_LC.COUT
+Info:  0.0 28.3    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[28] budget 0.000000 ns (16,18) -> (16,18)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_10_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 28.4  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_10_LC.COUT
+Info:  0.0 28.4    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[29] budget 0.000000 ns (16,18) -> (16,18)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_9_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 28.5  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_9_LC.COUT
+Info:  0.0 28.5    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[30] budget 0.000000 ns (16,18) -> (16,18)
+Info:                Sink u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_7_LC.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.1 28.7  Source u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_LUT4_I2_7_LC.COUT
+Info:  0.3 28.9    Net u_engine.u_engine.x1_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_O_27_I1_SB_LUT4_I1_O_SB_CARRY_I1_CO[31] budget 0.260000 ns (16,18) -> (16,18)
+Info:                Sink u_engine.u_engine.y1_SB_LUT4_I1_LC.I3
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 29.2  Source u_engine.u_engine.y1_SB_LUT4_I1_LC.O
+Info:  1.0 30.2    Net u_engine.u_engine.absresid2_SB_LUT4_O_9_I0_SB_LUT4_O_I0[31] budget 0.000000 ns (16,18) -> (16,19)
+Info:                Sink u_engine.u_engine.z_r_SB_DFFER_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I0_SB_LUT4_O_LC.I1
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:126.22-126.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:33.26-33.27
+Info:  0.4 30.6  Source u_engine.u_engine.z_r_SB_DFFER_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I0_SB_LUT4_O_LC.O
+Info:  1.6 32.2    Net u_engine.u_engine.tgt_SB_CARRY_I0_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O[0] budget 0.000000 ns (16,19) -> (19,14)
+Info:                Sink u_engine.u_engine.z_r_SB_DFFER_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I0_SB_LUT4_I1_LC.I1
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.4 32.6  Source u_engine.u_engine.z_r_SB_DFFER_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I0_SB_LUT4_I1_LC.O
+Info:  0.6 33.2    Net u_engine.u_engine.absresid2_SB_LUT4_O_9_I0_SB_LUT4_I2_O[31] budget 0.000000 ns (19,14) -> (19,13)
+Info:                Sink u_engine.u_engine.absresid2_SB_LUT4_O_27_LC.I3
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:149.53-149.60
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:49.21-49.23
+Info:  0.3 33.5  Source u_engine.u_engine.absresid2_SB_LUT4_O_27_LC.O
+Info:  0.6 34.1    Net u_engine.u_engine.absresid2[4] budget 0.000000 ns (19,13) -> (20,13)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5$CARRY.I1
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:149.26-149.35
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:  0.3 34.4  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5$CARRY.COUT
+Info:  0.0 34.4    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[1] budget 0.000000 ns (20,13) -> (20,13)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_13$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 34.5  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_13$CARRY.COUT
+Info:  0.0 34.5    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[2] budget 0.000000 ns (20,13) -> (20,13)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_4$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 34.6  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_4$CARRY.COUT
+Info:  0.0 34.6    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[3] budget 0.000000 ns (20,13) -> (20,13)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_5$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 34.8  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_5$CARRY.COUT
+Info:  0.0 34.8    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[4] budget 0.000000 ns (20,13) -> (20,13)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_3$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 34.9  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_3$CARRY.COUT
+Info:  0.0 34.9    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[5] budget 0.000000 ns (20,13) -> (20,13)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_4$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 35.0  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_4$CARRY.COUT
+Info:  0.0 35.0    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[6] budget 0.000000 ns (20,13) -> (20,13)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_3$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 35.1  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_3$CARRY.COUT
+Info:  0.0 35.1    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[7] budget 0.000000 ns (20,13) -> (20,13)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_2$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 35.3  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_2$CARRY.COUT
+Info:  0.2 35.5    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[8] budget 0.190000 ns (20,13) -> (20,14)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_1$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 35.6  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_1$CARRY.COUT
+Info:  0.0 35.6    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[9] budget 0.000000 ns (20,14) -> (20,14)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 35.7  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO$CARRY.COUT
+Info:  0.0 35.7    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[10] budget 0.000000 ns (20,14) -> (20,14)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_23$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 35.8  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_23$CARRY.COUT
+Info:  0.0 35.8    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[11] budget 0.000000 ns (20,14) -> (20,14)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_22$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 36.0  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_22$CARRY.COUT
+Info:  0.0 36.0    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[12] budget 0.000000 ns (20,14) -> (20,14)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_21$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 36.1  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_21$CARRY.COUT
+Info:  0.0 36.1    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[13] budget 0.000000 ns (20,14) -> (20,14)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_20$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 36.2  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_20$CARRY.COUT
+Info:  0.0 36.2    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[14] budget 0.000000 ns (20,14) -> (20,14)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_19$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 36.3  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_19$CARRY.COUT
+Info:  0.0 36.3    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[15] budget 0.000000 ns (20,14) -> (20,14)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_18$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 36.5  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_18$CARRY.COUT
+Info:  0.2 36.7    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[16] budget 0.190000 ns (20,14) -> (20,15)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_17$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 36.8  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_17$CARRY.COUT
+Info:  0.0 36.8    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[17] budget 0.000000 ns (20,15) -> (20,15)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_16$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 36.9  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_16$CARRY.COUT
+Info:  0.0 36.9    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[18] budget 0.000000 ns (20,15) -> (20,15)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_15$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 37.0  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_15$CARRY.COUT
+Info:  0.0 37.0    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[19] budget 0.000000 ns (20,15) -> (20,15)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_14$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 37.2  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_14$CARRY.COUT
+Info:  0.0 37.2    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[20] budget 0.000000 ns (20,15) -> (20,15)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_12$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 37.3  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_12$CARRY.COUT
+Info:  0.0 37.3    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[21] budget 0.000000 ns (20,15) -> (20,15)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_11$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 37.4  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_11$CARRY.COUT
+Info:  0.0 37.4    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[22] budget 0.000000 ns (20,15) -> (20,15)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_10$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 37.5  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_10$CARRY.COUT
+Info:  0.0 37.5    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[23] budget 0.000000 ns (20,15) -> (20,15)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_9$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 37.7  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_9$CARRY.COUT
+Info:  0.2 37.9    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[24] budget 0.190000 ns (20,15) -> (20,16)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_8$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 38.0  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_8$CARRY.COUT
+Info:  0.0 38.0    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[25] budget 0.000000 ns (20,16) -> (20,16)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_7$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 38.1  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_7$CARRY.COUT
+Info:  0.0 38.1    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[26] budget 0.000000 ns (20,16) -> (20,16)
+Info:                Sink u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_6$CARRY.CIN
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.1 38.2  Source u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO_SB_CARRY_CO_6$CARRY.COUT
+Info:  0.3 38.5    Net $nextpnr_ICESTORM_LC_20$I3 budget 0.260000 ns (20,16) -> (20,16)
+Info:                Sink $nextpnr_ICESTORM_LC_20.I3
+Info:  0.3 38.8  Source $nextpnr_ICESTORM_LC_20.O
+Info:  0.6 39.4    Net u_engine.u_engine.prec_r_SB_LUT4_I3_O_SB_CARRY_I1_5_CO[27] budget 783.632019 ns (20,16) -> (20,16)
+Info:                Sink u_engine.u_engine.state_SB_DFFER_Q_E_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_O_1_LC.I2
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:89.7-94.6
+Info:                  rtl/cordic_engine.v:157.60-157.74
+Info:                  rtl/cordic_top.v:85.7-90.6
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:37.23-37.25
+Info:  0.4 39.8  Source u_engine.u_engine.state_SB_DFFER_Q_E_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_O_1_LC.O
+Info:  1.3 41.1    Net u_engine.u_engine.state_SB_DFFER_Q_E_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_LUT4_O_I1[0] budget 48.976002 ns (20,16) -> (19,23)
+Info:                Sink u_engine.u_engine.state_SB_DFFER_Q_E_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_LUT4_O_LC.I1
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.4 41.5  Source u_engine.u_engine.state_SB_DFFER_Q_E_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_LUT4_O_LC.O
+Info:  0.6 42.1    Net u_engine.u_engine.state_SB_DFFER_Q_E_SB_LUT4_O_I3_SB_LUT4_O_I2[1] budget 48.976002 ns (19,23) -> (19,24)
+Info:                Sink u_engine.u_engine.state_SB_DFFER_Q_E_SB_LUT4_O_I3_SB_LUT4_O_LC.I2
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.4 42.5  Source u_engine.u_engine.state_SB_DFFER_Q_E_SB_LUT4_O_I3_SB_LUT4_O_LC.O
+Info:  0.6 43.1    Net u_engine.u_engine.state_SB_DFFER_Q_E_SB_LUT4_O_I3[2] budget 48.976002 ns (19,24) -> (19,24)
+Info:                Sink u_engine.u_engine.state_SB_DFFER_Q_E_SB_LUT4_O_LC.I3
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.3 43.4  Source u_engine.u_engine.state_SB_DFFER_Q_E_SB_LUT4_O_LC.O
+Info:  0.9 44.3    Net u_engine.u_engine.state_SB_DFFER_Q_E budget 48.976002 ns (19,24) -> (19,24)
+Info:                Sink u_engine.u_engine.state_SB_DFFER_Q_DFFLC.CEN
+Info:  0.1 44.4  Setup u_engine.u_engine.state_SB_DFFER_Q_DFFLC.CEN
+Info: 20.2 ns logic, 24.2 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge clk$SB_IO_IN_$glb_clk':
+Info: curr total
+Info:  0.0  0.0  Source op$sb_io.D_IN_0
+Info:  3.4  3.4    Net op$SB_IO_IN budget 332.990997 ns (10,0) -> (3,19)
+Info:                Sink op_SB_LUT4_I3_1_LC.I3
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.3  3.7  Source op_SB_LUT4_I3_1_LC.O
+Info:  2.3  6.0    Net op_SB_LUT4_I3_1_O[3] budget 275.933990 ns (3,19) -> (13,14)
+Info:                Sink u_engine.u_engine.y_r_SB_DFFER_Q_13_D_SB_LUT4_O_I0_SB_LUT4_O_LC.I3
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.3  6.3  Source u_engine.u_engine.y_r_SB_DFFER_Q_13_D_SB_LUT4_O_I0_SB_LUT4_O_LC.O
+Info:  2.3  8.6    Net u_engine.u_engine.y_r_SB_DFFER_Q_13_D_SB_LUT4_O_I0[3] budget 165.559998 ns (13,14) -> (15,24)
+Info:                Sink u_engine.u_engine.y_r_SB_DFFER_Q_13_D_SB_LUT4_O_LC.I3
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.3  9.0  Setup u_engine.u_engine.y_r_SB_DFFER_Q_13_D_SB_LUT4_O_LC.I3
+Info: 1.0 ns logic, 8.0 ns routing
+
+Info: Critical path report for cross-domain path 'posedge clk$SB_IO_IN_$glb_clk' -> '<async>':
+Info: curr total
+Info:  0.5  0.5  Source rd_shift_SB_LUT4_I3_6_LC.O
+Info:  2.5  3.0    Net dout[1]$SB_IO_OUT budget 999.460022 ns (11,25) -> (33,25)
+Info:                Sink dout[1]$sb_io.D_OUT_0
+Info:                Defined in:
+Info:                  rtl/cordic_fpga_shell.v:64.25-64.32
+Info: 0.5 ns logic, 2.5 ns routing
+
+Info: Max frequency for clock 'clk$SB_IO_IN_$glb_clk': 22.51 MHz (PASS at 1.00 MHz)
+
+Info: Max delay <async>                       -> posedge clk$SB_IO_IN_$glb_clk: 8.96 ns
+Info: Max delay posedge clk$SB_IO_IN_$glb_clk -> <async>                      : 3.02 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 8 endpoint(s)
+Info:          + represents [1,8) endpoint(s)
+Info: [955581, 957750) |+
+Info: [957750, 959919) | 
+Info: [959919, 962088) | 
+Info: [962088, 964257) | 
+Info: [964257, 966426) |******+
+Info: [966426, 968595) |**************+
+Info: [968595, 970764) |+
+Info: [970764, 972933) |+
+Info: [972933, 975102) | 
+Info: [975102, 977271) | 
+Info: [977271, 979440) | 
+Info: [979440, 981609) | 
+Info: [981609, 983778) |+
+Info: [983778, 985947) |********+
+Info: [985947, 988116) |**+
+Info: [988116, 990285) |+
+Info: [990285, 992454) |********+
+Info: [992454, 994623) |*******************************************+
+Info: [994623, 996792) |*************************************************+
+Info: [996792, 998961) |************************************************************ 
+1 warning, 0 errors
+
+Info: Program finished normally.

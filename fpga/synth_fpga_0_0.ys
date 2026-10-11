@@ -1,0 +1,5 @@
+read_verilog -sv cordic_engine.v
+read_verilog -sv cordic_top.v
+hierarchy -top cordic_top -chparam DUAL_STEP 0 -chparam EARLY_STOP 0
+synth_ice40 -top cordic_top
+stat

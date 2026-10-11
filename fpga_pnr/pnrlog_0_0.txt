@@ -1,0 +1,39 @@
+Warning: No PCF file specified; IO pins will be placed automatically
+
+Info: Packing constants..
+Info: Packing IOs..
+Info: Packing LUT-FFs..
+Info:     1459 LCs used as LUT4 only
+Info:      114 LCs used as LUT4 and DFF
+Info: Packing non-LUT FFs..
+Info:        6 LCs used as DFF only
+Info: Packing carries..
+Info:      190 LCs used as CARRY only
+Info: Packing indirect carry+LUT pairs...
+Info:      156 LUTs merged into carry LCs
+Info: Packing RAMs..
+Info: Placing PLLs..
+Info: Packing special functions..
+Info: Packing PLLs..
+Info: Promoting globals..
+Info: promoting clk$SB_IO_IN (fanout 120)
+Info: promoting rst_n_SB_LUT4_I3_O [reset] (fanout 120)
+Info: promoting start_SB_LUT4_I1_O [cen] (fanout 109)
+Info: Constraining chains...
+Info:       26 LCs used to legalise carry chains.
+Info: Checksum: 0x25b85f9f
+
+Info: Annotating ports with timing budgets for target frequency 100.00 MHz
+Info: Checksum: 0xc883aa9e
+
+Info: Device utilisation:
+Info: 	         ICESTORM_LC:  1641/ 7680    21%
+Info: 	        ICESTORM_RAM:     0/   32     0%
+Info: 	               SB_IO:   207/  256    80%
+Info: 	               SB_GB:     3/    8    37%
+Info: 	        ICESTORM_PLL:     0/    2     0%
+Info: 	         SB_WARMBOOT:     0/    1     0%
+
+Info: Placed 0 cells based on constraints.
+ERROR: Unable to find a placement location for cell 'angle_out[20]$sb_io'
+1 warning, 1 error

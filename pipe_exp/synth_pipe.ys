@@ -1,0 +1,8 @@
+read_verilog -sv rtl/cordic_engine_pipe.v
+read_verilog -sv rtl/cordic_top_pipe.v
+hierarchy -top cordic_top_pipe -chparam DUAL_STEP 2 -chparam EARLY_STOP 1
+synth -top cordic_top_pipe
+dfflibmap -liberty sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty sky130_fd_sc_hd__tt_025C_1v80.lib
+write_verilog pipe_exp/netlist_pipe.v
+stat -liberty sky130_fd_sc_hd__tt_025C_1v80.lib

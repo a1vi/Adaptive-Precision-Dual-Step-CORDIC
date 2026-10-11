@@ -1,0 +1,2313 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Executing script file `pipe_exp/synth_pipe.ys' --
+
+1. Executing Verilog-2005 frontend: rtl/cordic_engine_pipe.v
+Parsing SystemVerilog input from `rtl/cordic_engine_pipe.v' to AST representation.
+Generating RTLIL representation for module `\cordic_engine_pipe'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: rtl/cordic_top_pipe.v
+Parsing SystemVerilog input from `rtl/cordic_top_pipe.v' to AST representation.
+Generating RTLIL representation for module `\cordic_top_pipe'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+Parameter \DUAL_STEP = 2
+Parameter \EARLY_STOP = 1
+
+4. Executing AST frontend in derive mode using pre-parsed AST for module `\cordic_top_pipe'.
+Parameter \DUAL_STEP = 2
+Parameter \EARLY_STOP = 1
+Generating RTLIL representation for module `$paramod$040a201310ea5b9793669014d6e90d9672b9a649\cordic_top_pipe'.
+
+4.1. Analyzing design hierarchy..
+Top module:  \cordic_top_pipe
+Used module:     \cordic_engine_pipe
+Parameter \PW = 32
+Parameter \FRAC = 20
+Parameter \ITMAX = 18
+Parameter \DUAL_STEP = 2
+Parameter \EARLY_STOP = 1
+
+4.2. Executing AST frontend in derive mode using pre-parsed AST for module `\cordic_engine_pipe'.
+Parameter \PW = 32
+Parameter \FRAC = 20
+Parameter \ITMAX = 18
+Parameter \DUAL_STEP = 2
+Parameter \EARLY_STOP = 1
+Generating RTLIL representation for module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe'.
+
+4.3. Analyzing design hierarchy..
+Top module:  \cordic_top_pipe
+Used module:     $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe
+
+4.4. Analyzing design hierarchy..
+Top module:  \cordic_top_pipe
+Used module:     $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe
+Removing unused module `$paramod$040a201310ea5b9793669014d6e90d9672b9a649\cordic_top_pipe'.
+Removing unused module `\cordic_engine_pipe'.
+Removed 2 unused modules.
+
+5. Executing SYNTH pass.
+
+5.1. Executing HIERARCHY pass (managing design hierarchy).
+
+5.1.1. Analyzing design hierarchy..
+Top module:  \cordic_top_pipe
+Used module:     $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe
+
+5.1.2. Analyzing design hierarchy..
+Top module:  \cordic_top_pipe
+Used module:     $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe
+Removed 0 unused modules.
+
+5.2. Executing PROC pass (convert processes to netlists).
+
+5.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:160$214'.
+Cleaned up 1 empty switch.
+
+5.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$rtl/cordic_engine_pipe.v:0$309 in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+Marked 1 switch rules as full_case in process $proc$rtl/cordic_engine_pipe.v:0$303 in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+Marked 1 switch rules as full_case in process $proc$rtl/cordic_engine_pipe.v:0$297 in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+Marked 3 switch rules as full_case in process $proc$rtl/cordic_engine_pipe.v:0$259 in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+Marked 3 switch rules as full_case in process $proc$rtl/cordic_engine_pipe.v:0$221 in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+Marked 3 switch rules as full_case in process $proc$rtl/cordic_engine_pipe.v:160$214 in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+Marked 4 switch rules as full_case in process $proc$rtl/cordic_top_pipe.v:45$158 in module cordic_top_pipe.
+Marked 1 switch rules as full_case in process $proc$rtl/cordic_top_pipe.v:72$167 in module cordic_top_pipe.
+Marked 2 switch rules as full_case in process $proc$rtl/cordic_top_pipe.v:92$170 in module cordic_top_pipe.
+Removed a total of 0 dead cases.
+
+5.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 55 assignments to connections.
+
+5.2.4. Executing PROC_INIT pass (extract init attributes).
+
+5.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:160$214'.
+Found async reset \rst_n in `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:72$167'.
+
+5.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 4 switches.
+<suppressed ~15 debug messages>
+
+5.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$309'.
+     1/1: $1\thresh_val$func$rtl/cordic_engine_pipe.v:153$192.$result[31:0]$314
+Creating decoders for process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$303'.
+     1/1: $1\floor_depth$func$rtl/cordic_engine_pipe.v:152$191.$result[4:0]$308
+Creating decoders for process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$297'.
+     1/1: $1\target_depth$func$rtl/cordic_engine_pipe.v:151$190.$result[4:0]$302
+Creating decoders for process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$259'.
+     1/9: $2\atan_lut$func$rtl/cordic_engine_pipe.v:131$189.$result[31:0]$295
+     2/9: $2\atan_lut$func$rtl/cordic_engine_pipe.v:127$188.$result[31:0]$289
+     3/9: $1\micro_step$func$rtl/cordic_engine_pipe.v:142$187.zn[31:0]$282
+     4/9: $1\atan_lut$func$rtl/cordic_engine_pipe.v:127$188.$result[31:0]$281
+     5/9: $1\atan_lut$func$rtl/cordic_engine_pipe.v:127$188.idx[4:0]$280
+     6/9: $1\micro_step$func$rtl/cordic_engine_pipe.v:142$187.yn[31:0]$283
+     7/9: $1\micro_step$func$rtl/cordic_engine_pipe.v:142$187.xn[31:0]$284
+     8/9: $1\atan_lut$func$rtl/cordic_engine_pipe.v:131$189.$result[31:0]$279
+     9/9: $1\atan_lut$func$rtl/cordic_engine_pipe.v:131$189.idx[4:0]$278
+Creating decoders for process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$221'.
+     1/9: $2\atan_lut$func$rtl/cordic_engine_pipe.v:131$186.$result[31:0]$257
+     2/9: $2\atan_lut$func$rtl/cordic_engine_pipe.v:127$185.$result[31:0]$251
+     3/9: $1\micro_step$func$rtl/cordic_engine_pipe.v:138$184.zn[31:0]$243
+     4/9: $1\atan_lut$func$rtl/cordic_engine_pipe.v:127$185.$result[31:0]$242
+     5/9: $1\atan_lut$func$rtl/cordic_engine_pipe.v:127$185.idx[4:0]$241
+     6/9: $1\micro_step$func$rtl/cordic_engine_pipe.v:138$184.yn[31:0]$244
+     7/9: $1\micro_step$func$rtl/cordic_engine_pipe.v:138$184.xn[31:0]$245
+     8/9: $1\atan_lut$func$rtl/cordic_engine_pipe.v:131$186.idx[4:0]$246
+     9/9: $1\atan_lut$func$rtl/cordic_engine_pipe.v:131$186.$result[31:0]$240
+Creating decoders for process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:223$220'.
+Creating decoders for process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:160$214'.
+     1/9: $0\mode_r[0:0]
+     2/9: $0\prec_r[1:0]
+     3/9: $0\iter[4:0]
+     4/9: $0\z_r[31:0]
+     5/9: $0\y_r[31:0]
+     6/9: $0\x_r[31:0]
+     7/9: $0\state[1:0]
+     8/9: $0\cycle_count[7:0]
+     9/9: $0\valid[0:0]
+Creating decoders for process `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:45$158'.
+     1/15: $2\atan_flip[0:0]
+     2/15: $2\y_in_e[31:0]
+     3/15: $2\x_in_e[31:0]
+     4/15: $3\quad_neg_sin[0:0]
+     5/15: $3\quad_neg_cos[0:0]
+     6/15: $3\z_in_e[31:0]
+     7/15: $2\quad_neg_sin[0:0]
+     8/15: $2\quad_neg_cos[0:0]
+     9/15: $2\z_in_e[31:0]
+    10/15: $1\z_in_e[31:0]
+    11/15: $1\quad_neg_sin[0:0]
+    12/15: $1\quad_neg_cos[0:0]
+    13/15: $1\y_in_e[31:0]
+    14/15: $1\x_in_e[31:0]
+    15/15: $1\atan_flip[0:0]
+Creating decoders for process `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:72$167'.
+     1/5: $0\y0_nonneg_r[0:0]
+     2/5: $0\atan_flip_r[0:0]
+     3/5: $0\quad_neg_sin_r[0:0]
+     4/5: $0\quad_neg_cos_r[0:0]
+     5/5: $0\mode_r[0:0]
+Creating decoders for process `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:92$170'.
+     1/4: $2\angle_out[31:0]
+     2/4: $1\angle_out[31:0]
+     3/4: $1\sin_out[31:0]
+     4/4: $1\cos_out[31:0]
+
+5.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\thresh_val$func$rtl/cordic_engine_pipe.v:153$183.$result' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$309'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\thresh_val$func$rtl/cordic_engine_pipe.v:153$192.$result' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$309'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\thresh_val$func$rtl/cordic_engine_pipe.v:153$192.m' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$309'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\thresh_val$func$rtl/cordic_engine_pipe.v:153$192.p' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$309'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\floor_depth$func$rtl/cordic_engine_pipe.v:152$191.p' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$303'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\floor_depth$func$rtl/cordic_engine_pipe.v:152$191.m' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$303'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\floor_depth$func$rtl/cordic_engine_pipe.v:152$191.$result' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$303'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\floor_depth$func$rtl/cordic_engine_pipe.v:152$182.$result' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$303'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\target_depth$func$rtl/cordic_engine_pipe.v:151$190.p' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$297'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\target_depth$func$rtl/cordic_engine_pipe.v:151$190.m' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$297'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\target_depth$func$rtl/cordic_engine_pipe.v:151$190.$result' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$297'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\target_depth$func$rtl/cordic_engine_pipe.v:151$181.$result' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$297'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\atan_lut$func$rtl/cordic_engine_pipe.v:131$189.idx' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$259'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\atan_lut$func$rtl/cordic_engine_pipe.v:131$189.$result' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$259'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\atan_lut$func$rtl/cordic_engine_pipe.v:127$188.idx' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$259'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\atan_lut$func$rtl/cordic_engine_pipe.v:127$188.$result' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$259'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:142$187.zn' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$259'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:142$187.yn' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$259'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:142$187.xn' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$259'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:142$187.d_pos' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$259'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:142$187.m' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$259'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:142$187.i' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$259'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:142$187.z' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$259'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:142$187.y' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$259'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:142$187.x' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$259'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:142$187.$result' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$259'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:142$180.$result' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$259'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\atan_lut$func$rtl/cordic_engine_pipe.v:131$186.$result' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$221'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\atan_lut$func$rtl/cordic_engine_pipe.v:127$185.idx' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$221'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\atan_lut$func$rtl/cordic_engine_pipe.v:127$185.$result' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$221'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:138$184.zn' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$221'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:138$184.yn' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$221'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:138$184.xn' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$221'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:138$184.d_pos' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$221'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:138$184.m' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$221'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:138$184.i' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$221'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:138$184.z' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$221'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:138$184.y' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$221'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:138$184.x' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$221'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:138$184.$result' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$221'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\atan_lut$func$rtl/cordic_engine_pipe.v:131$186.idx' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$221'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\micro_step$func$rtl/cordic_engine_pipe.v:138$179.$result' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$221'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\x_out' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:223$220'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\y_out' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:223$220'.
+No latch inferred for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\z_out' from process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:223$220'.
+No latch inferred for signal `\cordic_top_pipe.\quad_neg_cos' from process `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:45$158'.
+No latch inferred for signal `\cordic_top_pipe.\quad_neg_sin' from process `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:45$158'.
+No latch inferred for signal `\cordic_top_pipe.\atan_flip' from process `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:45$158'.
+No latch inferred for signal `\cordic_top_pipe.\x_in_e' from process `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:45$158'.
+No latch inferred for signal `\cordic_top_pipe.\y_in_e' from process `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:45$158'.
+No latch inferred for signal `\cordic_top_pipe.\z_in_e' from process `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:45$158'.
+No latch inferred for signal `\cordic_top_pipe.\mode_e' from process `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:45$158'.
+No latch inferred for signal `\cordic_top_pipe.\cos_out' from process `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:92$170'.
+No latch inferred for signal `\cordic_top_pipe.\sin_out' from process `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:92$170'.
+No latch inferred for signal `\cordic_top_pipe.\angle_out' from process `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:92$170'.
+
+5.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\valid' using process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:160$214'.
+  created $adff cell `$procdff$579' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\cycle_count' using process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:160$214'.
+  created $adff cell `$procdff$580' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\state' using process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:160$214'.
+  created $adff cell `$procdff$581' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\x_r' using process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:160$214'.
+  created $adff cell `$procdff$582' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\y_r' using process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:160$214'.
+  created $adff cell `$procdff$583' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\z_r' using process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:160$214'.
+  created $adff cell `$procdff$584' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\iter' using process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:160$214'.
+  created $adff cell `$procdff$585' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\prec_r' using process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:160$214'.
+  created $adff cell `$procdff$586' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.\mode_r' using process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:160$214'.
+  created $adff cell `$procdff$587' with positive edge clock and negative level reset.
+Creating register for signal `\cordic_top_pipe.\mode_r' using process `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:72$167'.
+  created $adff cell `$procdff$588' with positive edge clock and negative level reset.
+Creating register for signal `\cordic_top_pipe.\quad_neg_cos_r' using process `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:72$167'.
+  created $adff cell `$procdff$589' with positive edge clock and negative level reset.
+Creating register for signal `\cordic_top_pipe.\quad_neg_sin_r' using process `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:72$167'.
+  created $adff cell `$procdff$590' with positive edge clock and negative level reset.
+Creating register for signal `\cordic_top_pipe.\atan_flip_r' using process `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:72$167'.
+  created $adff cell `$procdff$591' with positive edge clock and negative level reset.
+Creating register for signal `\cordic_top_pipe.\y0_nonneg_r' using process `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:72$167'.
+  created $adff cell `$procdff$592' with positive edge clock and negative level reset.
+
+5.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+5.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$309'.
+Removing empty process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$309'.
+Found and cleaned up 1 empty switch in `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$303'.
+Removing empty process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$303'.
+Found and cleaned up 1 empty switch in `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$297'.
+Removing empty process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$297'.
+Found and cleaned up 3 empty switches in `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$259'.
+Removing empty process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$259'.
+Found and cleaned up 3 empty switches in `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$221'.
+Removing empty process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:0$221'.
+Removing empty process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:223$220'.
+Found and cleaned up 3 empty switches in `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:160$214'.
+Removing empty process `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$proc$rtl/cordic_engine_pipe.v:160$214'.
+Found and cleaned up 4 empty switches in `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:45$158'.
+Removing empty process `cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:45$158'.
+Found and cleaned up 1 empty switch in `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:72$167'.
+Removing empty process `cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:72$167'.
+Found and cleaned up 2 empty switches in `\cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:92$170'.
+Removing empty process `cordic_top_pipe.$proc$rtl/cordic_top_pipe.v:92$170'.
+Cleaned up 19 empty switches.
+
+5.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+<suppressed ~12 debug messages>
+Optimizing module cordic_top_pipe.
+<suppressed ~21 debug messages>
+
+5.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+Optimizing module cordic_top_pipe.
+
+5.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+Finding unused cells or wires in module \cordic_top_pipe..
+Removed 45 unused cells and 264 unused wires.
+<suppressed ~63 debug messages>
+
+5.5. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe...
+Checking module cordic_top_pipe...
+Found and reported 0 problems.
+
+5.6. Executing OPT pass (performing simple optimizations).
+
+5.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+Optimizing module cordic_top_pipe.
+
+5.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe'.
+<suppressed ~63 debug messages>
+Finding identical cells in module `\cordic_top_pipe'.
+Removed a total of 21 cells.
+
+5.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $ternary$rtl/cordic_engine_pipe.v:148$197: \resid1 -> { 1'0 \resid1 [30:0] }
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cordic_top_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$477.
+    dead port 2/2 on $mux $procmux$483.
+    dead port 2/2 on $mux $procmux$489.
+    dead port 1/2 on $mux $procmux$496.
+    dead port 1/2 on $mux $procmux$498.
+    dead port 1/2 on $mux $procmux$505.
+    dead port 1/2 on $mux $procmux$507.
+    dead port 1/2 on $mux $procmux$514.
+    dead port 1/2 on $mux $procmux$516.
+    dead port 1/2 on $mux $procmux$522.
+    dead port 1/2 on $mux $procmux$528.
+    dead port 1/2 on $mux $procmux$534.
+    dead port 2/2 on $mux $procmux$568.
+Removed 13 multiplexer ports.
+<suppressed ~30 debug messages>
+
+5.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+  Optimizing cells in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+  Optimizing cells in module \cordic_top_pipe.
+Performed a total of 1 changes.
+
+5.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe'.
+Finding identical cells in module `\cordic_top_pipe'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+5.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+Finding unused cells or wires in module \cordic_top_pipe..
+Removed 0 unused cells and 36 unused wires.
+<suppressed ~2 debug messages>
+
+5.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+Optimizing module cordic_top_pipe.
+
+5.6.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cordic_top_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~31 debug messages>
+
+5.6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+  Optimizing cells in module \cordic_top_pipe.
+Performed a total of 0 changes.
+
+5.6.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe'.
+Finding identical cells in module `\cordic_top_pipe'.
+Removed a total of 0 cells.
+
+5.6.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+Finding unused cells or wires in module \cordic_top_pipe..
+
+5.6.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+Optimizing module cordic_top_pipe.
+
+5.6.16. Finished OPT passes. (There is nothing left to do.)
+
+5.7. Executing FSM pass (extract and optimize FSM).
+
+5.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.state as FSM state register:
+    Circuit seems to be self-resetting.
+
+5.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+5.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+5.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+Finding unused cells or wires in module \cordic_top_pipe..
+
+5.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+5.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+5.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+5.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+5.8. Executing OPT pass (performing simple optimizations).
+
+5.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+Optimizing module cordic_top_pipe.
+
+5.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe'.
+Finding identical cells in module `\cordic_top_pipe'.
+Removed a total of 0 cells.
+
+5.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cordic_top_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~31 debug messages>
+
+5.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+  Optimizing cells in module \cordic_top_pipe.
+Performed a total of 0 changes.
+
+5.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe'.
+Finding identical cells in module `\cordic_top_pipe'.
+Removed a total of 0 cells.
+
+5.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$587 ($adff) from module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe (D = \mode, Q = \mode_r).
+Adding EN signal on $procdff$586 ($adff) from module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe (D = \prec_sel, Q = \prec_r).
+Adding EN signal on $procdff$585 ($adff) from module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe (D = $0\iter[4:0], Q = \iter).
+Adding EN signal on $procdff$584 ($adff) from module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe (D = $0\z_r[31:0], Q = \z_r).
+Adding EN signal on $procdff$583 ($adff) from module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe (D = $0\y_r[31:0], Q = \y_r).
+Adding EN signal on $procdff$582 ($adff) from module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe (D = $0\x_r[31:0], Q = \x_r).
+Adding EN signal on $procdff$581 ($adff) from module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe (D = $0\state[1:0], Q = \state).
+Adding EN signal on $procdff$580 ($adff) from module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe (D = $0\cycle_count[7:0], Q = \cycle_count).
+Adding EN signal on $procdff$579 ($adff) from module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe (D = $0\valid[0:0], Q = \valid).
+Adding EN signal on $procdff$592 ($adff) from module cordic_top_pipe (D = $ge$rtl/cordic_top_pipe.v:79$169_Y, Q = \y0_nonneg_r).
+Adding EN signal on $procdff$591 ($adff) from module cordic_top_pipe (D = \atan_flip, Q = \atan_flip_r).
+Adding EN signal on $procdff$590 ($adff) from module cordic_top_pipe (D = \quad_neg_sin, Q = \quad_neg_sin_r).
+Adding EN signal on $procdff$589 ($adff) from module cordic_top_pipe (D = \quad_neg_cos, Q = \quad_neg_cos_r).
+Adding EN signal on $procdff$588 ($adff) from module cordic_top_pipe (D = \op, Q = \mode_r).
+
+5.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+Finding unused cells or wires in module \cordic_top_pipe..
+Removed 9 unused cells and 9 unused wires.
+<suppressed ~11 debug messages>
+
+5.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+<suppressed ~6 debug messages>
+Optimizing module cordic_top_pipe.
+
+5.8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cordic_top_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~27 debug messages>
+
+5.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+  Optimizing cells in module \cordic_top_pipe.
+Performed a total of 0 changes.
+
+5.8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe'.
+<suppressed ~42 debug messages>
+Finding identical cells in module `\cordic_top_pipe'.
+Removed a total of 14 cells.
+
+5.8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+Finding unused cells or wires in module \cordic_top_pipe..
+Removed 0 unused cells and 14 unused wires.
+<suppressed ~1 debug messages>
+
+5.8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+Optimizing module cordic_top_pipe.
+
+5.8.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.8.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cordic_top_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~27 debug messages>
+
+5.8.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+  Optimizing cells in module \cordic_top_pipe.
+Performed a total of 0 changes.
+
+5.8.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe'.
+Finding identical cells in module `\cordic_top_pipe'.
+Removed a total of 0 cells.
+
+5.8.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.8.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+Finding unused cells or wires in module \cordic_top_pipe..
+
+5.8.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+Optimizing module cordic_top_pipe.
+
+5.8.23. Finished OPT passes. (There is nothing left to do.)
+
+5.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 27 address bits (of 32) from memory init port $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$mem.cc:319:emit$326 ($auto$proc_rom.cc:150:do_switch$324).
+Removed top 27 address bits (of 32) from memory init port $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$mem.cc:319:emit$330 ($auto$proc_rom.cc:150:do_switch$328).
+Removed top 1 bits (of 2) from port B of cell $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$procmux$421_CMP0 ($eq).
+Removed top 2 bits (of 5) from mux cell $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$procmux$336 ($pmux).
+Removed top 1 bits (of 2) from port B of cell $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$opt_dff.cc:195:make_patterns_logic$631 ($ne).
+Removed top 23 bits (of 32) from mux cell $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$procmux$332 ($pmux).
+Removed top 1 bits (of 2) from port B of cell $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$procmux$333_CMP0 ($eq).
+Removed top 31 bits (of 32) from port B of cell $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$add$rtl/cordic_engine_pipe.v:155$200 ($add).
+Removed top 26 bits (of 32) from port Y of cell $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$add$rtl/cordic_engine_pipe.v:155$200 ($add).
+Removed top 26 bits (of 32) from port A of cell $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$ge$rtl/cordic_engine_pipe.v:155$201 ($ge).
+Removed top 1 bits (of 5) from port B of cell $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$ge$rtl/cordic_engine_pipe.v:155$201 ($ge).
+Removed top 22 bits (of 32) from port B of cell $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$lt$rtl/cordic_engine_pipe.v:155$203 ($lt).
+Removed top 26 bits (of 32) from port A of cell $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$ge$rtl/cordic_engine_pipe.v:156$206 ($ge).
+Removed top 7 bits (of 8) from port B of cell $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$add$rtl/cordic_engine_pipe.v:176$216 ($add).
+Removed top 4 bits (of 5) from port B of cell $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$add$rtl/cordic_engine_pipe.v:207$218 ($add).
+Removed top 31 bits (of 32) from port B of cell $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$lt$rtl/cordic_engine_pipe.v:123$237 ($lt).
+Removed top 31 bits (of 32) from port B of cell $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$ge$rtl/cordic_engine_pipe.v:123$238 ($ge).
+Removed top 26 bits (of 32) from wire $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$add$rtl/cordic_engine_pipe.v:155$200_Y.
+Removed top 2 bits (of 5) from wire $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.flr.
+Removed top 23 bits (of 32) from wire $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.th.
+Removed top 10 bits (of 32) from port B of cell cordic_top_pipe.$gt$rtl/cordic_top_pipe.v:54$160 ($gt).
+Removed top 9 bits (of 32) from port A of cell cordic_top_pipe.$sub$rtl/cordic_top_pipe.v:55$161 ($sub).
+Removed top 10 bits (of 32) from port B of cell cordic_top_pipe.$lt$rtl/cordic_top_pipe.v:56$162 ($lt).
+Removed top 9 bits (of 32) from port B of cell cordic_top_pipe.$add$rtl/cordic_top_pipe.v:57$163 ($add).
+Removed top 31 bits (of 32) from port B of cell cordic_top_pipe.$lt$rtl/cordic_top_pipe.v:62$164 ($lt).
+Removed top 31 bits (of 32) from port B of cell cordic_top_pipe.$ge$rtl/cordic_top_pipe.v:79$169 ($ge).
+Removed top 9 bits (of 32) from port B of cell cordic_top_pipe.$add$rtl/cordic_top_pipe.v:101$176 ($add).
+Removed top 9 bits (of 32) from port B of cell cordic_top_pipe.$sub$rtl/cordic_top_pipe.v:101$177 ($sub).
+
+5.10. Executing PEEPOPT pass (run peephole optimizers).
+
+5.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+Finding unused cells or wires in module \cordic_top_pipe..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+5.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe:
+  creating $macc model for $add$rtl/cordic_engine_pipe.v:126$250 ($add).
+  creating $macc model for $add$rtl/cordic_engine_pipe.v:129$254 ($add).
+  creating $macc model for $add$rtl/cordic_engine_pipe.v:131$258 ($add).
+  creating $macc model for $add$rtl/cordic_engine_pipe.v:155$200 ($add).
+  creating $macc model for $add$rtl/cordic_engine_pipe.v:176$216 ($add).
+  creating $macc model for $add$rtl/cordic_engine_pipe.v:207$218 ($add).
+  creating $macc model for $neg$rtl/cordic_engine_pipe.v:148$196 ($neg).
+  creating $macc model for $sub$rtl/cordic_engine_pipe.v:125$248 ($sub).
+  creating $macc model for $sub$rtl/cordic_engine_pipe.v:127$252 ($sub).
+  creating $macc model for $sub$rtl/cordic_engine_pipe.v:130$256 ($sub).
+  creating $alu model for $macc $sub$rtl/cordic_engine_pipe.v:130$256.
+  creating $alu model for $macc $sub$rtl/cordic_engine_pipe.v:127$252.
+  creating $alu model for $macc $sub$rtl/cordic_engine_pipe.v:125$248.
+  creating $alu model for $macc $neg$rtl/cordic_engine_pipe.v:148$196.
+  creating $alu model for $macc $add$rtl/cordic_engine_pipe.v:207$218.
+  creating $alu model for $macc $add$rtl/cordic_engine_pipe.v:176$216.
+  creating $alu model for $macc $add$rtl/cordic_engine_pipe.v:155$200.
+  creating $alu model for $macc $add$rtl/cordic_engine_pipe.v:131$258.
+  creating $alu model for $macc $add$rtl/cordic_engine_pipe.v:129$254.
+  creating $alu model for $macc $add$rtl/cordic_engine_pipe.v:126$250.
+  creating $alu model for $ge$rtl/cordic_engine_pipe.v:123$238 ($ge): new $alu
+  creating $alu model for $ge$rtl/cordic_engine_pipe.v:155$201 ($ge): new $alu
+  creating $alu model for $ge$rtl/cordic_engine_pipe.v:156$206 ($ge): new $alu
+  creating $alu model for $lt$rtl/cordic_engine_pipe.v:123$237 ($lt): new $alu
+  creating $alu model for $lt$rtl/cordic_engine_pipe.v:155$203 ($lt): new $alu
+  creating $alu cell for $lt$rtl/cordic_engine_pipe.v:155$203: $auto$alumacc.cc:485:replace_alu$657
+  creating $alu cell for $lt$rtl/cordic_engine_pipe.v:123$237: $auto$alumacc.cc:485:replace_alu$670
+  creating $alu cell for $ge$rtl/cordic_engine_pipe.v:156$206: $auto$alumacc.cc:485:replace_alu$683
+  creating $alu cell for $ge$rtl/cordic_engine_pipe.v:155$201: $auto$alumacc.cc:485:replace_alu$692
+  creating $alu cell for $ge$rtl/cordic_engine_pipe.v:123$238: $auto$alumacc.cc:485:replace_alu$701
+  creating $alu cell for $add$rtl/cordic_engine_pipe.v:126$250: $auto$alumacc.cc:485:replace_alu$712
+  creating $alu cell for $add$rtl/cordic_engine_pipe.v:129$254: $auto$alumacc.cc:485:replace_alu$715
+  creating $alu cell for $add$rtl/cordic_engine_pipe.v:131$258: $auto$alumacc.cc:485:replace_alu$718
+  creating $alu cell for $add$rtl/cordic_engine_pipe.v:176$216: $auto$alumacc.cc:485:replace_alu$721
+  creating $alu cell for $add$rtl/cordic_engine_pipe.v:155$200: $auto$alumacc.cc:485:replace_alu$724
+  creating $alu cell for $add$rtl/cordic_engine_pipe.v:207$218: $auto$alumacc.cc:485:replace_alu$727
+  creating $alu cell for $neg$rtl/cordic_engine_pipe.v:148$196: $auto$alumacc.cc:485:replace_alu$730
+  creating $alu cell for $sub$rtl/cordic_engine_pipe.v:125$248: $auto$alumacc.cc:485:replace_alu$733
+  creating $alu cell for $sub$rtl/cordic_engine_pipe.v:127$252: $auto$alumacc.cc:485:replace_alu$736
+  creating $alu cell for $sub$rtl/cordic_engine_pipe.v:130$256: $auto$alumacc.cc:485:replace_alu$739
+  created 15 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module cordic_top_pipe:
+  creating $macc model for $add$rtl/cordic_top_pipe.v:101$176 ($add).
+  creating $macc model for $add$rtl/cordic_top_pipe.v:57$163 ($add).
+  creating $macc model for $neg$rtl/cordic_top_pipe.v:63$165 ($neg).
+  creating $macc model for $neg$rtl/cordic_top_pipe.v:63$166 ($neg).
+  creating $macc model for $neg$rtl/cordic_top_pipe.v:94$172 ($neg).
+  creating $macc model for $neg$rtl/cordic_top_pipe.v:95$174 ($neg).
+  creating $macc model for $sub$rtl/cordic_top_pipe.v:101$177 ($sub).
+  creating $macc model for $sub$rtl/cordic_top_pipe.v:55$161 ($sub).
+  creating $alu model for $macc $sub$rtl/cordic_top_pipe.v:55$161.
+  creating $alu model for $macc $sub$rtl/cordic_top_pipe.v:101$177.
+  creating $alu model for $macc $neg$rtl/cordic_top_pipe.v:95$174.
+  creating $alu model for $macc $neg$rtl/cordic_top_pipe.v:94$172.
+  creating $alu model for $macc $neg$rtl/cordic_top_pipe.v:63$166.
+  creating $alu model for $macc $neg$rtl/cordic_top_pipe.v:63$165.
+  creating $alu model for $macc $add$rtl/cordic_top_pipe.v:57$163.
+  creating $alu model for $macc $add$rtl/cordic_top_pipe.v:101$176.
+  creating $alu model for $ge$rtl/cordic_top_pipe.v:79$169 ($ge): new $alu
+  creating $alu model for $gt$rtl/cordic_top_pipe.v:54$160 ($gt): new $alu
+  creating $alu model for $lt$rtl/cordic_top_pipe.v:56$162 ($lt): new $alu
+  creating $alu model for $lt$rtl/cordic_top_pipe.v:62$164 ($lt): new $alu
+  creating $alu cell for $lt$rtl/cordic_top_pipe.v:62$164: $auto$alumacc.cc:485:replace_alu$746
+  creating $alu cell for $lt$rtl/cordic_top_pipe.v:56$162: $auto$alumacc.cc:485:replace_alu$759
+  creating $alu cell for $gt$rtl/cordic_top_pipe.v:54$160: $auto$alumacc.cc:485:replace_alu$772
+  creating $alu cell for $ge$rtl/cordic_top_pipe.v:79$169: $auto$alumacc.cc:485:replace_alu$779
+  creating $alu cell for $add$rtl/cordic_top_pipe.v:101$176: $auto$alumacc.cc:485:replace_alu$790
+  creating $alu cell for $neg$rtl/cordic_top_pipe.v:63$165: $auto$alumacc.cc:485:replace_alu$793
+  creating $alu cell for $neg$rtl/cordic_top_pipe.v:63$166: $auto$alumacc.cc:485:replace_alu$796
+  creating $alu cell for $neg$rtl/cordic_top_pipe.v:94$172: $auto$alumacc.cc:485:replace_alu$799
+  creating $alu cell for $neg$rtl/cordic_top_pipe.v:95$174: $auto$alumacc.cc:485:replace_alu$802
+  creating $alu cell for $sub$rtl/cordic_top_pipe.v:101$177: $auto$alumacc.cc:485:replace_alu$805
+  creating $alu cell for $add$rtl/cordic_top_pipe.v:57$163: $auto$alumacc.cc:485:replace_alu$808
+  creating $alu cell for $sub$rtl/cordic_top_pipe.v:55$161: $auto$alumacc.cc:485:replace_alu$811
+  created 12 $alu and 0 $macc cells.
+
+5.13. Executing SHARE pass (SAT-based resource sharing).
+Found 4 cells in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe that may be considered for resource sharing.
+  Analyzing resource sharing options for $sshr$rtl/cordic_engine_pipe.v:126$249 ($sshr):
+    Found 2 activation_patterns using ctrl signal { $procmux$421_CMP \mode_r }.
+    Found 1 candidates: $sshr$rtl/cordic_engine_pipe.v:125$247
+    Analyzing resource sharing with $sshr$rtl/cordic_engine_pipe.v:125$247 ($sshr):
+      Found 1 activation_patterns using ctrl signal $procmux$421_CMP.
+      Forbidden control signals for this pair of cells: { $logic_or$rtl/cordic_engine_pipe.v:206$217_Y \resid1 [31] }
+      Activation pattern for cell $sshr$rtl/cordic_engine_pipe.v:126$249: $procmux$421_CMP = 1'1
+      Activation pattern for cell $sshr$rtl/cordic_engine_pipe.v:126$249: \mode_r = 1'1
+      Activation pattern for cell $sshr$rtl/cordic_engine_pipe.v:125$247: $procmux$421_CMP = 1'1
+      Size of SAT problem: 0 cells, 22 variables, 53 clauses
+      According to the SAT solver this pair of cells can not be shared.
+      Model from SAT solver: { $procmux$421_CMP \mode_r } = 2'11
+  Analyzing resource sharing options for $sshr$rtl/cordic_engine_pipe.v:125$247 ($sshr):
+    Found 1 activation_patterns using ctrl signal $procmux$421_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $auto$mem.cc:273:emit$329 ($memrd_v2):
+    Found 2 activation_patterns using ctrl signal { $0\micro_step$func$rtl/cordic_engine_pipe.v:138$184.d_pos[0:0]$228 $procmux$421_CMP \mode_r }.
+    No candidates found.
+  Analyzing resource sharing options for $auto$mem.cc:273:emit$325 ($memrd_v2):
+    Found 2 activation_patterns using ctrl signal { $0\micro_step$func$rtl/cordic_engine_pipe.v:138$184.d_pos[0:0]$228 $procmux$421_CMP \mode_r }.
+    No candidates found.
+
+5.14. Executing OPT pass (performing simple optimizations).
+
+5.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+Optimizing module cordic_top_pipe.
+<suppressed ~5 debug messages>
+
+5.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe'.
+Finding identical cells in module `\cordic_top_pipe'.
+Removed a total of 0 cells.
+
+5.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cordic_top_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~27 debug messages>
+
+5.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+  Optimizing cells in module \cordic_top_pipe.
+Performed a total of 0 changes.
+
+5.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe'.
+Finding identical cells in module `\cordic_top_pipe'.
+Removed a total of 0 cells.
+
+5.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+Finding unused cells or wires in module \cordic_top_pipe..
+Removed 2 unused cells and 11 unused wires.
+<suppressed ~4 debug messages>
+
+5.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+Optimizing module cordic_top_pipe.
+
+5.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cordic_top_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~27 debug messages>
+
+5.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+  Optimizing cells in module \cordic_top_pipe.
+Performed a total of 0 changes.
+
+5.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe'.
+Finding identical cells in module `\cordic_top_pipe'.
+Removed a total of 0 cells.
+
+5.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+Finding unused cells or wires in module \cordic_top_pipe..
+
+5.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+Optimizing module cordic_top_pipe.
+
+5.14.16. Finished OPT passes. (There is nothing left to do.)
+
+5.15. Executing MEMORY pass.
+
+5.15.1. Executing OPT_MEM pass (optimize memories).
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$324: removing const-0 lane 20
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$324: removing const-0 lane 21
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$324: removing const-0 lane 22
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$324: removing const-0 lane 23
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$324: removing const-0 lane 24
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$324: removing const-0 lane 25
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$324: removing const-0 lane 26
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$324: removing const-0 lane 27
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$324: removing const-0 lane 28
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$324: removing const-0 lane 29
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$324: removing const-0 lane 30
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$324: removing const-0 lane 31
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$328: removing const-0 lane 20
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$328: removing const-0 lane 21
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$328: removing const-0 lane 22
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$328: removing const-0 lane 23
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$328: removing const-0 lane 24
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$328: removing const-0 lane 25
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$328: removing const-0 lane 26
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$328: removing const-0 lane 27
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$328: removing const-0 lane 28
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$328: removing const-0 lane 29
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$328: removing const-0 lane 30
+$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.$auto$proc_rom.cc:150:do_switch$328: removing const-0 lane 31
+Performed a total of 2 transformations.
+
+5.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+5.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+5.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+5.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `$auto$proc_rom.cc:150:do_switch$324'[0] in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe': no output FF found.
+Checking read port `$auto$proc_rom.cc:150:do_switch$328'[0] in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe': no output FF found.
+Checking read port address `$auto$proc_rom.cc:150:do_switch$324'[0] in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe': address FF has async set and/or reset, not supported.
+Checking read port address `$auto$proc_rom.cc:150:do_switch$328'[0] in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe': address FF has async set and/or reset, not supported.
+
+5.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+Finding unused cells or wires in module \cordic_top_pipe..
+
+5.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+5.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+5.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+Finding unused cells or wires in module \cordic_top_pipe..
+
+5.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+5.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+Finding unused cells or wires in module \cordic_top_pipe..
+
+5.17. Executing OPT pass (performing simple optimizations).
+
+5.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+<suppressed ~17 debug messages>
+Optimizing module cordic_top_pipe.
+<suppressed ~5 debug messages>
+
+5.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe'.
+Finding identical cells in module `\cordic_top_pipe'.
+Removed a total of 0 cells.
+
+5.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+Finding unused cells or wires in module \cordic_top_pipe..
+Removed 0 unused cells and 11 unused wires.
+<suppressed ~1 debug messages>
+
+5.17.5. Finished fast OPT passes.
+
+5.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory $auto$proc_rom.cc:150:do_switch$324 in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe:
+  created 32 $dff cells and 0 static cells of width 20.
+  read interface: 0 $dff and 31 $mux cells.
+  write interface: 0 write mux blocks.
+Mapping memory $auto$proc_rom.cc:150:do_switch$328 in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe:
+  created 32 $dff cells and 0 static cells of width 20.
+  read interface: 0 $dff and 31 $mux cells.
+  write interface: 0 write mux blocks.
+
+5.19. Executing OPT pass (performing simple optimizations).
+
+5.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+<suppressed ~22 debug messages>
+Optimizing module cordic_top_pipe.
+
+5.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe'.
+Finding identical cells in module `\cordic_top_pipe'.
+Removed a total of 0 cells.
+
+5.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cordic_top_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+5.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][4][7]$983:
+      Old ports: A=20'00000000000001000000, B=20'00000000000000100000, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][3]$b$949
+      New ports: A=2'10, B=2'01, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][3]$b$949 [6:5]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][3]$b$949 [19:7] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][3]$b$949 [4:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][4][3]$971:
+      Old ports: A=20'00000011111111111111, B=20'00000010000000000001, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$b$943
+      New ports: A=1'1, B=1'0, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$b$943 [1]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$b$943 [19:2] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$b$943 [0] } = { 7'0000001 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$b$943 [1] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$b$943 [1] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$b$943 [1] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$b$943 [1] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$b$943 [1] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$b$943 [1] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$b$943 [1] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$b$943 [1] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$b$943 [1] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$b$943 [1] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$b$943 [1] 1'1 }
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][4][1]$965:
+      Old ports: A=20'00111110101101101111, B=20'00011111110101011100, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$b$940
+      New ports: A=2'01, B=2'10, Y={ $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$b$940 [4] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$b$940 [0] }
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$b$940 [19:5] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$b$940 [3:1] } = { 2'00 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$b$940 [0] 4'1111 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$b$940 [4] 1'1 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$b$940 [4] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$b$940 [0] 3'101 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$b$940 [0] 2'11 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$b$940 [0] }
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][4][8]$893:
+      Old ports: A=20'00000000000000010000, B=20'00000000000000001000, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][4]$a$858
+      New ports: A=2'10, B=2'01, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][4]$a$858 [4:3]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][4]$a$858 [19:5] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][4]$a$858 [2:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][4][7]$890:
+      Old ports: A=20'00000000000001000000, B=20'00000000000000100000, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][3]$b$856
+      New ports: A=2'10, B=2'01, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][3]$b$856 [6:5]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][3]$b$856 [19:7] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][3]$b$856 [4:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][4][6]$887:
+      Old ports: A=20'00000000000100000000, B=20'00000000000010000000, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][3]$a$855
+      New ports: A=2'10, B=2'01, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][3]$a$855 [8:7]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][3]$a$855 [19:9] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][3]$a$855 [6:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][4][5]$884:
+      Old ports: A=20'00000000010000000000, B=20'00000000001000000000, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][2]$b$853
+      New ports: A=2'10, B=2'01, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][2]$b$853 [10:9]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][2]$b$853 [19:11] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][2]$b$853 [8:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][4][4]$881:
+      Old ports: A=20'00000001000000000000, B=20'00000000100000000000, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][2]$a$852
+      New ports: A=2'10, B=2'01, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][2]$a$852 [12:11]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][2]$a$852 [19:13] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][2]$a$852 [10:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][4][3]$878:
+      Old ports: A=20'00000011111111111111, B=20'00000010000000000001, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$b$850
+      New ports: A=1'1, B=1'0, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$b$850 [1]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$b$850 [19:2] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$b$850 [0] } = { 7'0000001 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$b$850 [1] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$b$850 [1] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$b$850 [1] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$b$850 [1] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$b$850 [1] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$b$850 [1] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$b$850 [1] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$b$850 [1] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$b$850 [1] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$b$850 [1] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$b$850 [1] 1'1 }
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][4][2]$875:
+      Old ports: A=20'00001111111110101011, B=20'00000111111111110101, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$a$849
+      New ports: A=2'01, B=2'10, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$a$849 [2:1]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$a$849 [19:3] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$a$849 [0] } = { 4'0000 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$a$849 [1] 8'11111111 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$a$849 [2] 1'1 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$a$849 [2:1] 1'1 }
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][4][1]$872:
+      Old ports: A=20'00111110101101101111, B=20'00011111110101011100, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$b$847
+      New ports: A=2'01, B=2'10, Y={ $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$b$847 [4] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$b$847 [0] }
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$b$847 [19:5] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$b$847 [3:1] } = { 2'00 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$b$847 [0] 4'1111 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$b$847 [4] 1'1 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$b$847 [4] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$b$847 [0] 3'101 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$b$847 [0] 2'11 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$b$847 [0] }
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][4][0]$869:
+      Old ports: A=20'11001001000011111110, B=20'01110110101100011010, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846
+      New ports: A=2'01, B=2'10, Y={ $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [8] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [2] }
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [19:9] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [7:3] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [1:0] } = { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [2] 1'1 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [8] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [8] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [2] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [8] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [8] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [2] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [8] 1'0 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [8] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [2] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [2] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [2] 4'1110 }
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][4][5]$977:
+      Old ports: A=20'00000000010000000000, B=20'00000000001000000000, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][2]$b$946
+      New ports: A=2'10, B=2'01, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][2]$b$946 [10:9]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][2]$b$946 [19:11] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][2]$b$946 [8:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][4][8]$986:
+      Old ports: A=20'00000000000000010000, B=20'00000000000000001000, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][4]$a$951
+      New ports: A=2'10, B=2'01, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][4]$a$951 [4:3]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][4]$a$951 [19:5] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][4]$a$951 [2:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][4][2]$968:
+      Old ports: A=20'00001111111110101011, B=20'00000111111111110101, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$a$942
+      New ports: A=2'01, B=2'10, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$a$942 [2:1]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$a$942 [19:3] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$a$942 [0] } = { 4'0000 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$a$942 [1] 8'11111111 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$a$942 [2] 1'1 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$a$942 [2:1] 1'1 }
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][4][4]$974:
+      Old ports: A=20'00000001000000000000, B=20'00000000100000000000, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][2]$a$945
+      New ports: A=2'10, B=2'01, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][2]$a$945 [12:11]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][2]$a$945 [19:13] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][2]$a$945 [10:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][4][6]$980:
+      Old ports: A=20'00000000000100000000, B=20'00000000000010000000, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][3]$a$948
+      New ports: A=2'10, B=2'01, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][3]$a$948 [8:7]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][3]$a$948 [19:9] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][3]$a$948 [6:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][4][0]$962:
+      Old ports: A=20'11001001000011111110, B=20'01110110101100011010, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939
+      New ports: A=2'01, B=2'10, Y={ $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [8] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [2] }
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [19:9] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [7:3] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [1:0] } = { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [2] 1'1 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [8] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [8] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [2] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [8] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [8] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [2] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [8] 1'0 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [8] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [2] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [2] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [2] 4'1110 }
+    Consolidated identical input bits for $pmux cell $procmux$332:
+      Old ports: A=9'100000000, B=18'000010000001000000, Y=\th
+      New ports: A=3'100, B=6'001010, Y={ \th [8] \th [6] \th [4] }
+      New connections: { \th [7] \th [5] \th [3:0] } = 6'000000
+    Consolidated identical input bits for $pmux cell $procmux$336:
+      Old ports: A=3'000, B=6'100010, Y=\flr
+      New ports: A=2'00, B=4'1001, Y=\flr [2:1]
+      New connections: \flr [0] = 1'0
+    Consolidated identical input bits for $pmux cell $procmux$340:
+      Old ports: A=5'01011, B=10'1001001110, Y=\tgt
+      New ports: A=4'0101, B=8'10000110, Y={ \tgt [4:2] \tgt [0] }
+      New connections: \tgt [1] = 1'1
+  Optimizing cells in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$938:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939, B=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$b$940, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927
+      New ports: A={ 1'1 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [2] 1'0 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [8] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [8] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [2] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [2] 1'1 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$a$939 [2] 2'10 }, B={ 1'0 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$b$940 [4] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$b$940 [4] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$b$940 [0] 2'10 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$b$940 [0] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$b$940 [4] 1'1 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$b$940 [0] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][0]$b$940 [0] }, Y={ $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [18] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [12] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [10:7] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [5:4] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [2:0] }
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [19] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [17:13] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [11] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [6] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [3] } = { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [7] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [9:8] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [2] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [8] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [8] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [8] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [2] 1'1 }
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$941:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$a$942, B=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$b$943, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928
+      New ports: A={ $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$a$942 [1] 2'11 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$a$942 [2:1] }, B={ 2'00 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$b$943 [1] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$b$943 [1] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][1]$b$943 [1] }, Y={ $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [15:14] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [5] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [2:1] }
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [19:16] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [13:6] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [4:3] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [0] } = { 5'00001 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [5] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [5] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [5] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [5] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [5] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [5] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [2] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [2:1] 1'1 }
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][3]$947:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][3]$a$948, B=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][3]$b$949, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][1]$b$931
+      New ports: A={ $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][3]$a$948 [8:7] 2'00 }, B={ 2'00 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][3]$b$949 [6:5] }, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][1]$b$931 [8:5]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][1]$b$931 [19:9] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][1]$b$931 [4:0] } = 16'0000000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][4]$950:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][4]$a$951, B=20'00000000000000000000, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][2]$a$933
+      New ports: A=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][4]$a$951 [4:3], B=2'00, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][2]$a$933 [4:3]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][2]$a$933 [19:5] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][2]$a$933 [2:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][2]$944:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][2]$a$945, B=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][2]$b$946, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][1]$a$930
+      New ports: A={ $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][2]$a$945 [12:11] 2'00 }, B={ 2'00 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][3][2]$b$946 [10:9] }, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][1]$a$930 [12:9]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][1]$a$930 [19:13] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][1]$a$930 [8:0] } = 16'0000000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][4]$857:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][4]$a$858, B=20'00000000000000000000, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][2]$a$840
+      New ports: A=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][4]$a$858 [4:3], B=2'00, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][2]$a$840 [4:3]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][2]$a$840 [19:5] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][2]$a$840 [2:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][3]$854:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][3]$a$855, B=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][3]$b$856, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][1]$b$838
+      New ports: A={ $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][3]$a$855 [8:7] 2'00 }, B={ 2'00 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][3]$b$856 [6:5] }, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][1]$b$838 [8:5]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][1]$b$838 [19:9] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][1]$b$838 [4:0] } = 16'0000000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][2]$851:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][2]$a$852, B=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][2]$b$853, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][1]$a$837
+      New ports: A={ $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][2]$a$852 [12:11] 2'00 }, B={ 2'00 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][2]$b$853 [10:9] }, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][1]$a$837 [12:9]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][1]$a$837 [19:13] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][1]$a$837 [8:0] } = 16'0000000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$848:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$a$849, B=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$b$850, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835
+      New ports: A={ $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$a$849 [1] 2'11 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$a$849 [2:1] }, B={ 2'00 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$b$850 [1] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$b$850 [1] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][1]$b$850 [1] }, Y={ $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [15:14] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [5] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [2:1] }
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [19:16] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [13:6] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [4:3] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [0] } = { 5'00001 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [5] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [5] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [5] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [5] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [5] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [5] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [2] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [2:1] 1'1 }
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$845:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846, B=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$b$847, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834
+      New ports: A={ 1'1 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [2] 1'0 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [8] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [8] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [2] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [2] 1'1 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [2] 2'10 }, B={ 1'0 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$b$847 [4] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$b$847 [4] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$b$847 [0] 2'10 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$b$847 [0] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$b$847 [4] 1'1 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$b$847 [0] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$b$847 [0] }, Y={ $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [18] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [12] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [10:7] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [5:4] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [2:0] }
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [19] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [17:13] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [11] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [6] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [3] } = { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [7] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [9:8] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [2] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [8] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [8] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [8] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [2] 1'1 }
+  Optimizing cells in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][2]$932:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][2]$a$933, B=20'00000000000000000000, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][1][1]$a$924
+      New ports: A=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][2]$a$933 [4:3], B=2'00, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][1][1]$a$924 [4:3]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][1][1]$a$924 [19:5] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][1][1]$a$924 [2:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][1]$929:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][1]$a$930, B=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][1]$b$931, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][1][0]$b$922
+      New ports: A={ $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][1]$a$930 [12:9] 4'0000 }, B={ 4'0000 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][1]$b$931 [8:5] }, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][1][0]$b$922 [12:5]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][1][0]$b$922 [19:13] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][1][0]$b$922 [4:0] } = 12'000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$926:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927, B=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][1][0]$a$921
+      New ports: A={ $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [7] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [18] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [9:8] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [2] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [8] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [8] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [12] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [10:7] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [5:4] 1'1 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$a$927 [2:0] }, B={ 4'0000 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [15:14] 1'1 $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [5] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [5] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [5] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [5] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [5] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [5] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [2:1] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][2][0]$b$928 [2:1] 1'1 }, Y={ $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][1][0]$a$921 [19:12] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][1][0]$a$921 [10:7] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][1][0]$a$921 [5:0] }
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][1][0]$a$921 [11] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][1][0]$a$921 [6] } = { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][1][0]$a$921 [8] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][1][0]$a$921 [2] }
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][2]$839:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][2]$a$840, B=20'00000000000000000000, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][1][1]$a$831
+      New ports: A=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][2]$a$840 [4:3], B=2'00, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][1][1]$a$831 [4:3]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][1][1]$a$831 [19:5] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][1][1]$a$831 [2:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][1]$836:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][1]$a$837, B=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][1]$b$838, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][1][0]$b$829
+      New ports: A={ $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][1]$a$837 [12:9] 4'0000 }, B={ 4'0000 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][1]$b$838 [8:5] }, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][1][0]$b$829 [12:5]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][1][0]$b$829 [19:13] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][1][0]$b$829 [4:0] } = 12'000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$833:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834, B=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][1][0]$a$828
+      New ports: A={ $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [7] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [18] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [9:8] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [2] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [8] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [8] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [12] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [10:7] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [5:4] 1'1 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [2:0] }, B={ 4'0000 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [15:14] 1'1 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [5] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [5] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [5] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [5] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [5] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [5] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [2:1] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$b$835 [2:1] 1'1 }, Y={ $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][1][0]$a$828 [19:12] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][1][0]$a$828 [10:7] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][1][0]$a$828 [5:0] }
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][1][0]$a$828 [11] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][1][0]$a$828 [6] } = { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][1][0]$a$828 [8] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][1][0]$a$828 [2] }
+  Optimizing cells in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][1][1]$923:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][1][1]$a$924, B=20'00000000000000000000, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][0][0]$b$919
+      New ports: A=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][1][1]$a$924 [4:3], B=2'00, Y=$memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][0][0]$b$919 [4:3]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][0][0]$b$919 [19:5] $memory$auto$proc_rom.cc:150:do_switch$328$rdmux[0][0][0]$b$919 [2:0] } = 18'000000000000000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][1][1]$830:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][1][1]$a$831, B=20'00000000000000000000, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][0][0]$b$826
+      New ports: A=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][1][1]$a$831 [4:3], B=2'00, Y=$memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][0][0]$b$826 [4:3]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][0][0]$b$826 [19:5] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][0][0]$b$826 [2:0] } = 18'000000000000000000
+  Optimizing cells in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+  Optimizing cells in module \cordic_top_pipe.
+Performed a total of 39 changes.
+
+5.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe'.
+<suppressed ~81 debug messages>
+Finding identical cells in module `\cordic_top_pipe'.
+Removed a total of 27 cells.
+
+5.19.6. Executing OPT_SHARE pass.
+    Found cells that share an operand and can be merged by moving the $mux $procmux$381 in front of them:
+        $auto$alumacc.cc:485:replace_alu$736
+        $auto$alumacc.cc:485:replace_alu$718
+
+    Found cells that share an operand and can be merged by moving the $mux $procmux$390 in front of them:
+        $auto$alumacc.cc:485:replace_alu$712
+        $auto$alumacc.cc:485:replace_alu$739
+
+    Found cells that share an operand and can be merged by moving the $mux $procmux$393 in front of them:
+        $auto$alumacc.cc:485:replace_alu$733
+        $auto$alumacc.cc:485:replace_alu$715
+
+    Found cells that share an operand and can be merged by moving the $mux $ternary$rtl/cordic_top_pipe.v:101$178 in front of them:
+        $auto$alumacc.cc:485:replace_alu$790
+        $auto$alumacc.cc:485:replace_alu$805
+
+5.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+Finding unused cells or wires in module \cordic_top_pipe..
+Removed 0 unused cells and 137 unused wires.
+<suppressed ~2 debug messages>
+
+5.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+<suppressed ~4 debug messages>
+Optimizing module cordic_top_pipe.
+<suppressed ~2 debug messages>
+
+5.19.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.19.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cordic_top_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~27 debug messages>
+
+5.19.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$845:
+      Old ports: A={ 1'1 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [19] 1'0 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [17] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [17] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [19] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [19] 1'1 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [19] 2'10 }, B={ 1'0 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [17] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [17] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [19] 2'10 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [19] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [17] 1'1 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [19] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [19] }, Y={ $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [18] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [12] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [10] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [17:16] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [19] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [5:4] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [15] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [1:0] }
+      New ports: A={ 1'1 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [19] 1'0 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [17] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [17] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [19] 1'1 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [19] 2'10 }, B={ 1'0 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [17] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [17] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [19] 2'10 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [17] 1'1 $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [19] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [19] }, Y={ $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [18] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [12] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [10] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [17:16] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [19] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [4] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [15] $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [1:0] }
+      New connections: $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][2][0]$a$834 [5] = $memory$auto$proc_rom.cc:150:do_switch$324$rdmux[0][3][0]$a$846 [19]
+  Optimizing cells in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+  Optimizing cells in module \cordic_top_pipe.
+    Consolidated identical input bits for $mux cell $auto$opt_share.cc:244:merge_operators$1034:
+      Old ports: A=32'11111111110011011011110000001001, B=3294199, Y=$auto$rtlil.cc:2498:Mux$1035
+      New ports: A=2'10, B=2'01, Y={ $auto$rtlil.cc:2498:Mux$1035 [3] $auto$rtlil.cc:2498:Mux$1035 [1] }
+      New connections: { $auto$rtlil.cc:2498:Mux$1035 [31:4] $auto$rtlil.cc:2498:Mux$1035 [2] $auto$rtlil.cc:2498:Mux$1035 [0] } = { $auto$rtlil.cc:2498:Mux$1035 [3] $auto$rtlil.cc:2498:Mux$1035 [3] $auto$rtlil.cc:2498:Mux$1035 [3] $auto$rtlil.cc:2498:Mux$1035 [3] $auto$rtlil.cc:2498:Mux$1035 [3] $auto$rtlil.cc:2498:Mux$1035 [3] $auto$rtlil.cc:2498:Mux$1035 [3] $auto$rtlil.cc:2498:Mux$1035 [3] $auto$rtlil.cc:2498:Mux$1035 [3] $auto$rtlil.cc:2498:Mux$1035 [3] $auto$rtlil.cc:2498:Mux$1035 [1] $auto$rtlil.cc:2498:Mux$1035 [1] $auto$rtlil.cc:2498:Mux$1035 [3] $auto$rtlil.cc:2498:Mux$1035 [3] $auto$rtlil.cc:2498:Mux$1035 [1] $auto$rtlil.cc:2498:Mux$1035 [3] $auto$rtlil.cc:2498:Mux$1035 [3] $auto$rtlil.cc:2498:Mux$1035 [1] $auto$rtlil.cc:2498:Mux$1035 [3] $auto$rtlil.cc:2498:Mux$1035 [3] $auto$rtlil.cc:2498:Mux$1035 [3] $auto$rtlil.cc:2498:Mux$1035 [3] $auto$rtlil.cc:2498:Mux$1035 [1] $auto$rtlil.cc:2498:Mux$1035 [1] $auto$rtlil.cc:2498:Mux$1035 [1] $auto$rtlil.cc:2498:Mux$1035 [1] $auto$rtlil.cc:2498:Mux$1035 [1] $auto$rtlil.cc:2498:Mux$1035 [1] $auto$rtlil.cc:2498:Mux$1035 [1] 1'1 }
+  Optimizing cells in module \cordic_top_pipe.
+Performed a total of 2 changes.
+
+5.19.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe'.
+Finding identical cells in module `\cordic_top_pipe'.
+Removed a total of 0 cells.
+
+5.19.14. Executing OPT_SHARE pass.
+
+5.19.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.19.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+Finding unused cells or wires in module \cordic_top_pipe..
+Removed 0 unused cells and 5 unused wires.
+<suppressed ~2 debug messages>
+
+5.19.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+Optimizing module cordic_top_pipe.
+
+5.19.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.19.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cordic_top_pipe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~27 debug messages>
+
+5.19.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+  Optimizing cells in module \cordic_top_pipe.
+Performed a total of 0 changes.
+
+5.19.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe'.
+Finding identical cells in module `\cordic_top_pipe'.
+Removed a total of 0 cells.
+
+5.19.22. Executing OPT_SHARE pass.
+
+5.19.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.19.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+Finding unused cells or wires in module \cordic_top_pipe..
+
+5.19.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+Optimizing module cordic_top_pipe.
+
+5.19.26. Finished OPT passes. (There is nothing left to do.)
+
+5.20. Executing TECHMAP pass (map to technology primitives).
+
+5.20.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+5.20.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $reduce_and.
+Using template $paramod$7b00947614a4c48e09c066dca449366ddfa907a5\_90_alu for cells of type $alu.
+Using template $paramod$7fd5b4d7d88b05df445e71e1efc89bfe738da47b\_90_alu for cells of type $alu.
+Using template $paramod$f31235db72ccf9c1ce2fe287188eba7dffdc9745\_90_alu for cells of type $alu.
+Using template $paramod$c6baa65225090ac0a120feab1b920965244aa496\_90_alu for cells of type $alu.
+Using template $paramod$2653f68ddb8eab7b1907b4a20767b72a824a7a36\_90_alu for cells of type $alu.
+Using template $paramod$1cd7b48931e8fc0e2388e46792294929cf794dd3\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $adffe.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000100000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000011101 for cells of type $lcu.
+Using template $paramod$521ce43182eecb9f60c72393a788160d2c356bf5\_90_pmux for cells of type $pmux.
+Using template $paramod$32e7c4d6f92ff4337599ece53082d2e88a82a9f2\_90_pmux for cells of type $pmux.
+Using template $paramod$a77d4b6fbb68fb20c1bf15b8d79b6db75c48b7c2\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $logic_not.
+Running "alumacc" on wrapper $extern:wrap:$neg:A_SIGNED=1:A_WIDTH=32:Y_WIDTH=32:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$neg:A_SIGNED=1:A_WIDTH=32:Y_WIDTH=32:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$neg:A_SIGNED=1:A_WIDTH=32:Y_WIDTH=32:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $paramod$bf2533632d512eac76dd186c0da49367e29b8e98\_90_pmux for cells of type $pmux.
+Using template $paramod$672a140277c71df8314410f22acc08d55222c3c7\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $logic_and.
+Using template $paramod$5e23d2e0f07f5403e3d2c5b606bab0c16e4174c1\_90_alu for cells of type $alu.
+Using template $paramod$5bb6c3f3e4a5303115f41a182fad517280ea0b25\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $logic_or.
+Using template $paramod$e04283ca12514baf3d204c6994bec8f178dd89f8\_90_alu for cells of type $alu.
+Using template $paramod$constmap:4621fcf06a436d1e2a4080e2ed9866a7d07a6e07$paramod$e765c459d3029c22a22a27989e94858fd9ebfa9c\_90_shift_ops_shr_shl_sshl_sshr for cells of type $sshr.
+Using template $paramod$c3cd1564c35d873179656addd6052d7ea8b6d991\_90_alu for cells of type $alu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000101 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000110 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001000 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~4861 debug messages>
+
+5.21. Executing OPT pass (performing simple optimizations).
+
+5.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+<suppressed ~1722 debug messages>
+Optimizing module cordic_top_pipe.
+<suppressed ~1736 debug messages>
+
+5.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe'.
+<suppressed ~645 debug messages>
+Finding identical cells in module `\cordic_top_pipe'.
+<suppressed ~1398 debug messages>
+Removed a total of 681 cells.
+
+5.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+Finding unused cells or wires in module \cordic_top_pipe..
+Removed 443 unused cells and 2525 unused wires.
+<suppressed ~445 debug messages>
+
+5.21.5. Finished fast OPT passes.
+
+5.22. Executing ABC pass (technology mapping using ABC).
+
+5.22.1. Extracting gate netlist of module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe' to `<abc-temp-dir>/input.blif'..
+Extracted 2108 gates and 2321 wires to a netlist network with 211 inputs and 116 outputs.
+
+5.22.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+5.22.1.2. Re-integrating ABC results.
+ABC RESULTS:             ORNOT cells:       17
+ABC RESULTS:              XNOR cells:       68
+ABC RESULTS:                OR cells:      240
+ABC RESULTS:               AND cells:       18
+ABC RESULTS:              NAND cells:      101
+ABC RESULTS:               XOR cells:      252
+ABC RESULTS:               NOT cells:      194
+ABC RESULTS:               MUX cells:      570
+ABC RESULTS:               NOR cells:      137
+ABC RESULTS:            ANDNOT cells:      401
+ABC RESULTS:        internal signals:     1994
+ABC RESULTS:           input signals:      211
+ABC RESULTS:          output signals:      116
+Removing temp directory.
+
+5.22.2. Extracting gate netlist of module `\cordic_top_pipe' to `<abc-temp-dir>/input.blif'..
+Extracted 1501 gates and 1701 wires to a netlist network with 198 inputs and 196 outputs.
+
+5.22.2.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+5.22.2.2. Re-integrating ABC results.
+ABC RESULTS:              NAND cells:       24
+ABC RESULTS:               AND cells:       35
+ABC RESULTS:             ORNOT cells:       41
+ABC RESULTS:              XNOR cells:       25
+ABC RESULTS:               NOR cells:       83
+ABC RESULTS:                OR cells:      195
+ABC RESULTS:               NOT cells:      154
+ABC RESULTS:               XOR cells:      224
+ABC RESULTS:               MUX cells:      218
+ABC RESULTS:            ANDNOT cells:      446
+ABC RESULTS:        internal signals:     1307
+ABC RESULTS:           input signals:      198
+ABC RESULTS:          output signals:      196
+Removing temp directory.
+
+5.23. Executing OPT pass (performing simple optimizations).
+
+5.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe.
+<suppressed ~262 debug messages>
+Optimizing module cordic_top_pipe.
+<suppressed ~108 debug messages>
+
+5.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe'.
+<suppressed ~18 debug messages>
+Finding identical cells in module `\cordic_top_pipe'.
+<suppressed ~24 debug messages>
+Removed a total of 14 cells.
+
+5.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe..
+Finding unused cells or wires in module \cordic_top_pipe..
+Removed 7 unused cells and 1640 unused wires.
+<suppressed ~17 debug messages>
+
+5.23.5. Finished fast OPT passes.
+
+5.24. Executing HIERARCHY pass (managing design hierarchy).
+
+5.24.1. Analyzing design hierarchy..
+Top module:  \cordic_top_pipe
+Used module:     $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe
+
+5.24.2. Analyzing design hierarchy..
+Top module:  \cordic_top_pipe
+Used module:     $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe
+Removed 0 unused modules.
+
+5.25. Printing statistics.
+
+=== $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe ===
+
+   Number of wires:               1936
+   Number of wire bits:           2747
+   Number of public wires:          51
+   Number of public wire bits:     757
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               2105
+     $_ANDNOT_                     399
+     $_AND_                         18
+     $_DFFE_PN0P_                  115
+     $_MUX_                        570
+     $_NAND_                       101
+     $_NOR_                        133
+     $_NOT_                        192
+     $_ORNOT_                       17
+     $_OR_                         240
+     $_XNOR_                        68
+     $_XOR_                        252
+
+=== cordic_top_pipe ===
+
+   Number of wires:               1265
+   Number of wire bits:           1645
+   Number of public wires:          28
+   Number of public wire bits:     408
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1438
+     $_ANDNOT_                     446
+     $_AND_                         30
+     $_DFFE_PN0P_                    5
+     $_MUX_                        218
+     $_NAND_                        23
+     $_NOR_                         81
+     $_NOT_                        149
+     $_ORNOT_                       41
+     $_OR_                         195
+     $_XNOR_                        25
+     $_XOR_                        224
+     $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe      1
+
+=== design hierarchy ===
+
+   cordic_top_pipe                   1
+     $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe      1
+
+   Number of wires:               3201
+   Number of wire bits:           4392
+   Number of public wires:          79
+   Number of public wire bits:    1165
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               3542
+     $_ANDNOT_                     845
+     $_AND_                         48
+     $_DFFE_PN0P_                  120
+     $_MUX_                        788
+     $_NAND_                       124
+     $_NOR_                        214
+     $_NOT_                        341
+     $_ORNOT_                       58
+     $_OR_                         435
+     $_XNOR_                        93
+     $_XOR_                        476
+
+5.26. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe...
+Checking module cordic_top_pipe...
+Found and reported 0 problems.
+
+6. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  cell sky130_fd_sc_hd__dfxtp_1 (noninv, pins=3, area=20.02) is a direct match for cell type $_DFF_P_.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+  cell sky130_fd_sc_hd__dfrtn_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_NN0_.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  cell sky130_fd_sc_hd__dfrtp_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_PN0_.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+  cell sky130_fd_sc_hd__dfbbn_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_NNN_.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  cell sky130_fd_sc_hd__dfbbp_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_PNN_.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_1 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    \sky130_fd_sc_hd__dfrtn_1 _DFF_NN0_ (.CLK_N( C), .D( D), .Q( Q), .RESET_B( R));
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_1 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    \sky130_fd_sc_hd__dfbbp_1 _DFFSR_PNN_ (.CLK( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+6.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe':
+  mapped 115 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_1 cells.
+Mapping DFF cells in module `\cordic_top_pipe':
+  mapped 5 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_1 cells.
+
+7. Executing ABC pass (technology mapping using ABC).
+
+7.1. Extracting gate netlist of module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe' to `<abc-temp-dir>/input.blif'..
+Extracted 2105 gates and 2320 wires to a netlist network with 215 inputs and 115 outputs.
+
+7.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /home/claude/cordic_paper/release_extract/cordic_paper_release/sky130_fd_sc_hd__tt_025C_1v80.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.09 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__diode_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_0".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_8".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_bleeder_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__lpflow_inputisolatch_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/claude/cordic_paper/release_extract/cordic_paper_release/sky130_fd_sc_hd__tt_025C_1v80.lib" has 324 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use).  Time =     0.14 sec
+ABC: Memory =   19.52 MB. Time =     0.14 sec
+ABC: Warning: Detected 9 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+7.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__a32o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a221oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o22a_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21bo_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o211a_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o41ai_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor3b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__xnor3_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or4_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor4b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o2111ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and4b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a211oi_1 cells:       14
+ABC RESULTS:   sky130_fd_sc_hd__a2111oi_0 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__and4_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand4_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__nor4_1 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__a41o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o31ai_1 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__nand3_1 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__a311oi_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__mux4_2 cells:       70
+ABC RESULTS:   sky130_fd_sc_hd__nand3b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o31a_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__or2_0 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__a31o_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor2b_1 cells:       21
+ABC RESULTS:   sky130_fd_sc_hd__nor3_1 cells:       23
+ABC RESULTS:   sky130_fd_sc_hd__o211ai_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__or3_1 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__a211o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and2_0 cells:       21
+ABC RESULTS:   sky130_fd_sc_hd__a31oi_1 cells:       12
+ABC RESULTS:   sky130_fd_sc_hd__o221ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21o_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__maj3_1 cells:       53
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_0 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__nand2b_1 cells:       21
+ABC RESULTS:   sky130_fd_sc_hd__o21a_1 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__and3_1 cells:       15
+ABC RESULTS:   sky130_fd_sc_hd__o22ai_1 cells:       16
+ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:       34
+ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:       89
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_1 cells:      120
+ABC RESULTS:   sky130_fd_sc_hd__a22oi_1 cells:       12
+ABC RESULTS:   sky130_fd_sc_hd__mux2i_1 cells:       68
+ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:      210
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_1 cells:      138
+ABC RESULTS:   sky130_fd_sc_hd__a22o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:      260
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:      212
+ABC RESULTS:   sky130_fd_sc_hd__mux2_1 cells:       42
+ABC RESULTS:        internal signals:     1990
+ABC RESULTS:           input signals:      215
+ABC RESULTS:          output signals:      115
+Removing temp directory.
+
+7.2. Extracting gate netlist of module `\cordic_top_pipe' to `<abc-temp-dir>/input.blif'..
+Extracted 1437 gates and 1636 wires to a netlist network with 199 inputs and 197 outputs.
+
+7.2.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /home/claude/cordic_paper/release_extract/cordic_paper_release/sky130_fd_sc_hd__tt_025C_1v80.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.10 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__diode_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_0".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_8".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_bleeder_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__lpflow_inputisolatch_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/claude/cordic_paper/release_extract/cordic_paper_release/sky130_fd_sc_hd__tt_025C_1v80.lib" has 324 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use).  Time =     0.14 sec
+ABC: Memory =   19.52 MB. Time =     0.14 sec
+ABC: Warning: Detected 9 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+7.2.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__and4_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a41o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o32ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand4_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__nor3b_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o311ai_0 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor4_1 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__o2bb2ai_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o211ai_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a31o_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a41oi_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a2bb2oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o2111ai_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a211oi_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a31oi_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a22o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a2111oi_0 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o31a_1 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__a22oi_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_0 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__maj3_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o41ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o31ai_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:       16
+ABC RESULTS:   sky130_fd_sc_hd__and2_0 cells:       16
+ABC RESULTS:   sky130_fd_sc_hd__a21o_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:       31
+ABC RESULTS:   sky130_fd_sc_hd__a311oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:       72
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_1 cells:       44
+ABC RESULTS:   sky130_fd_sc_hd__mux2i_1 cells:       14
+ABC RESULTS:   sky130_fd_sc_hd__nand3_1 cells:       32
+ABC RESULTS:   sky130_fd_sc_hd__and3b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2b_1 cells:       36
+ABC RESULTS:   sky130_fd_sc_hd__or4_1 cells:       14
+ABC RESULTS:   sky130_fd_sc_hd__o21bai_1 cells:       17
+ABC RESULTS:   sky130_fd_sc_hd__or2_0 cells:       25
+ABC RESULTS:   sky130_fd_sc_hd__or3_1 cells:       31
+ABC RESULTS:   sky130_fd_sc_hd__and3_1 cells:       47
+ABC RESULTS:   sky130_fd_sc_hd__nor3_1 cells:       59
+ABC RESULTS:   sky130_fd_sc_hd__o21a_1 cells:       29
+ABC RESULTS:   sky130_fd_sc_hd__nand2b_1 cells:       15
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:       77
+ABC RESULTS:   sky130_fd_sc_hd__o22ai_1 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:      105
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_1 cells:      154
+ABC RESULTS:        internal signals:     1240
+ABC RESULTS:           input signals:      199
+ABC RESULTS:          output signals:      197
+Removing temp directory.
+
+8. Executing Verilog backend.
+
+8.1. Executing BMUXMAP pass.
+
+8.2. Executing DEMUXMAP pass.
+Dumping module `$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe'.
+Dumping module `\cordic_top_pipe'.
+
+9. Printing statistics.
+
+=== $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe ===
+
+   Number of wires:               3812
+   Number of wire bits:           4623
+   Number of public wires:          51
+   Number of public wire bits:     757
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1661
+     sky130_fd_sc_hd__a2111oi_0      3
+     sky130_fd_sc_hd__a211o_1        1
+     sky130_fd_sc_hd__a211oi_1      14
+     sky130_fd_sc_hd__a21bo_1        1
+     sky130_fd_sc_hd__a21boi_0       8
+     sky130_fd_sc_hd__a21o_1         5
+     sky130_fd_sc_hd__a21oi_1      138
+     sky130_fd_sc_hd__a221oi_1       1
+     sky130_fd_sc_hd__a22o_1         1
+     sky130_fd_sc_hd__a22oi_1       12
+     sky130_fd_sc_hd__a311oi_1       3
+     sky130_fd_sc_hd__a31o_1         2
+     sky130_fd_sc_hd__a31oi_1       12
+     sky130_fd_sc_hd__a32o_1         1
+     sky130_fd_sc_hd__a41o_1         1
+     sky130_fd_sc_hd__and2_0        21
+     sky130_fd_sc_hd__and3_1        15
+     sky130_fd_sc_hd__and4_1         1
+     sky130_fd_sc_hd__and4b_1        1
+     sky130_fd_sc_hd__clkinv_1      34
+     sky130_fd_sc_hd__dfrtp_1      115
+     sky130_fd_sc_hd__maj3_1        53
+     sky130_fd_sc_hd__mux2_1        42
+     sky130_fd_sc_hd__mux2i_1       68
+     sky130_fd_sc_hd__mux4_2        70
+     sky130_fd_sc_hd__nand2_1      260
+     sky130_fd_sc_hd__nand2b_1      21
+     sky130_fd_sc_hd__nand3_1        7
+     sky130_fd_sc_hd__nand3b_1       1
+     sky130_fd_sc_hd__nand4_1        5
+     sky130_fd_sc_hd__nor2_1       210
+     sky130_fd_sc_hd__nor2b_1       21
+     sky130_fd_sc_hd__nor3_1        23
+     sky130_fd_sc_hd__nor3b_1        1
+     sky130_fd_sc_hd__nor4_1         8
+     sky130_fd_sc_hd__nor4b_1        1
+     sky130_fd_sc_hd__o2111ai_1      1
+     sky130_fd_sc_hd__o211a_1        1
+     sky130_fd_sc_hd__o211ai_1       2
+     sky130_fd_sc_hd__o21a_1         7
+     sky130_fd_sc_hd__o21ai_0      212
+     sky130_fd_sc_hd__o221ai_1       1
+     sky130_fd_sc_hd__o22a_1         1
+     sky130_fd_sc_hd__o22ai_1       16
+     sky130_fd_sc_hd__o31a_1         3
+     sky130_fd_sc_hd__o31ai_1        6
+     sky130_fd_sc_hd__o41ai_1        2
+     sky130_fd_sc_hd__or2_0          8
+     sky130_fd_sc_hd__or3_1          8
+     sky130_fd_sc_hd__or4_1          2
+     sky130_fd_sc_hd__xnor2_1      120
+     sky130_fd_sc_hd__xnor3_1        1
+     sky130_fd_sc_hd__xor2_1        89
+
+   Chip area for module '$paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe': 13299.004800
+
+=== cordic_top_pipe ===
+
+   Number of wires:               2382
+   Number of wire bits:           2762
+   Number of public wires:          28
+   Number of public wire bits:     408
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                919
+     $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe      1
+     sky130_fd_sc_hd__a2111oi_0      2
+     sky130_fd_sc_hd__a211oi_1       3
+     sky130_fd_sc_hd__a21boi_0       4
+     sky130_fd_sc_hd__a21o_1         3
+     sky130_fd_sc_hd__a21oi_1      154
+     sky130_fd_sc_hd__a22o_1         1
+     sky130_fd_sc_hd__a22oi_1        4
+     sky130_fd_sc_hd__a2bb2oi_1      1
+     sky130_fd_sc_hd__a311oi_1       1
+     sky130_fd_sc_hd__a31o_1         4
+     sky130_fd_sc_hd__a31oi_1        4
+     sky130_fd_sc_hd__a41o_1         1
+     sky130_fd_sc_hd__a41oi_1        2
+     sky130_fd_sc_hd__and2_0        16
+     sky130_fd_sc_hd__and3_1        47
+     sky130_fd_sc_hd__and3b_1        1
+     sky130_fd_sc_hd__and4_1         1
+     sky130_fd_sc_hd__clkinv_1      16
+     sky130_fd_sc_hd__dfrtp_1        5
+     sky130_fd_sc_hd__maj3_1         4
+     sky130_fd_sc_hd__mux2i_1       14
+     sky130_fd_sc_hd__nand2_1       72
+     sky130_fd_sc_hd__nand2b_1      15
+     sky130_fd_sc_hd__nand3_1       32
+     sky130_fd_sc_hd__nand4_1        5
+     sky130_fd_sc_hd__nor2_1       105
+     sky130_fd_sc_hd__nor2b_1       36
+     sky130_fd_sc_hd__nor3_1        59
+     sky130_fd_sc_hd__nor3b_1        2
+     sky130_fd_sc_hd__nor4_1         7
+     sky130_fd_sc_hd__o2111ai_1      2
+     sky130_fd_sc_hd__o211ai_1       2
+     sky130_fd_sc_hd__o21a_1        29
+     sky130_fd_sc_hd__o21ai_0       77
+     sky130_fd_sc_hd__o21bai_1      17
+     sky130_fd_sc_hd__o22ai_1        6
+     sky130_fd_sc_hd__o2bb2ai_1      4
+     sky130_fd_sc_hd__o311ai_0       2
+     sky130_fd_sc_hd__o31a_1         7
+     sky130_fd_sc_hd__o31ai_1        4
+     sky130_fd_sc_hd__o32ai_1        1
+     sky130_fd_sc_hd__o41ai_1        1
+     sky130_fd_sc_hd__or2_0         25
+     sky130_fd_sc_hd__or3_1         31
+     sky130_fd_sc_hd__or4_1         14
+     sky130_fd_sc_hd__xnor2_1       44
+     sky130_fd_sc_hd__xor2_1        31
+
+   Area for cell type $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe is unknown!
+
+   Chip area for module '\cordic_top_pipe': 5387.667200
+
+=== design hierarchy ===
+
+   cordic_top_pipe                   1
+     $paramod$48d06d2e7f5128fde9fa9d09e394b93501e01fc4\cordic_engine_pipe      1
+
+   Number of wires:               6194
+   Number of wire bits:           7385
+   Number of public wires:          79
+   Number of public wire bits:    1165
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               2579
+     sky130_fd_sc_hd__a2111oi_0      5
+     sky130_fd_sc_hd__a211o_1        1
+     sky130_fd_sc_hd__a211oi_1      17
+     sky130_fd_sc_hd__a21bo_1        1
+     sky130_fd_sc_hd__a21boi_0      12
+     sky130_fd_sc_hd__a21o_1         8
+     sky130_fd_sc_hd__a21oi_1      292
+     sky130_fd_sc_hd__a221oi_1       1
+     sky130_fd_sc_hd__a22o_1         2
+     sky130_fd_sc_hd__a22oi_1       16
+     sky130_fd_sc_hd__a2bb2oi_1      1
+     sky130_fd_sc_hd__a311oi_1       4
+     sky130_fd_sc_hd__a31o_1         6
+     sky130_fd_sc_hd__a31oi_1       16
+     sky130_fd_sc_hd__a32o_1         1
+     sky130_fd_sc_hd__a41o_1         2
+     sky130_fd_sc_hd__a41oi_1        2
+     sky130_fd_sc_hd__and2_0        37
+     sky130_fd_sc_hd__and3_1        62
+     sky130_fd_sc_hd__and3b_1        1
+     sky130_fd_sc_hd__and4_1         2
+     sky130_fd_sc_hd__and4b_1        1
+     sky130_fd_sc_hd__clkinv_1      50
+     sky130_fd_sc_hd__dfrtp_1      120
+     sky130_fd_sc_hd__maj3_1        57
+     sky130_fd_sc_hd__mux2_1        42
+     sky130_fd_sc_hd__mux2i_1       82
+     sky130_fd_sc_hd__mux4_2        70
+     sky130_fd_sc_hd__nand2_1      332
+     sky130_fd_sc_hd__nand2b_1      36
+     sky130_fd_sc_hd__nand3_1       39
+     sky130_fd_sc_hd__nand3b_1       1
+     sky130_fd_sc_hd__nand4_1       10
+     sky130_fd_sc_hd__nor2_1       315
+     sky130_fd_sc_hd__nor2b_1       57
+     sky130_fd_sc_hd__nor3_1        82
+     sky130_fd_sc_hd__nor3b_1        3
+     sky130_fd_sc_hd__nor4_1        15
+     sky130_fd_sc_hd__nor4b_1        1
+     sky130_fd_sc_hd__o2111ai_1      3
+     sky130_fd_sc_hd__o211a_1        1
+     sky130_fd_sc_hd__o211ai_1       4
+     sky130_fd_sc_hd__o21a_1        36
+     sky130_fd_sc_hd__o21ai_0      289
+     sky130_fd_sc_hd__o21bai_1      17
+     sky130_fd_sc_hd__o221ai_1       1
+     sky130_fd_sc_hd__o22a_1         1
+     sky130_fd_sc_hd__o22ai_1       22
+     sky130_fd_sc_hd__o2bb2ai_1      4
+     sky130_fd_sc_hd__o311ai_0       2
+     sky130_fd_sc_hd__o31a_1        10
+     sky130_fd_sc_hd__o31ai_1       10
+     sky130_fd_sc_hd__o32ai_1        1
+     sky130_fd_sc_hd__o41ai_1        3
+     sky130_fd_sc_hd__or2_0         33
+     sky130_fd_sc_hd__or3_1         39
+     sky130_fd_sc_hd__or4_1         16
+     sky130_fd_sc_hd__xnor2_1      164
+     sky130_fd_sc_hd__xnor3_1        1
+     sky130_fd_sc_hd__xor2_1       120
+
+   Chip area for top module '\cordic_top_pipe': 18686.672000
+
+Warnings: 26 unique messages, 234 total
+End of script. Logfile hash: 6ef2519a1d, CPU: user 2.68s system 0.03s, MEM: 45.54 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 42% 2x abc (1 sec), 13% 31x opt_expr (0 sec), ...

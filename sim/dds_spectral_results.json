@@ -1,0 +1,23 @@
+{
+  "High": {
+    "sfdr_dbc": 114.69,
+    "thd_db": -121.79,
+    "fund_bin": 37,
+    "spur_bin": 1555,
+    "peak_abs": 1.0
+  },
+  "Medium": {
+    "sfdr_dbc": 98.34,
+    "thd_db": -110.3,
+    "fund_bin": 37,
+    "spur_bin": 379,
+    "peak_abs": 1.0
+  },
+  "Low": {
+    "sfdr_dbc": 76.68,
+    "thd_db": -106.72,
+    "fund_bin": 37,
+    "spur_bin": 763,
+    "peak_abs": 1.0
+  }
+}

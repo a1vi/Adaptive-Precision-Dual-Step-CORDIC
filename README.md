@@ -1,4 +1,4 @@
-﻿# Adaptive-Precision, Dual-Step CORDIC (Sine / Cosine / Arctan2)
+# Adaptive-Precision, Dual-Step CORDIC (Sine / Cosine / Arctan2)
 
 > **Why fewer cycles do not guarantee higher throughput at timing closure**
 
@@ -411,7 +411,7 @@ If you use this work, please cite:
              Guarantee Higher Throughput at Timing Closure},
   author  = {Alvi, Atair Rahman},
   journal = {Preprint / Elsevier submission},
-  year    = {2024},
+  year    = {2026},
   note    = {Repository: https://github.com/a1vi/cordic_paper_github}
 }
 ```

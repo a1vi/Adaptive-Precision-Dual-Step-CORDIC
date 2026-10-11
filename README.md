@@ -406,7 +406,7 @@ vvp sim_<DS>_<ES>.vvp          # produces power.vcd
 If you use this work, please cite:
 
 ```bibtex
-@article{alvi2024adaptive,
+@article{alvi2026adaptive,
   title   = {Adaptive-Precision Dual-Step CORDIC: Why Fewer Cycles Do Not
              Guarantee Higher Throughput at Timing Closure},
   author  = {Alvi, Atair Rahman},

@@ -4,7 +4,7 @@
 
 A reconfigurable, multiplier-free circular-mode CORDIC engine combining **residual-based early termination** with **dual-step-per-cycle (DSPC)** scheduling — evaluated through real logic synthesis, static timing closure (fast/typical/slow SKY130 PVT corners), gate-level activity-annotated dynamic power, FPGA place-and-route, and an application-level DDS/NCO spectral-purity check.
 
-[![Paper (Elsevier)](https://img.shields.io/badge/Paper-Elsevier%20Draft-blue?logo=readthedocs)](paper_elsevier.pdf)
+[![Paper](https://img.shields.io/badge/Paper-Read%20PDF-blue?logo=readthedocs)](paper_elsevier.pdf)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Verilog RTL](https://img.shields.io/badge/RTL-Verilog-orange?logo=v)](rtl/)
 [![SKY130 PDK](https://img.shields.io/badge/PDK-SkyWater%20SKY130-purple)](https://github.com/google/skywater-pdk)
@@ -410,7 +410,7 @@ If you use this work, please cite:
   title   = {Adaptive-Precision Dual-Step CORDIC: Why Fewer Cycles Do Not
              Guarantee Higher Throughput at Timing Closure},
   author  = {Alvi, Atair Rahman},
-  journal = {Preprint / Elsevier submission},
+  journal = {Paper},
   year    = {2026},
   note    = {Repository: https://github.com/a1vi/cordic_paper_github}
 }
